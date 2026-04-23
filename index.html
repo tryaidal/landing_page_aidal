@@ -584,6 +584,14 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
   </ul>
 </nav>
 
+<!-- URGENCY BANNER -->
+<div style="background:#f0ebe0;color:#2d3a5c;text-align:center;padding:12px 2rem;font-family:EB Garamond,serif;font-size:15px;letter-spacing:1px">
+  <strong style="font-family:Playfair Display,serif;font-size:17px">EU AI Act deadline:</strong>
+  &nbsp;<span id="countdown" style="font-family:Playfair Display,serif;font-size:17px;font-weight:700;color:#8b1a1a"></span>
+  &nbsp;— companies using AI for loans, insurance &amp; fraud detection must comply or face fines up to €30M.
+  &nbsp;<a href="#pricing" style="color:#2d3a5c;font-weight:700;text-decoration:underline">Get compliant now →</a>
+</div>
+
 <!-- HERO -->
 <section class="hero">
   <div class="hero-eyebrow">EU AI Act · Article 12 & 13 Compliance</div>
@@ -794,5 +802,19 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
   <p style="font-size:13px;color:var(--cream-dim)">© 2026 AIDAL</p>
 </footer>
 
+<script>
+var deadline=new Date("2026-08-01T00:00:00");
+function tick(){
+  var now=new Date();
+  var diff=deadline-now;
+  if(diff<=0){document.getElementById("countdown").textContent="DEADLINE PASSED";return;}
+  var d=Math.floor(diff/86400000);
+  var h=Math.floor((diff%86400000)/3600000);
+  var m=Math.floor((diff%3600000)/60000);
+  var s=Math.floor((diff%60000)/1000);
+  document.getElementById("countdown").textContent=d+"d "+h+"h "+m+"m "+s+"s remaining";
+}
+tick();setInterval(tick,1000);
+</script>
 </body>
 </html>
