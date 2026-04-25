@@ -580,6 +580,7 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
     <li><a href="#how">How it works</a></li>
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#docs">Docs</a></li>
+    <li><a href="https://aidal-dashboard.vercel.app" target="_blank">Dashboard</a></li>
     <li><a href="https://aidal-production.up.railway.app/docs" target="_blank" class="nav-cta">Try API</a></li>
   </ul>
 </nav>
@@ -792,9 +793,82 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
 <section class="cta-section">
   <div class="section-label" style="justify-content:center">Get started</div>
   <h2>Your AI decisions.<br><em>Accountable from day one.</em></h2>
-  <p>Try the live API. No signup required. See your first audit trail in under 60 seconds.</p>
-  <a href="https://aidal-production.up.railway.app/docs" target="_blank" class="btn-primary">Try AIDAL free</a>
+  <p>Join companies already preparing for the August 2026 deadline. Request beta access — we will personally onboard you for free.</p>
+
+  <div id="form-wrap" style="max-width:520px;margin:2rem auto 0;text-align:left">
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <input id="f-name" type="text" placeholder="Company name"
+        style="background:rgba(240,235,224,0.08);border:1px solid rgba(240,235,224,0.25);color:#f0ebe0;padding:14px 18px;font-family:EB Garamond,serif;font-size:16px;outline:none;width:100%" />
+      <input id="f-email" type="email" placeholder="Work email"
+        style="background:rgba(240,235,224,0.08);border:1px solid rgba(240,235,224,0.25);color:#f0ebe0;padding:14px 18px;font-family:EB Garamond,serif;font-size:16px;outline:none;width:100%" />
+      <input id="f-role" type="text" placeholder="Your role (e.g. CTO, Compliance Officer)"
+        style="background:rgba(240,235,224,0.08);border:1px solid rgba(240,235,224,0.25);color:#f0ebe0;padding:14px 18px;font-family:EB Garamond,serif;font-size:16px;outline:none;width:100%" />
+      <select id="f-jurisdiction"
+        style="background:#2d3a5c;border:1px solid rgba(240,235,224,0.25);color:#f0ebe0;padding:14px 18px;font-family:EB Garamond,serif;font-size:16px;outline:none;width:100%">
+        <option value="">Which regulation concerns you most?</option>
+        <option>EU AI Act</option>
+        <option>Indonesia OJK</option>
+        <option>Singapore MAS</option>
+        <option>UAE VARA</option>
+        <option>US CFPB</option>
+        <option>Multiple jurisdictions</option>
+      </select>
+      <button onclick="submitForm()"
+        style="background:#f0ebe0;color:#2d3a5c;border:none;padding:16px;font-family:EB Garamond,serif;font-size:16px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;width:100%;margin-top:4px">
+        Request Beta Access
+      </button>
+    </div>
+    <div id="form-msg" style="margin-top:16px;font-size:15px;text-align:center;display:none"></div>
+  </div>
+
+  <p style="margin-top:2rem;font-size:14px;color:rgba(240,235,224,0.4)">
+    No credit card. No commitment. We respond within 24 hours.
+  </p>
 </section>
+
+<script>
+function submitForm() {
+  var name = document.getElementById("f-name").value.trim();
+  var email = document.getElementById("f-email").value.trim();
+  var role = document.getElementById("f-role").value.trim();
+  var jurisdiction = document.getElementById("f-jurisdiction").value;
+  var msg = document.getElementById("form-msg");
+
+  if (!name || !email) {
+    msg.style.display = "block";
+    msg.style.color = "#e08080";
+    msg.textContent = "Please fill in your company name and email.";
+    return;
+  }
+
+  if (!email.includes("@")) {
+    msg.style.display = "block";
+    msg.style.color = "#e08080";
+    msg.textContent = "Please enter a valid email address.";
+    return;
+  }
+
+  // Open email client with pre-filled request to AIDAL
+  var subject = encodeURIComponent("AIDAL Beta Access Request — " + name);
+  var body = encodeURIComponent(
+    "Company: " + name + "\n" +
+    "Email: " + email + "\n" +
+    "Role: " + role + "\n" +
+    "Jurisdiction: " + jurisdiction + "\n\n" +
+    "I would like to request beta access to AIDAL."
+  );
+  window.location.href = "mailto:try.aidal@gmail.com?subject=" + subject + "&body=" + body;
+
+  msg.style.display = "block";
+  msg.style.color = "#7ec8a0";
+  msg.textContent = "Opening your email app... We will respond within 24 hours.";
+
+  document.getElementById("f-name").value = "";
+  document.getElementById("f-email").value = "";
+  document.getElementById("f-role").value = "";
+  document.getElementById("f-jurisdiction").value = "";
+}
+</script>
 
 <footer>
   <div class="footer-logo">AIDAL.</div>
