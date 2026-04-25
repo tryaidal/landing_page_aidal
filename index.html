@@ -12,13 +12,12 @@
   --navy-light: #3d4f7a;
   --cream: #f0ebe0;
   --cream-dim: #d4cec0;
-  --white: #fafaf8;
+  --green: #1d9e75;
+  --red: #a32d2d;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { scroll-behavior: smooth; }
-
 body {
   background: var(--navy);
   color: var(--cream);
@@ -36,7 +35,6 @@ nav {
   padding: 2rem 4rem;
   border-bottom: 1px solid rgba(240,235,224,0.1);
 }
-
 .logo {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 28px;
@@ -45,15 +43,7 @@ nav {
   letter-spacing: 2px;
   text-decoration: none;
 }
-
-.logo span { color: var(--cream); }
-
-.nav-links {
-  display: flex;
-  gap: 3rem;
-  list-style: none;
-}
-
+.nav-links { display: flex; gap: 3rem; list-style: none; }
 .nav-links a {
   color: var(--cream-dim);
   text-decoration: none;
@@ -61,9 +51,7 @@ nav {
   letter-spacing: 1px;
   transition: color 0.2s;
 }
-
 .nav-links a:hover { color: var(--cream); }
-
 .nav-cta {
   border: 1px solid var(--cream-dim);
   padding: 10px 28px;
@@ -73,11 +61,7 @@ nav {
   text-transform: uppercase;
   transition: all 0.2s !important;
 }
-
-.nav-cta:hover {
-  background: var(--cream) !important;
-  color: var(--navy) !important;
-}
+.nav-cta:hover { background: var(--cream) !important; color: var(--navy) !important; }
 
 /* HERO */
 .hero {
@@ -90,7 +74,6 @@ nav {
   margin: 0 auto;
   position: relative;
 }
-
 .hero-eyebrow {
   font-size: 13px;
   letter-spacing: 4px;
@@ -101,7 +84,6 @@ nav {
   align-items: center;
   gap: 16px;
 }
-
 .hero-eyebrow::before {
   content: '';
   display: block;
@@ -109,7 +91,6 @@ nav {
   height: 1px;
   background: var(--cream-dim);
 }
-
 h1 {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: clamp(56px, 8vw, 110px);
@@ -120,12 +101,7 @@ h1 {
   margin-bottom: 2rem;
   max-width: 900px;
 }
-
-h1 em {
-  font-style: italic;
-  color: var(--cream-dim);
-}
-
+h1 em { font-style: italic; color: var(--cream-dim); }
 .hero-sub {
   font-size: 22px;
   color: var(--cream-dim);
@@ -134,13 +110,7 @@ h1 em {
   margin-bottom: 4rem;
   font-weight: 400;
 }
-
-.hero-actions {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-}
-
+.hero-actions { display: flex; gap: 1.5rem; align-items: center; }
 .btn-primary {
   background: var(--cream);
   color: var(--navy);
@@ -153,13 +123,9 @@ h1 em {
   border: 1px solid var(--cream);
   cursor: pointer;
   transition: all 0.2s;
+  display: inline-block;
 }
-
-.btn-primary:hover {
-  background: transparent;
-  color: var(--cream);
-}
-
+.btn-primary:hover { background: transparent; color: var(--cream); }
 .btn-secondary {
   color: var(--cream-dim);
   font-size: 16px;
@@ -170,23 +136,15 @@ h1 em {
   gap: 10px;
   transition: color 0.2s;
 }
-
 .btn-secondary:hover { color: var(--cream); }
-
-.btn-secondary::after {
-  content: '→';
-  transition: transform 0.2s;
-}
-
+.btn-secondary::after { content: '→'; transition: transform 0.2s; }
 .btn-secondary:hover::after { transform: translateX(4px); }
-
 .hero-stat {
   position: absolute;
   right: 4rem;
   bottom: 6rem;
   text-align: right;
 }
-
 .hero-stat-num {
   font-family: 'Playfair Display', serif;
   font-size: 72px;
@@ -195,7 +153,6 @@ h1 em {
   line-height: 1;
   display: block;
 }
-
 .hero-stat-label {
   font-size: 13px;
   letter-spacing: 2px;
@@ -204,19 +161,10 @@ h1 em {
 }
 
 /* DIVIDER */
-.divider {
-  border: none;
-  border-top: 1px solid rgba(240,235,224,0.15);
-  margin: 0 4rem;
-}
+.divider { border: none; border-top: 1px solid rgba(240,235,224,0.15); margin: 0 4rem; }
 
-/* PROBLEM */
-.section {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 8rem 4rem;
-}
-
+/* SECTIONS */
+.section { max-width: 1200px; margin: 0 auto; padding: 8rem 4rem; }
 .section-label {
   font-size: 12px;
   letter-spacing: 4px;
@@ -227,15 +175,7 @@ h1 em {
   align-items: center;
   gap: 16px;
 }
-
-.section-label::before {
-  content: '';
-  display: block;
-  width: 30px;
-  height: 1px;
-  background: var(--cream-dim);
-}
-
+.section-label::before { content: ''; display: block; width: 30px; height: 1px; background: var(--cream-dim); }
 h2 {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: clamp(36px, 5vw, 64px);
@@ -244,9 +184,9 @@ h2 {
   color: var(--cream);
   margin-bottom: 2rem;
 }
-
 h2 em { font-style: italic; color: var(--cream-dim); }
 
+/* PROBLEM */
 .problem-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -255,14 +195,8 @@ h2 em { font-style: italic; color: var(--cream-dim); }
   margin-top: 5rem;
   border: 1px solid rgba(240,235,224,0.1);
 }
-
-.problem-cell {
-  background: var(--navy);
-  padding: 3rem;
-}
-
+.problem-cell { background: var(--navy); padding: 3rem; }
 .problem-cell.accent { background: var(--navy-dark); }
-
 .problem-num {
   font-family: 'Playfair Display', serif;
   font-size: 48px;
@@ -272,63 +206,16 @@ h2 em { font-style: italic; color: var(--cream-dim); }
   margin-bottom: 1rem;
   line-height: 1;
 }
-
-.problem-cell h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--cream);
-  margin-bottom: 1rem;
-}
-
-.problem-cell p {
-  font-size: 16px;
-  color: var(--cream-dim);
-  line-height: 1.8;
-}
+.problem-cell h3 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--cream); margin-bottom: 1rem; }
+.problem-cell p { font-size: 16px; color: var(--cream-dim); line-height: 1.8; }
 
 /* HOW IT WORKS */
-.how-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8rem;
-  align-items: start;
-  margin-top: 5rem;
-}
-
-.step {
-  display: flex;
-  gap: 2rem;
-  margin-bottom: 3rem;
-  padding-bottom: 3rem;
-  border-bottom: 1px solid rgba(240,235,224,0.1);
-}
-
+.how-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: start; margin-top: 5rem; }
+.step { display: flex; gap: 2rem; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(240,235,224,0.1); }
 .step:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-
-.step-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 13px;
-  color: var(--cream-dim);
-  letter-spacing: 2px;
-  min-width: 36px;
-  padding-top: 4px;
-}
-
-.step h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--cream);
-  margin-bottom: 8px;
-}
-
-.step p {
-  font-size: 16px;
-  color: var(--cream-dim);
-  line-height: 1.8;
-}
-
+.step-num { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--cream-dim); letter-spacing: 2px; min-width: 36px; padding-top: 4px; }
+.step h3 { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--cream); margin-bottom: 8px; }
+.step p { font-size: 16px; color: var(--cream-dim); line-height: 1.8; }
 .code-block {
   background: var(--navy-dark);
   border: 1px solid rgba(240,235,224,0.1);
@@ -340,12 +227,42 @@ h2 em { font-style: italic; color: var(--cream-dim); }
   position: sticky;
   top: 2rem;
 }
-
 .code-comment { color: rgba(240,235,224,0.3); }
 .code-key { color: #7ec8a0; }
 .code-val { color: #f0c47a; }
 .code-str { color: #f0ebe0; }
 .code-highlight { color: var(--cream); font-weight: bold; }
+
+/* JURISDICTIONS */
+.jurisdiction-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(240,235,224,0.1);
+  margin-top: 5rem;
+  border: 1px solid rgba(240,235,224,0.1);
+}
+.jurisdiction-card { background: var(--navy-dark); padding: 2.5rem; }
+.jurisdiction-code {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 900;
+  color: rgba(240,235,224,0.12);
+  display: block;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+.jurisdiction-card h3 { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--cream); margin-bottom: 8px; }
+.jurisdiction-card p { font-size: 14px; color: var(--cream-dim); line-height: 1.7; margin-bottom: 1rem; }
+.jurisdiction-badge {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 1px solid rgba(240,235,224,0.2);
+  color: var(--cream-dim);
+  padding: 3px 10px;
+}
 
 /* PRICING */
 .pricing-grid {
@@ -356,174 +273,167 @@ h2 em { font-style: italic; color: var(--cream-dim); }
   margin-top: 5rem;
   border: 1px solid rgba(240,235,224,0.1);
 }
-
-.price-card {
-  background: var(--navy);
-  padding: 3rem;
-}
-
-.price-card.featured {
-  background: var(--cream);
-}
-
-.price-label {
-  font-size: 12px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--cream-dim);
-  margin-bottom: 2rem;
-  display: block;
-}
-
+.price-card { background: var(--navy); padding: 3rem; }
+.price-card.featured { background: var(--cream); }
+.price-label { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--cream-dim); margin-bottom: 2rem; display: block; }
 .price-card.featured .price-label { color: var(--navy-light); }
-
-.price-amount {
-  font-family: 'Playfair Display', serif;
-  font-size: 52px;
-  font-weight: 700;
-  color: var(--cream);
-  display: block;
-  line-height: 1;
-  margin-bottom: 6px;
-}
-
+.price-amount { font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 700; color: var(--cream); display: block; line-height: 1; margin-bottom: 6px; }
 .price-card.featured .price-amount { color: var(--navy); }
-
-.price-unit {
-  font-size: 14px;
-  color: var(--cream-dim);
-  display: block;
-  margin-bottom: 2rem;
-  letter-spacing: 1px;
-}
-
+.price-unit { font-size: 14px; color: var(--cream-dim); display: block; margin-bottom: 2rem; letter-spacing: 1px; }
 .price-card.featured .price-unit { color: var(--navy-light); }
-
-.price-features {
-  list-style: none;
-  margin-bottom: 2.5rem;
-}
-
-.price-features li {
-  font-size: 15px;
-  color: var(--cream-dim);
-  padding: 8px 0;
-  border-bottom: 1px solid rgba(240,235,224,0.08);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.price-card.featured .price-features li {
-  color: var(--navy);
-  border-bottom-color: rgba(45,58,92,0.1);
-}
-
-.price-features li::before {
-  content: '';
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--cream-dim);
-  min-width: 5px;
-}
-
+.price-features { list-style: none; margin-bottom: 2.5rem; }
+.price-features li { font-size: 15px; color: var(--cream-dim); padding: 8px 0; border-bottom: 1px solid rgba(240,235,224,0.08); display: flex; align-items: center; gap: 10px; }
+.price-card.featured .price-features li { color: var(--navy); border-bottom-color: rgba(45,58,92,0.1); }
+.price-features li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--cream-dim); min-width: 5px; }
 .price-card.featured .price-features li::before { background: var(--navy); }
+.price-btn { display: block; text-align: center; padding: 14px; border: 1px solid var(--cream-dim); color: var(--cream); text-decoration: none; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; transition: all 0.2s; cursor: pointer; background: transparent; width: 100%; font-family: 'EB Garamond', serif; }
+.price-card.featured .price-btn { background: var(--navy); border-color: var(--navy); color: var(--cream); }
+.price-btn:hover { background: var(--cream); color: var(--navy); }
 
-.price-btn {
-  display: block;
-  text-align: center;
-  padding: 14px;
-  border: 1px solid var(--cream-dim);
-  color: var(--cream);
-  text-decoration: none;
-  font-size: 13px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  transition: all 0.2s;
-}
-
-.price-card.featured .price-btn {
-  background: var(--navy);
-  border-color: var(--navy);
-  color: var(--cream);
-}
-
-.price-btn:hover {
-  background: var(--cream);
-  color: var(--navy);
-}
-
-/* WHO ITS FOR */
-.clients-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-  margin-top: 5rem;
-}
-
-.client-card {
-  border-top: 1px solid rgba(240,235,224,0.2);
-  padding-top: 2rem;
-}
-
-.client-card h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--cream);
-  margin-bottom: 1rem;
-}
-
-.client-card p {
-  font-size: 15px;
-  color: var(--cream-dim);
-  line-height: 1.8;
-}
+/* CLIENTS */
+.clients-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-top: 5rem; }
+.client-card { border-top: 1px solid rgba(240,235,224,0.2); padding-top: 2rem; }
+.client-card h3 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--cream); margin-bottom: 1rem; }
+.client-card p { font-size: 15px; color: var(--cream-dim); line-height: 1.8; }
 
 /* DEADLINE */
-.deadline-section {
-  background: var(--navy-dark);
-  border-top: 1px solid rgba(240,235,224,0.1);
-  border-bottom: 1px solid rgba(240,235,224,0.1);
-}
+.deadline-section { background: var(--navy-dark); border-top: 1px solid rgba(240,235,224,0.1); border-bottom: 1px solid rgba(240,235,224,0.1); }
+.deadline-inner { max-width: 1200px; margin: 0 auto; padding: 6rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+.deadline-date { font-family: 'Playfair Display', serif; font-size: 80px; font-weight: 900; color: var(--cream); line-height: 1; margin-bottom: 1rem; }
+.deadline-label { font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: var(--cream-dim); }
 
-.deadline-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 6rem 4rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6rem;
-  align-items: center;
-}
-
-.deadline-date {
-  font-family: 'Playfair Display', serif;
-  font-size: 80px;
-  font-weight: 900;
-  color: var(--cream);
-  line-height: 1;
-  margin-bottom: 1rem;
-}
-
-.deadline-label {
-  font-size: 13px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--cream-dim);
-}
-
-/* CTA */
-.cta-section {
+/* ── GET API KEY SECTION ─────────────────────────────────────────────── */
+.signup-section {
   text-align: center;
   padding: 10rem 4rem;
   max-width: 800px;
   margin: 0 auto;
 }
+.signup-section h2 { margin-bottom: 1rem; }
+.signup-section > p { font-size: 20px; color: var(--cream-dim); margin-bottom: 3rem; }
 
-.cta-section h2 { margin-bottom: 1.5rem; }
-.cta-section p { font-size: 20px; color: var(--cream-dim); margin-bottom: 3rem; }
+.signup-box {
+  max-width: 540px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.signup-input {
+  width: 100%;
+  background: rgba(240,235,224,0.08);
+  border: 1px solid rgba(240,235,224,0.25);
+  color: var(--cream);
+  padding: 14px 18px;
+  font-family: 'EB Garamond', serif;
+  font-size: 16px;
+  outline: none;
+  margin-bottom: 12px;
+  display: block;
+}
+.signup-input::placeholder { color: rgba(240,235,224,0.4); }
+.signup-input:focus { border-color: rgba(240,235,224,0.5); }
+
+.signup-btn {
+  width: 100%;
+  background: var(--cream);
+  color: var(--navy);
+  border: none;
+  padding: 16px;
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 4px;
+}
+.signup-btn:hover { background: transparent; color: var(--cream); border: 1px solid var(--cream); }
+.signup-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* API KEY RESULT BOX */
+.key-result {
+  display: none;
+  margin-top: 2rem;
+  background: var(--navy-dark);
+  border: 1px solid rgba(29,158,117,0.5);
+  padding: 2rem;
+  text-align: left;
+}
+.key-result-title {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #7ec8a0;
+  margin-bottom: 1rem;
+}
+.key-display {
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  color: var(--cream);
+  background: rgba(240,235,224,0.06);
+  border: 1px solid rgba(240,235,224,0.15);
+  padding: 14px 18px;
+  word-break: break-all;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+}
+.copy-btn {
+  background: transparent;
+  border: 1px solid rgba(240,235,224,0.3);
+  color: var(--cream-dim);
+  padding: 8px 20px;
+  font-family: 'EB Garamond', serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 1.5rem;
+}
+.copy-btn:hover { background: rgba(240,235,224,0.1); color: var(--cream); }
+.key-warning {
+  font-size: 13px;
+  color: rgba(240,235,224,0.5);
+  line-height: 1.7;
+  border-top: 1px solid rgba(240,235,224,0.1);
+  padding-top: 1rem;
+}
+.key-warning strong { color: var(--cream-dim); }
+
+.key-next-steps {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(240,235,224,0.1);
+}
+.key-next-steps p { font-size: 14px; color: var(--cream-dim); margin-bottom: 10px; }
+.key-next-steps a {
+  display: inline-block;
+  margin-right: 12px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #7ec8a0;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(29,158,117,0.3);
+  transition: border-color 0.2s;
+}
+.key-next-steps a:hover { border-color: #7ec8a0; }
+
+.signup-error {
+  display: none;
+  margin-top: 12px;
+  font-size: 14px;
+  color: #e08080;
+  background: rgba(163,45,45,0.1);
+  border: 1px solid rgba(163,45,45,0.3);
+  padding: 10px 14px;
+}
+
+.signup-note {
+  margin-top: 1.5rem;
+  font-size: 14px;
+  color: rgba(240,235,224,0.4);
+  text-align: center;
+}
 
 /* FOOTER */
 footer {
@@ -533,27 +443,11 @@ footer {
   justify-content: space-between;
   align-items: center;
 }
-
-.footer-logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--cream);
-  letter-spacing: 2px;
-}
-
-footer p {
-  font-size: 13px;
-  color: var(--cream-dim);
-  letter-spacing: 1px;
-}
+.footer-logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--cream); letter-spacing: 2px; }
+footer p { font-size: 13px; color: var(--cream-dim); letter-spacing: 1px; }
 
 /* ANIMATIONS */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
+@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 .hero-eyebrow { animation: fadeUp 0.8s ease forwards; }
 h1 { animation: fadeUp 0.8s 0.15s ease both; }
 .hero-sub { animation: fadeUp 0.8s 0.3s ease both; }
@@ -566,9 +460,10 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
   .hero { padding: 4rem 2rem; }
   .hero-stat { display: none; }
   .section { padding: 5rem 2rem; }
-  .problem-grid, .how-layout, .pricing-grid, .clients-grid { grid-template-columns: 1fr; }
+  .problem-grid, .how-layout, .pricing-grid, .clients-grid, .jurisdiction-grid { grid-template-columns: 1fr; }
   .deadline-inner { grid-template-columns: 1fr; gap: 3rem; }
   footer { flex-direction: column; gap: 1rem; text-align: center; }
+  .signup-section { padding: 5rem 2rem; }
 }
 </style>
 </head>
@@ -578,10 +473,10 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
   <a href="#" class="logo">AIDAL.</a>
   <ul class="nav-links">
     <li><a href="#how">How it works</a></li>
+    <li><a href="#jurisdictions">Jurisdictions</a></li>
     <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#docs">Docs</a></li>
     <li><a href="https://aidal-dashboard.vercel.app" target="_blank">Dashboard</a></li>
-    <li><a href="https://aidal-production.up.railway.app/docs" target="_blank" class="nav-cta">Try API</a></li>
+    <li><a href="#get-key" class="nav-cta">Get API Key</a></li>
   </ul>
 </nav>
 
@@ -590,16 +485,16 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
   <strong style="font-family:Playfair Display,serif;font-size:17px">EU AI Act deadline:</strong>
   &nbsp;<span id="countdown" style="font-family:Playfair Display,serif;font-size:17px;font-weight:700;color:#8b1a1a"></span>
   &nbsp;— companies using AI for loans, insurance &amp; fraud detection must comply or face fines up to €30M.
-  &nbsp;<a href="#pricing" style="color:#2d3a5c;font-weight:700;text-decoration:underline">Get compliant now →</a>
+  &nbsp;<a href="#get-key" style="color:#2d3a5c;font-weight:700;text-decoration:underline">Get compliant now →</a>
 </div>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-eyebrow">EU AI Act · Article 12 & 13 Compliance</div>
+  <div class="hero-eyebrow">EU AI Act · OJK · MAS FEAT · VARA Compliance</div>
   <h1>Every AI decision.<br><em>Accountable.</em><br>Forever.</h1>
   <p class="hero-sub">Tamper-proof audit infrastructure for banks, fintechs, and insurers using AI to make consequential decisions.</p>
   <div class="hero-actions">
-    <a href="https://aidal-production.up.railway.app/docs" target="_blank" class="btn-primary">Try the API</a>
+    <a href="#get-key" class="btn-primary">Get your API key</a>
     <a href="#how" class="btn-secondary">See how it works</a>
   </div>
   <div class="hero-stat">
@@ -614,7 +509,6 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
 <section class="section" id="problem">
   <div class="section-label">The problem</div>
   <h2>AI makes millions of decisions.<br><em>None of them are provable.</em></h2>
-
   <div class="problem-grid">
     <div class="problem-cell">
       <span class="problem-num">01</span>
@@ -629,12 +523,12 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
     <div class="problem-cell accent">
       <span class="problem-num">03</span>
       <h3>Regulators are arriving</h3>
-      <p>The EU AI Act, Singapore MAS FEAT, and OJK's new AI guidelines all mandate explainable, auditable AI decisions. The deadline is August 2026. Most companies have nothing.</p>
+      <p>The EU AI Act, Singapore MAS FEAT, Indonesia OJK, and UAE VARA all mandate explainable, auditable AI decisions. The deadline is August 2026. Most companies have nothing.</p>
     </div>
     <div class="problem-cell">
       <span class="problem-num">04</span>
       <h3>AIDAL solves all three</h3>
-      <p>One API call logs every decision with a cryptographic proof, an AI-generated explanation, and a tamper-evident chain. Regulators can verify everything in seconds.</p>
+      <p>One API call logs every decision with a cryptographic proof, an AI-generated explanation, and automatic compliance checking. Regulators verify everything in seconds.</p>
     </div>
   </div>
 </section>
@@ -645,61 +539,97 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
 <section class="section" id="how">
   <div class="section-label">How it works</div>
   <h2>One line of code.<br><em>Full compliance.</em></h2>
-
   <div class="how-layout">
     <div>
       <div class="step">
         <span class="step-num">01.</span>
         <div>
-          <h3>Send the decision</h3>
-          <p>After your AI makes a decision, send it to AIDAL via one API call. Any language, any model, any cloud provider.</p>
+          <h3>Get your API key instantly</h3>
+          <p>Sign up below with your company name and email. Your unique <code style="font-family:monospace;font-size:14px">aidal_live_xxxx</code> key is generated in seconds — no waiting, no manual approval.</p>
         </div>
       </div>
       <div class="step">
         <span class="step-num">02.</span>
         <div>
-          <h3>We lock it forever</h3>
-          <p>AIDAL cryptographically hashes the decision and chains it to all previous records. It is now mathematically impossible to change without detection.</p>
+          <h3>Send decisions after your model runs</h3>
+          <p>After your AI makes a decision, send it to AIDAL via one API call. Any language, any model, any cloud provider.</p>
         </div>
       </div>
       <div class="step">
         <span class="step-num">03.</span>
         <div>
-          <h3>AI generates the explanation</h3>
-          <p>An LLM automatically writes a plain-English explanation of why the decision was made — compliant with EU AI Act Article 13.</p>
+          <h3>We lock it and check compliance</h3>
+          <p>AIDAL cryptographically hashes the decision, chains it to all previous records, generates a plain-English explanation, and checks it against your regulator's requirements — automatically.</p>
         </div>
       </div>
       <div class="step">
         <span class="step-num">04.</span>
         <div>
           <h3>Audit anytime</h3>
-          <p>Regulators hit /verify and get instant proof the ledger is clean. Customers can contest decisions with full transparency. You pass the audit.</p>
+          <p>Open your dashboard. Regulators call /verify and get instant cryptographic proof the ledger is clean. You pass the audit.</p>
         </div>
       </div>
     </div>
-
     <div class="code-block">
-      <div class="code-comment"># Before AIDAL</div>
-      outcome = model.predict(applicant)<br>
-      return outcome<br>
+      <div class="code-comment"># 1. Get your key (once)</div>
+      POST /signup<br>
+      → <span class="code-key">"api_key"</span>: <span class="code-str">"aidal_live_xxxx"</span><br>
       <br>
-      <div class="code-comment"># After AIDAL — one line added</div>
-      outcome = model.predict(applicant)<br>
-      <span class="code-highlight">requests.post(</span><span class="code-str">"https://api.aidal.io/decision"</span><span class="code-highlight">, json={</span><br>
-      &nbsp;&nbsp;<span class="code-key">"type"</span>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-val">"credit_approval"</span>,<br>
-      &nbsp;&nbsp;<span class="code-key">"model"</span>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-val">"your-model-v1"</span>,<br>
-      &nbsp;&nbsp;<span class="code-key">"outcome"</span>:&nbsp;&nbsp;&nbsp;<span class="code-val">outcome</span>,<br>
-      &nbsp;&nbsp;<span class="code-key">"confidence"</span>: <span class="code-val">model.confidence</span>,<br>
-      &nbsp;&nbsp;<span class="code-key">"jurisdiction"</span>: <span class="code-val">"EU"</span>,<br>
-      &nbsp;&nbsp;<span class="code-key">"explanation"</span>: <span class="code-val">model.explain()</span><br>
-      <span class="code-highlight">})</span><br>
-      return outcome<br>
+      <div class="code-comment"># 2. Log every AI decision</div>
+      <span class="code-highlight">requests.post(</span><span class="code-str">"https://aidal-production.up.railway.app/decision"</span><span class="code-highlight">, </span><br>
+      &nbsp;&nbsp;headers={<span class="code-key">"Authorization"</span>: <span class="code-str">"Bearer aidal_live_xxxx"</span>},<br>
+      &nbsp;&nbsp;json={<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">"decision_type"</span>: <span class="code-val">"loan_approval"</span>,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">"model_used"</span>: <span class="code-val">"xgboost-v2"</span>,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">"input_features"</span>: <span class="code-val">applicant_data</span>,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">"output"</span>: <span class="code-val">model_result</span>,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">"jurisdiction"</span>: <span class="code-val">"ID"</span><br>
+      &nbsp;&nbsp;})<br>
       <br>
-      <div class="code-comment"># Response</div>
+      <div class="code-comment"># Response — instant</div>
       {<br>
-      &nbsp;&nbsp;<span class="code-key">"audit_id"</span>: <span class="code-str">"a7f3c9b2e1d4..."</span>,<br>
-      &nbsp;&nbsp;<span class="code-key">"message"</span>: <span class="code-str">"Decision logged."</span><br>
+      &nbsp;&nbsp;<span class="code-key">"audit_id"</span>: <span class="code-str">"aud_a7f3c9b2..."</span>,<br>
+      &nbsp;&nbsp;<span class="code-key">"explanation"</span>: <span class="code-str">"Loan approved based on..."</span>,<br>
+      &nbsp;&nbsp;<span class="code-key">"compliance"</span>: {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">"status"</span>: <span class="code-val">"COMPLIANT"</span>,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">"regulator"</span>: <span class="code-val">"OJK Indonesia"</span><br>
+      &nbsp;&nbsp;}<br>
       }
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- JURISDICTIONS -->
+<section class="section" id="jurisdictions">
+  <div class="section-label">Jurisdiction modules</div>
+  <h2>Built for your<br><em>specific regulator.</em></h2>
+  <p style="color:var(--cream-dim);font-size:18px;max-width:600px;margin-bottom:1rem">Pass your jurisdiction code and AIDAL automatically checks compliance, flags missing fields, and tells you exactly what your regulator requires.</p>
+  <div class="jurisdiction-grid">
+    <div class="jurisdiction-card">
+      <span class="jurisdiction-code">ID</span>
+      <h3>OJK Indonesia</h3>
+      <p>POJK No. 11/POJK.03/2022. AI decisions in financial services must be explainable and retained for 5 years.</p>
+      <span class="jurisdiction-badge">5 yr retention</span>
+    </div>
+    <div class="jurisdiction-card">
+      <span class="jurisdiction-code">SG</span>
+      <h3>MAS FEAT Singapore</h3>
+      <p>Fairness, Ethics, Accountability, Transparency. All financial AI must be auditable and explainable.</p>
+      <span class="jurisdiction-badge">5 yr retention</span>
+    </div>
+    <div class="jurisdiction-card">
+      <span class="jurisdiction-code">EU</span>
+      <h3>EU AI Act</h3>
+      <p>Articles 9–17. Automatic logging mandatory. Plain-language explanations required. Fines up to €30M.</p>
+      <span class="jurisdiction-badge">10 yr retention</span>
+    </div>
+    <div class="jurisdiction-card">
+      <span class="jurisdiction-code">UAE</span>
+      <h3>VARA UAE</h3>
+      <p>Virtual Assets Regulatory Authority. AI decisions for crypto and fintech must be risk-classified and auditable.</p>
+      <span class="jurisdiction-badge">7 yr retention</span>
     </div>
   </div>
 </section>
@@ -710,7 +640,6 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
 <section class="section">
   <div class="section-label">Who uses AIDAL</div>
   <h2>Built for anyone<br><em>using AI to make decisions.</em></h2>
-
   <div class="clients-grid">
     <div class="client-card">
       <h3>Fintech & lending</h3>
@@ -736,7 +665,7 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
     </div>
     <div>
       <p style="font-size:19px;color:var(--cream-dim);line-height:1.8;margin-bottom:2rem">Every company using AI for credit, insurance, healthcare, employment, or critical infrastructure must have audit trails, explainability, and contestation mechanisms in place. Non-compliance: fines up to €30M or 6% of global revenue.</p>
-      <a href="https://aidal-production.up.railway.app/docs" target="_blank" class="btn-primary">Start compliance now</a>
+      <a href="#get-key" class="btn-primary">Get your API key now</a>
     </div>
   </div>
 </div>
@@ -745,33 +674,32 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
 <section class="section" id="pricing">
   <div class="section-label">Pricing</div>
   <h2>Simple, usage-based.<br><em>Scales with your AI.</em></h2>
-
   <div class="pricing-grid">
     <div class="price-card">
-      <span class="price-label">Startup</span>
+      <span class="price-label">Starter</span>
       <span class="price-amount">$299</span>
       <span class="price-unit">per month · up to 50,000 decisions</span>
       <ul class="price-features">
         <li>Full API access</li>
         <li>AI-generated explanations</li>
         <li>Tamper-proof audit log</li>
-        <li>EU AI Act compliance cert</li>
+        <li>Jurisdiction compliance check</li>
         <li>Email support</li>
       </ul>
-      <a href="mailto:try.aidal@gmail.com" class="price-btn">Get started</a>
+      <button class="price-btn" onclick="document.getElementById('get-key').scrollIntoView({behavior:'smooth'})">Get started</button>
     </div>
     <div class="price-card featured">
       <span class="price-label">Business</span>
       <span class="price-amount">$999</span>
       <span class="price-unit">per month · up to 500,000 decisions</span>
       <ul class="price-features">
-        <li>Everything in Startup</li>
+        <li>Everything in Starter</li>
         <li>Compliance dashboard</li>
-        <li>SAR draft generation</li>
+        <li>Compliance report API</li>
         <li>Regulatory reporting</li>
         <li>Priority support</li>
       </ul>
-      <a href="mailto:try.aidal@gmail.com" class="price-btn">Get started</a>
+      <button class="price-btn" onclick="document.getElementById('get-key').scrollIntoView({behavior:'smooth'})">Get started</button>
     </div>
     <div class="price-card">
       <span class="price-label">Enterprise</span>
@@ -789,93 +717,37 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-section">
-  <div class="section-label" style="justify-content:center">Get started</div>
-  <h2>Your AI decisions.<br><em>Accountable from day one.</em></h2>
-  <p>Join companies already preparing for the August 2026 deadline. Request beta access — we will personally onboard you for free.</p>
+<!-- ── GET API KEY ──────────────────────────────────────────────────────────── -->
+<section class="signup-section" id="get-key">
+  <div class="section-label" style="justify-content:center">Get started free</div>
+  <h2>Your API key.<br><em>In 10 seconds.</em></h2>
+  <p>Enter your details below and get your unique API key instantly. No credit card. No manual approval. Start logging decisions immediately.</p>
 
-  <div id="form-wrap" style="max-width:520px;margin:2rem auto 0;text-align:left">
-    <div style="display:flex;flex-direction:column;gap:12px">
-      <input id="f-name" type="text" placeholder="Company name"
-        style="background:rgba(240,235,224,0.08);border:1px solid rgba(240,235,224,0.25);color:#f0ebe0;padding:14px 18px;font-family:EB Garamond,serif;font-size:16px;outline:none;width:100%" />
-      <input id="f-email" type="email" placeholder="Work email"
-        style="background:rgba(240,235,224,0.08);border:1px solid rgba(240,235,224,0.25);color:#f0ebe0;padding:14px 18px;font-family:EB Garamond,serif;font-size:16px;outline:none;width:100%" />
-      <input id="f-role" type="text" placeholder="Your role (e.g. CTO, Compliance Officer)"
-        style="background:rgba(240,235,224,0.08);border:1px solid rgba(240,235,224,0.25);color:#f0ebe0;padding:14px 18px;font-family:EB Garamond,serif;font-size:16px;outline:none;width:100%" />
-      <select id="f-jurisdiction"
-        style="background:#2d3a5c;border:1px solid rgba(240,235,224,0.25);color:#f0ebe0;padding:14px 18px;font-family:EB Garamond,serif;font-size:16px;outline:none;width:100%">
-        <option value="">Which regulation concerns you most?</option>
-        <option>EU AI Act</option>
-        <option>Indonesia OJK</option>
-        <option>Singapore MAS</option>
-        <option>UAE VARA</option>
-        <option>US CFPB</option>
-        <option>Multiple jurisdictions</option>
-      </select>
-      <button onclick="submitForm()"
-        style="background:#f0ebe0;color:#2d3a5c;border:none;padding:16px;font-family:EB Garamond,serif;font-size:16px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;width:100%;margin-top:4px">
-        Request Beta Access
-      </button>
+  <div class="signup-box">
+    <input id="s-name" class="signup-input" type="text" placeholder="Company name" />
+    <input id="s-email" class="signup-input" type="email" placeholder="Work email" />
+    <button class="signup-btn" id="signup-btn" onclick="getApiKey()">Get My API Key →</button>
+
+    <div class="signup-error" id="signup-error"></div>
+
+    <!-- KEY RESULT — shown after successful signup -->
+    <div class="key-result" id="key-result">
+      <div class="key-result-title">✓ Your API key is ready</div>
+      <div class="key-display" id="key-display"></div>
+      <button class="copy-btn" onclick="copyKey()">Copy key</button>
+      <div class="key-warning">
+        <strong>Save this key now.</strong> It will not be shown again. If you lose it, email try.aidal@gmail.com to reset it.
+      </div>
+      <div class="key-next-steps">
+        <p>What to do next:</p>
+        <a href="https://aidal-dashboard.vercel.app" target="_blank">Open dashboard →</a>
+        <a href="https://aidal-production.up.railway.app/docs" target="_blank">API docs →</a>
+      </div>
     </div>
-    <div id="form-msg" style="margin-top:16px;font-size:15px;text-align:center;display:none"></div>
+
+    <p class="signup-note">Beta is free. No commitment. We respond to all emails within 24 hours.</p>
   </div>
-
-  <p style="margin-top:2rem;font-size:14px;color:rgba(240,235,224,0.4)">
-    No credit card. No commitment. We respond within 24 hours.
-  </p>
 </section>
-
-<script>
-function submitForm() {
-  var name = document.getElementById("f-name").value.trim();
-  var email = document.getElementById("f-email").value.trim();
-  var role = document.getElementById("f-role").value.trim();
-  var jurisdiction = document.getElementById("f-jurisdiction").value;
-  var msg = document.getElementById("form-msg");
-
-  if (!name || !email) {
-    msg.style.display = "block";
-    msg.style.color = "#e08080";
-    msg.textContent = "Please fill in your company name and email.";
-    return;
-  }
-
-  if (!email.includes("@")) {
-    msg.style.display = "block";
-    msg.style.color = "#e08080";
-    msg.textContent = "Please enter a valid email address.";
-    return;
-  }
-
-  // Submit to Formspree
-  fetch("https://formspree.io/f/xgorddko", {
-    method: "POST",
-    headers: { "Content-Type": "application/json", "Accept": "application/json" },
-    body: JSON.stringify({ company: name, email: email, role: role, jurisdiction: jurisdiction })
-  })
-  .then(function(r) {
-    if (r.ok) {
-      msg.style.display = "block";
-      msg.style.color = "#7ec8a0";
-      msg.textContent = "✓ Request received! We will respond within 24 hours.";
-      document.getElementById("f-name").value = "";
-      document.getElementById("f-email").value = "";
-      document.getElementById("f-role").value = "";
-      document.getElementById("f-jurisdiction").value = "";
-    } else {
-      msg.style.display = "block";
-      msg.style.color = "#e08080";
-      msg.textContent = "Something went wrong. Email us directly at try.aidal@gmail.com";
-    }
-  })
-  .catch(function() {
-    msg.style.display = "block";
-    msg.style.color = "#e08080";
-    msg.textContent = "Something went wrong. Email us directly at try.aidal@gmail.com";
-  });
-}
-</script>
 
 <footer>
   <div class="footer-logo">AIDAL.</div>
@@ -884,18 +756,102 @@ function submitForm() {
 </footer>
 
 <script>
-var deadline=new Date("2026-08-01T00:00:00");
-function tick(){
-  var now=new Date();
-  var diff=deadline-now;
-  if(diff<=0){document.getElementById("countdown").textContent="DEADLINE PASSED";return;}
-  var d=Math.floor(diff/86400000);
-  var h=Math.floor((diff%86400000)/3600000);
-  var m=Math.floor((diff%3600000)/60000);
-  var s=Math.floor((diff%60000)/1000);
-  document.getElementById("countdown").textContent=d+"d "+h+"h "+m+"m "+s+"s remaining";
+// Countdown
+var deadline = new Date("2026-08-01T00:00:00");
+function tick() {
+  var diff = deadline - new Date();
+  if (diff <= 0) { document.getElementById("countdown").textContent = "DEADLINE PASSED"; return; }
+  var d = Math.floor(diff / 86400000);
+  var h = Math.floor((diff % 86400000) / 3600000);
+  var m = Math.floor((diff % 3600000) / 60000);
+  var s = Math.floor((diff % 60000) / 1000);
+  document.getElementById("countdown").textContent = d + "d " + h + "h " + m + "m " + s + "s remaining";
 }
-tick();setInterval(tick,1000);
+tick(); setInterval(tick, 1000);
+
+// Signup
+var generatedKey = "";
+
+function getApiKey() {
+  var name = document.getElementById("s-name").value.trim();
+  var email = document.getElementById("s-email").value.trim();
+  var btn = document.getElementById("signup-btn");
+  var errEl = document.getElementById("signup-error");
+  var resultEl = document.getElementById("key-result");
+
+  errEl.style.display = "none";
+  resultEl.style.display = "none";
+
+  if (!name) { showError("Please enter your company name."); return; }
+  if (!email || !email.includes("@")) { showError("Please enter a valid work email."); return; }
+
+  btn.disabled = true;
+  btn.textContent = "Creating your key...";
+
+  fetch("https://aidal-production.up.railway.app/signup", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ name: name, email: email })
+  })
+  .then(function(r) { return r.json().then(function(d) { return { status: r.status, data: d }; }); })
+  .then(function(res) {
+    btn.disabled = false;
+    btn.textContent = "Get My API Key →";
+
+    if (res.status === 409) {
+      showError("An account with this email already exists. Check your records or email try.aidal@gmail.com to recover your key.");
+      return;
+    }
+    if (res.status !== 201) {
+      showError("Something went wrong. Email try.aidal@gmail.com and we will set you up manually.");
+      return;
+    }
+
+    generatedKey = res.data.api_key;
+    document.getElementById("key-display").textContent = generatedKey;
+    resultEl.style.display = "block";
+    resultEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
+
+    // Clear form
+    document.getElementById("s-name").value = "";
+    document.getElementById("s-email").value = "";
+
+    // Also notify via Formspree so you have a record
+    fetch("https://formspree.io/f/xgorddko", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify({ company: name, email: email, event: "api_key_created", api_key_prefix: generatedKey.slice(0, 20) })
+    }).catch(function() {});
+  })
+  .catch(function() {
+    btn.disabled = false;
+    btn.textContent = "Get My API Key →";
+    showError("Network error. Check your connection or email try.aidal@gmail.com.");
+  });
+}
+
+function showError(msg) {
+  var el = document.getElementById("signup-error");
+  el.textContent = msg;
+  el.style.display = "block";
+}
+
+function copyKey() {
+  if (!generatedKey) return;
+  navigator.clipboard.writeText(generatedKey).then(function() {
+    var btn = document.querySelector(".copy-btn");
+    btn.textContent = "Copied!";
+    setTimeout(function() { btn.textContent = "Copy key"; }, 2000);
+  }).catch(function() {
+    // Fallback
+    var el = document.getElementById("key-display");
+    var range = document.createRange();
+    range.selectNode(el);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+  });
+}
 </script>
+
 </body>
 </html>
