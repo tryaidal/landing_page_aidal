@@ -15,264 +15,83 @@
   --green: #1d9e75;
   --red: #a32d2d;
 }
-
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body {
-  background: var(--navy);
-  color: var(--cream);
-  font-family: 'EB Garamond', Georgia, serif;
-  font-size: 18px;
-  line-height: 1.7;
-  overflow-x: hidden;
-}
+body { background: var(--navy); color: var(--cream); font-family: 'EB Garamond', Georgia, serif; font-size: 18px; line-height: 1.7; overflow-x: hidden; }
 
-/* NAV */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem 4rem;
-  border-bottom: 1px solid rgba(240,235,224,0.1);
-}
-.logo {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--cream);
-  letter-spacing: 2px;
-  text-decoration: none;
-}
+nav { display: flex; justify-content: space-between; align-items: center; padding: 2rem 4rem; border-bottom: 1px solid rgba(240,235,224,0.1); }
+.logo { font-family: 'Playfair Display', Georgia, serif; font-size: 28px; font-weight: 700; color: var(--cream); letter-spacing: 2px; text-decoration: none; }
 .nav-links { display: flex; gap: 3rem; list-style: none; }
-.nav-links a {
-  color: var(--cream-dim);
-  text-decoration: none;
-  font-size: 15px;
-  letter-spacing: 1px;
-  transition: color 0.2s;
-}
+.nav-links a { color: var(--cream-dim); text-decoration: none; font-size: 15px; letter-spacing: 1px; transition: color 0.2s; }
 .nav-links a:hover { color: var(--cream); }
-.nav-cta {
-  border: 1px solid var(--cream-dim);
-  padding: 10px 28px;
-  color: var(--cream) !important;
-  letter-spacing: 2px;
-  font-size: 13px !important;
-  text-transform: uppercase;
-  transition: all 0.2s !important;
-}
+.nav-cta { border: 1px solid var(--cream-dim); padding: 10px 28px; color: var(--cream) !important; letter-spacing: 2px; font-size: 13px !important; text-transform: uppercase; transition: all 0.2s !important; }
 .nav-cta:hover { background: var(--cream) !important; color: var(--navy) !important; }
 
-/* HERO */
-.hero {
-  min-height: 92vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 6rem 4rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-}
-.hero-eyebrow {
-  font-size: 13px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--cream-dim);
-  margin-bottom: 2.5rem;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-.hero-eyebrow::before {
-  content: '';
-  display: block;
-  width: 40px;
-  height: 1px;
-  background: var(--cream-dim);
-}
-h1 {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(56px, 8vw, 110px);
-  font-weight: 900;
-  line-height: 1.0;
-  letter-spacing: -1px;
-  color: var(--cream);
-  margin-bottom: 2rem;
-  max-width: 900px;
-}
+.hero { min-height: 92vh; display: flex; flex-direction: column; justify-content: center; padding: 6rem 4rem; max-width: 1200px; margin: 0 auto; position: relative; }
+.hero-eyebrow { font-size: 13px; letter-spacing: 4px; text-transform: uppercase; color: var(--cream-dim); margin-bottom: 2.5rem; display: flex; align-items: center; gap: 16px; }
+.hero-eyebrow::before { content: ''; display: block; width: 40px; height: 1px; background: var(--cream-dim); }
+h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(56px, 8vw, 110px); font-weight: 900; line-height: 1.0; letter-spacing: -1px; color: var(--cream); margin-bottom: 2rem; max-width: 900px; }
 h1 em { font-style: italic; color: var(--cream-dim); }
-.hero-sub {
-  font-size: 22px;
-  color: var(--cream-dim);
-  max-width: 560px;
-  line-height: 1.7;
-  margin-bottom: 4rem;
-  font-weight: 400;
-}
+.hero-sub { font-size: 22px; color: var(--cream-dim); max-width: 560px; line-height: 1.7; margin-bottom: 4rem; font-weight: 400; }
 .hero-actions { display: flex; gap: 1.5rem; align-items: center; }
-.btn-primary {
-  background: var(--cream);
-  color: var(--navy);
-  padding: 16px 42px;
-  font-family: 'EB Garamond', serif;
-  font-size: 16px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-decoration: none;
-  border: 1px solid var(--cream);
-  cursor: pointer;
-  transition: all 0.2s;
-  display: inline-block;
-}
+.btn-primary { background: var(--cream); color: var(--navy); padding: 16px 42px; font-family: 'EB Garamond', serif; font-size: 16px; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border: 1px solid var(--cream); cursor: pointer; transition: all 0.2s; display: inline-block; }
 .btn-primary:hover { background: transparent; color: var(--cream); }
-.btn-secondary {
-  color: var(--cream-dim);
-  font-size: 16px;
-  letter-spacing: 1px;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  transition: color 0.2s;
-}
+.btn-secondary { color: var(--cream-dim); font-size: 16px; letter-spacing: 1px; text-decoration: none; display: flex; align-items: center; gap: 10px; transition: color 0.2s; }
 .btn-secondary:hover { color: var(--cream); }
 .btn-secondary::after { content: '→'; transition: transform 0.2s; }
 .btn-secondary:hover::after { transform: translateX(4px); }
-.hero-stat {
-  position: absolute;
-  right: 4rem;
-  bottom: 6rem;
-  text-align: right;
-}
-.hero-stat-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 72px;
-  font-weight: 700;
-  color: var(--cream);
-  line-height: 1;
-  display: block;
-}
-.hero-stat-label {
-  font-size: 13px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--cream-dim);
-}
+.hero-stat { position: absolute; right: 4rem; bottom: 6rem; text-align: right; }
+.hero-stat-num { font-family: 'Playfair Display', serif; font-size: 72px; font-weight: 700; color: var(--cream); line-height: 1; display: block; }
+.hero-stat-label { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--cream-dim); }
 
-/* DIVIDER */
+/* TRUST BAR */
+.trust-bar { border-top: 1px solid rgba(240,235,224,0.1); border-bottom: 1px solid rgba(240,235,224,0.1); background: var(--navy-dark); padding: 1.25rem 4rem; display: flex; align-items: center; gap: 2.5rem; overflow-x: auto; }
+.trust-item { display: flex; align-items: center; gap: 8px; white-space: nowrap; font-size: 13px; letter-spacing: 0.5px; color: var(--cream-dim); }
+.trust-icon { width: 18px; height: 18px; border-radius: 50%; background: rgba(29,158,117,0.15); border: 1px solid rgba(29,158,117,0.35); display: flex; align-items: center; justify-content: center; font-size: 10px; color: #7ec8a0; flex-shrink: 0; }
+.trust-divider { width: 1px; height: 20px; background: rgba(240,235,224,0.1); flex-shrink: 0; }
+
 .divider { border: none; border-top: 1px solid rgba(240,235,224,0.15); margin: 0 4rem; }
-
-/* SECTIONS */
 .section { max-width: 1200px; margin: 0 auto; padding: 8rem 4rem; }
-.section-label {
-  font-size: 12px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--cream-dim);
-  margin-bottom: 3rem;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
+.section-label { font-size: 12px; letter-spacing: 4px; text-transform: uppercase; color: var(--cream-dim); margin-bottom: 3rem; display: flex; align-items: center; gap: 16px; }
 .section-label::before { content: ''; display: block; width: 30px; height: 1px; background: var(--cream-dim); }
-h2 {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(36px, 5vw, 64px);
-  font-weight: 700;
-  line-height: 1.1;
-  color: var(--cream);
-  margin-bottom: 2rem;
-}
+h2 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(36px, 5vw, 64px); font-weight: 700; line-height: 1.1; color: var(--cream); margin-bottom: 2rem; }
 h2 em { font-style: italic; color: var(--cream-dim); }
 
-/* PROBLEM */
-.problem-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: rgba(240,235,224,0.1);
-  margin-top: 5rem;
-  border: 1px solid rgba(240,235,224,0.1);
-}
+.problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(240,235,224,0.1); margin-top: 5rem; border: 1px solid rgba(240,235,224,0.1); }
 .problem-cell { background: var(--navy); padding: 3rem; }
 .problem-cell.accent { background: var(--navy-dark); }
-.problem-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 48px;
-  font-weight: 700;
-  color: rgba(240,235,224,0.15);
-  display: block;
-  margin-bottom: 1rem;
-  line-height: 1;
-}
+.problem-num { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700; color: rgba(240,235,224,0.15); display: block; margin-bottom: 1rem; line-height: 1; }
 .problem-cell h3 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--cream); margin-bottom: 1rem; }
 .problem-cell p { font-size: 16px; color: var(--cream-dim); line-height: 1.8; }
 
-/* HOW IT WORKS */
 .how-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: start; margin-top: 5rem; }
 .step { display: flex; gap: 2rem; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(240,235,224,0.1); }
 .step:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
 .step-num { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--cream-dim); letter-spacing: 2px; min-width: 36px; padding-top: 4px; }
 .step h3 { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--cream); margin-bottom: 8px; }
 .step p { font-size: 16px; color: var(--cream-dim); line-height: 1.8; }
-.code-block {
-  background: var(--navy-dark);
-  border: 1px solid rgba(240,235,224,0.1);
-  padding: 2.5rem;
-  font-family: 'Courier New', monospace;
-  font-size: 13px;
-  line-height: 2;
-  color: var(--cream-dim);
-  position: sticky;
-  top: 2rem;
-}
+.code-block { background: var(--navy-dark); border: 1px solid rgba(240,235,224,0.1); padding: 2.5rem; font-family: 'Courier New', monospace; font-size: 13px; line-height: 2; color: var(--cream-dim); position: sticky; top: 2rem; }
 .code-comment { color: rgba(240,235,224,0.3); }
 .code-key { color: #7ec8a0; }
 .code-val { color: #f0c47a; }
 .code-str { color: #f0ebe0; }
 .code-highlight { color: var(--cream); font-weight: bold; }
 
-/* JURISDICTIONS */
-.jurisdiction-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: rgba(240,235,224,0.1);
-  margin-top: 5rem;
-  border: 1px solid rgba(240,235,224,0.1);
-}
+.jurisdiction-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(240,235,224,0.1); margin-top: 5rem; border: 1px solid rgba(240,235,224,0.1); }
 .jurisdiction-card { background: var(--navy-dark); padding: 2.5rem; }
-.jurisdiction-code {
-  font-family: 'Playfair Display', serif;
-  font-size: 42px;
-  font-weight: 900;
-  color: rgba(240,235,224,0.12);
-  display: block;
-  line-height: 1;
-  margin-bottom: 1rem;
-}
+.jurisdiction-code { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 900; color: rgba(240,235,224,0.12); display: block; line-height: 1; margin-bottom: 1rem; }
 .jurisdiction-card h3 { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--cream); margin-bottom: 8px; }
 .jurisdiction-card p { font-size: 14px; color: var(--cream-dim); line-height: 1.7; margin-bottom: 1rem; }
-.jurisdiction-badge {
-  display: inline-block;
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  border: 1px solid rgba(240,235,224,0.2);
-  color: var(--cream-dim);
-  padding: 3px 10px;
-}
+.jurisdiction-badge { display: inline-block; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; border: 1px solid rgba(240,235,224,0.2); color: var(--cream-dim); padding: 3px 10px; }
 
-/* PRICING */
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: rgba(240,235,224,0.1);
-  margin-top: 5rem;
-  border: 1px solid rgba(240,235,224,0.1);
-}
+/* WHY AIDAL */
+.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(240,235,224,0.1); margin-top: 5rem; border: 1px solid rgba(240,235,224,0.1); }
+.why-card { background: var(--navy-dark); padding: 2.5rem; }
+.why-num { font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 900; color: rgba(240,235,224,0.08); line-height: 1; margin-bottom: 1rem; display: block; }
+.why-card h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--cream); margin-bottom: 0.75rem; font-weight: 700; }
+.why-card p { font-size: 15px; color: var(--cream-dim); line-height: 1.8; }
+
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(240,235,224,0.1); margin-top: 5rem; border: 1px solid rgba(240,235,224,0.1); }
 .price-card { background: var(--navy); padding: 3rem; }
 .price-card.featured { background: var(--cream); }
 .price-label { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--cream-dim); margin-bottom: 2rem; display: block; }
@@ -290,163 +109,62 @@ h2 em { font-style: italic; color: var(--cream-dim); }
 .price-card.featured .price-btn { background: var(--navy); border-color: var(--navy); color: var(--cream); }
 .price-btn:hover { background: var(--cream); color: var(--navy); }
 
-/* CLIENTS */
 .clients-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-top: 5rem; }
 .client-card { border-top: 1px solid rgba(240,235,224,0.2); padding-top: 2rem; }
 .client-card h3 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--cream); margin-bottom: 1rem; }
 .client-card p { font-size: 15px; color: var(--cream-dim); line-height: 1.8; }
 
-/* DEADLINE */
 .deadline-section { background: var(--navy-dark); border-top: 1px solid rgba(240,235,224,0.1); border-bottom: 1px solid rgba(240,235,224,0.1); }
 .deadline-inner { max-width: 1200px; margin: 0 auto; padding: 6rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
 .deadline-date { font-family: 'Playfair Display', serif; font-size: 80px; font-weight: 900; color: var(--cream); line-height: 1; margin-bottom: 1rem; }
 .deadline-label { font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: var(--cream-dim); }
 
-/* ── GET API KEY SECTION ─────────────────────────────────────────────── */
-.signup-section {
-  text-align: center;
-  padding: 10rem 4rem;
-  max-width: 800px;
-  margin: 0 auto;
-}
+/* LEGAL SECTION */
+.legal-section { background: var(--navy-dark); border-top: 1px solid rgba(240,235,224,0.1); border-bottom: 1px solid rgba(240,235,224,0.1); }
+.legal-inner { max-width: 1200px; margin: 0 auto; padding: 6rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+.legal-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; border: 1px solid rgba(29,158,117,0.4); color: #7ec8a0; padding: 6px 14px; margin-bottom: 2rem; }
+.legal-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: #7ec8a0; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.4} }
+.legal-cards { display: flex; flex-direction: column; gap: 1rem; }
+.legal-card { border: 1px solid rgba(240,235,224,0.1); padding: 1.5rem; background: rgba(240,235,224,0.03); }
+.legal-card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+.legal-card h4 { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--cream); font-weight: 700; }
+.legal-card-tag { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; padding: 3px 8px; border: 1px solid rgba(240,235,224,0.2); color: var(--cream-dim); }
+.legal-card-tag.seeking { border-color: rgba(186,117,23,0.5); color: #e8c070; }
+.legal-card-tag.done { border-color: rgba(29,158,117,0.5); color: #7ec8a0; }
+.legal-card p { font-size: 14px; color: var(--cream-dim); line-height: 1.7; }
+.legal-cta { margin-top: 2rem; font-size: 15px; color: var(--cream-dim); line-height: 1.8; }
+.legal-cta a { color: #7ec8a0; text-decoration: none; border-bottom: 1px solid rgba(29,158,117,0.3); transition: border-color 0.2s; }
+.legal-cta a:hover { border-color: #7ec8a0; }
+
+.signup-section { text-align: center; padding: 10rem 4rem; max-width: 800px; margin: 0 auto; }
 .signup-section h2 { margin-bottom: 1rem; }
 .signup-section > p { font-size: 20px; color: var(--cream-dim); margin-bottom: 3rem; }
-
-.signup-box {
-  max-width: 540px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.signup-input {
-  width: 100%;
-  background: rgba(240,235,224,0.08);
-  border: 1px solid rgba(240,235,224,0.25);
-  color: var(--cream);
-  padding: 14px 18px;
-  font-family: 'EB Garamond', serif;
-  font-size: 16px;
-  outline: none;
-  margin-bottom: 12px;
-  display: block;
-}
+.signup-box { max-width: 540px; margin: 0 auto; text-align: left; }
+.signup-input { width: 100%; background: rgba(240,235,224,0.08); border: 1px solid rgba(240,235,224,0.25); color: var(--cream); padding: 14px 18px; font-family: 'EB Garamond', serif; font-size: 16px; outline: none; margin-bottom: 12px; display: block; }
 .signup-input::placeholder { color: rgba(240,235,224,0.4); }
 .signup-input:focus { border-color: rgba(240,235,224,0.5); }
-
-.signup-btn {
-  width: 100%;
-  background: var(--cream);
-  color: var(--navy);
-  border: none;
-  padding: 16px;
-  font-family: 'Playfair Display', serif;
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.2s;
-  margin-top: 4px;
-}
+.signup-btn { width: 100%; background: var(--cream); color: var(--navy); border: none; padding: 16px; font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.2s; margin-top: 4px; }
 .signup-btn:hover { background: transparent; color: var(--cream); border: 1px solid var(--cream); }
 .signup-btn:disabled { opacity: 0.6; cursor: not-allowed; }
-
-/* API KEY RESULT BOX */
-.key-result {
-  display: none;
-  margin-top: 2rem;
-  background: var(--navy-dark);
-  border: 1px solid rgba(29,158,117,0.5);
-  padding: 2rem;
-  text-align: left;
-}
-.key-result-title {
-  font-size: 11px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: #7ec8a0;
-  margin-bottom: 1rem;
-}
-.key-display {
-  font-family: 'Courier New', monospace;
-  font-size: 14px;
-  color: var(--cream);
-  background: rgba(240,235,224,0.06);
-  border: 1px solid rgba(240,235,224,0.15);
-  padding: 14px 18px;
-  word-break: break-all;
-  letter-spacing: 0.5px;
-  margin-bottom: 1rem;
-}
-.copy-btn {
-  background: transparent;
-  border: 1px solid rgba(240,235,224,0.3);
-  color: var(--cream-dim);
-  padding: 8px 20px;
-  font-family: 'EB Garamond', serif;
-  font-size: 14px;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: all 0.2s;
-  margin-bottom: 1.5rem;
-}
+.key-result { display: none; margin-top: 2rem; background: var(--navy-dark); border: 1px solid rgba(29,158,117,0.5); padding: 2rem; text-align: left; }
+.key-result-title { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #7ec8a0; margin-bottom: 1rem; }
+.key-display { font-family: 'Courier New', monospace; font-size: 14px; color: var(--cream); background: rgba(240,235,224,0.06); border: 1px solid rgba(240,235,224,0.15); padding: 14px 18px; word-break: break-all; letter-spacing: 0.5px; margin-bottom: 1rem; }
+.copy-btn { background: transparent; border: 1px solid rgba(240,235,224,0.3); color: var(--cream-dim); padding: 8px 20px; font-family: 'EB Garamond', serif; font-size: 14px; letter-spacing: 1px; cursor: pointer; transition: all 0.2s; margin-bottom: 1.5rem; }
 .copy-btn:hover { background: rgba(240,235,224,0.1); color: var(--cream); }
-.key-warning {
-  font-size: 13px;
-  color: rgba(240,235,224,0.5);
-  line-height: 1.7;
-  border-top: 1px solid rgba(240,235,224,0.1);
-  padding-top: 1rem;
-}
+.key-warning { font-size: 13px; color: rgba(240,235,224,0.5); line-height: 1.7; border-top: 1px solid rgba(240,235,224,0.1); padding-top: 1rem; }
 .key-warning strong { color: var(--cream-dim); }
-
-.key-next-steps {
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(240,235,224,0.1);
-}
+.key-next-steps { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(240,235,224,0.1); }
 .key-next-steps p { font-size: 14px; color: var(--cream-dim); margin-bottom: 10px; }
-.key-next-steps a {
-  display: inline-block;
-  margin-right: 12px;
-  font-size: 13px;
-  letter-spacing: 1px;
-  color: #7ec8a0;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(29,158,117,0.3);
-  transition: border-color 0.2s;
-}
+.key-next-steps a { display: inline-block; margin-right: 12px; font-size: 13px; letter-spacing: 1px; color: #7ec8a0; text-decoration: none; border-bottom: 1px solid rgba(29,158,117,0.3); transition: border-color 0.2s; }
 .key-next-steps a:hover { border-color: #7ec8a0; }
+.signup-error { display: none; margin-top: 12px; font-size: 14px; color: #e08080; background: rgba(163,45,45,0.1); border: 1px solid rgba(163,45,45,0.3); padding: 10px 14px; }
+.signup-note { margin-top: 1.5rem; font-size: 14px; color: rgba(240,235,224,0.4); text-align: center; }
 
-.signup-error {
-  display: none;
-  margin-top: 12px;
-  font-size: 14px;
-  color: #e08080;
-  background: rgba(163,45,45,0.1);
-  border: 1px solid rgba(163,45,45,0.3);
-  padding: 10px 14px;
-}
-
-.signup-note {
-  margin-top: 1.5rem;
-  font-size: 14px;
-  color: rgba(240,235,224,0.4);
-  text-align: center;
-}
-
-/* FOOTER */
-footer {
-  border-top: 1px solid rgba(240,235,224,0.1);
-  padding: 3rem 4rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+footer { border-top: 1px solid rgba(240,235,224,0.1); padding: 3rem 4rem; display: flex; justify-content: space-between; align-items: center; }
 .footer-logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--cream); letter-spacing: 2px; }
 footer p { font-size: 13px; color: var(--cream-dim); letter-spacing: 1px; }
 
-/* ANIMATIONS */
 @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 .hero-eyebrow { animation: fadeUp 0.8s ease forwards; }
 h1 { animation: fadeUp 0.8s 0.15s ease both; }
@@ -460,10 +178,11 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
   .hero { padding: 4rem 2rem; }
   .hero-stat { display: none; }
   .section { padding: 5rem 2rem; }
-  .problem-grid, .how-layout, .pricing-grid, .clients-grid, .jurisdiction-grid { grid-template-columns: 1fr; }
-  .deadline-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .problem-grid,.how-layout,.pricing-grid,.clients-grid,.jurisdiction-grid,.why-grid { grid-template-columns: 1fr; }
+  .deadline-inner,.legal-inner { grid-template-columns: 1fr; gap: 3rem; }
   footer { flex-direction: column; gap: 1rem; text-align: center; }
   .signup-section { padding: 5rem 2rem; }
+  .trust-bar { padding: 1.25rem 2rem; }
 }
 </style>
 </head>
@@ -480,7 +199,6 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
   </ul>
 </nav>
 
-<!-- URGENCY BANNER -->
 <div style="background:#f0ebe0;color:#2d3a5c;text-align:center;padding:12px 2rem;font-family:EB Garamond,serif;font-size:15px;letter-spacing:1px">
   <strong style="font-family:Playfair Display,serif;font-size:17px">EU AI Act deadline:</strong>
   &nbsp;<span id="countdown" style="font-family:Playfair Display,serif;font-size:17px;font-weight:700;color:#8b1a1a"></span>
@@ -488,7 +206,6 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
   &nbsp;<a href="#get-key" style="color:#2d3a5c;font-weight:700;text-decoration:underline">Get compliant now →</a>
 </div>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-eyebrow">EU AI Act · OJK · MAS FEAT · VARA Compliance</div>
   <h1>Every AI decision.<br><em>Accountable.</em><br>Forever.</h1>
@@ -503,9 +220,23 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
   </div>
 </section>
 
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><div class="trust-icon">✓</div>SHA-256 tamper-proof chain</div>
+  <div class="trust-divider"></div>
+  <div class="trust-item"><div class="trust-icon">✓</div>4 jurisdiction modules live</div>
+  <div class="trust-divider"></div>
+  <div class="trust-item"><div class="trust-icon">✓</div>30-minute integration</div>
+  <div class="trust-divider"></div>
+  <div class="trust-item"><div class="trust-icon">✓</div>AI explanation per decision</div>
+  <div class="trust-divider"></div>
+  <div class="trust-item"><div class="trust-icon">✓</div>Beta free — no credit card</div>
+  <div class="trust-divider"></div>
+  <div class="trust-item"><div class="trust-icon" style="background:rgba(186,117,23,0.15);border-color:rgba(186,117,23,0.4);color:#e8c070;">⚖</div><span style="color:#e8c070">Legal review in progress — MAS FEAT &amp; OJK</span></div>
+</div>
+
 <hr class="divider">
 
-<!-- PROBLEM -->
 <section class="section" id="problem">
   <div class="section-label">The problem</div>
   <h2>AI makes millions of decisions.<br><em>None of them are provable.</em></h2>
@@ -535,7 +266,6 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
 
 <hr class="divider">
 
-<!-- HOW IT WORKS -->
 <section class="section" id="how">
   <div class="section-label">How it works</div>
   <h2>One line of code.<br><em>Full compliance.</em></h2>
@@ -572,36 +302,31 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
     </div>
     <div class="code-block">
       <div class="code-comment"># 1. Get your key (once)</div>
-      POST /signup<br>
-      → <span class="code-key">"api_key"</span>: <span class="code-str">"aidal_live_xxxx"</span><br>
-      <br>
+      POST /signup<br>→ <span class="code-key">"api_key"</span>: <span class="code-str">"aidal_live_xxxx"</span><br><br>
       <div class="code-comment"># 2. Log every AI decision</div>
-      <span class="code-highlight">requests.post(</span><span class="code-str">"https://aidal-production.up.railway.app/decision"</span><span class="code-highlight">, </span><br>
+      <span class="code-highlight">requests.post(</span><span class="code-str">"https://aidal-production.up.railway.app/decision"</span><span class="code-highlight">,</span><br>
       &nbsp;&nbsp;headers={<span class="code-key">"Authorization"</span>: <span class="code-str">"Bearer aidal_live_xxxx"</span>},<br>
       &nbsp;&nbsp;json={<br>
       &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">"decision_type"</span>: <span class="code-val">"loan_approval"</span>,<br>
       &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">"model_used"</span>: <span class="code-val">"xgboost-v2"</span>,<br>
       &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">"input_features"</span>: <span class="code-val">applicant_data</span>,<br>
       &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">"output"</span>: <span class="code-val">model_result</span>,<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">"jurisdiction"</span>: <span class="code-val">"ID"</span><br>
-      &nbsp;&nbsp;})<br>
-      <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">"jurisdiction"</span>: <span class="code-val">"SG"</span><br>
+      &nbsp;&nbsp;})<br><br>
       <div class="code-comment"># Response — instant</div>
       {<br>
       &nbsp;&nbsp;<span class="code-key">"audit_id"</span>: <span class="code-str">"aud_a7f3c9b2..."</span>,<br>
       &nbsp;&nbsp;<span class="code-key">"explanation"</span>: <span class="code-str">"Loan approved based on..."</span>,<br>
       &nbsp;&nbsp;<span class="code-key">"compliance"</span>: {<br>
       &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">"status"</span>: <span class="code-val">"COMPLIANT"</span>,<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">"regulator"</span>: <span class="code-val">"OJK Indonesia"</span><br>
-      &nbsp;&nbsp;}<br>
-      }
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">"regulator"</span>: <span class="code-val">"MAS FEAT Singapore"</span><br>
+      &nbsp;&nbsp;}<br>}
     </div>
   </div>
 </section>
 
 <hr class="divider">
 
-<!-- JURISDICTIONS -->
 <section class="section" id="jurisdictions">
   <div class="section-label">Jurisdiction modules</div>
   <h2>Built for your<br><em>specific regulator.</em></h2>
@@ -636,13 +361,36 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
 
 <hr class="divider">
 
-<!-- WHO ITS FOR -->
+<section class="section">
+  <div class="section-label">Why AIDAL</div>
+  <h2>Cheaper, faster,<br><em>already built.</em></h2>
+  <div class="why-grid">
+    <div class="why-card">
+      <span class="why-num">30</span>
+      <h3>Minutes to integrate</h3>
+      <p>One API call. Any language. IBM OpenPages takes 6 months and $50k. AIDAL takes 30 minutes and $299/month.</p>
+    </div>
+    <div class="why-card">
+      <span class="why-num">4</span>
+      <h3>Jurisdictions auto-checked</h3>
+      <p>OJK, MAS FEAT, EU AI Act, VARA — every decision is checked against the right rules automatically. No manual compliance work.</p>
+    </div>
+    <div class="why-card">
+      <span class="why-num">95</span>
+      <h3>Days until EU AI Act</h3>
+      <p>The deadline is August 2026. AIDAL is live now. Your competitors are still planning. This is your window.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
 <section class="section">
   <div class="section-label">Who uses AIDAL</div>
   <h2>Built for anyone<br><em>using AI to make decisions.</em></h2>
   <div class="clients-grid">
     <div class="client-card">
-      <h3>Fintech & lending</h3>
+      <h3>Fintech &amp; lending</h3>
       <p>Credit decisions, loan approvals, risk scoring. Every decision logged, every rejection explainable. OJK, MAS, and EU compliant out of the box.</p>
     </div>
     <div class="client-card">
@@ -650,13 +398,12 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
       <p>Claims approval and denial, underwriting decisions, fraud flagging. Full audit trail that satisfies regulators and silences customer complaints.</p>
     </div>
     <div class="client-card">
-      <h3>HR & hiring platforms</h3>
+      <h3>HR &amp; hiring platforms</h3>
       <p>AI screening and ranking decisions. The EU AI Act classifies these as high-risk. AIDAL makes every hiring decision contestable and provable.</p>
     </div>
   </div>
 </section>
 
-<!-- DEADLINE BANNER -->
 <div class="deadline-section">
   <div class="deadline-inner">
     <div>
@@ -670,7 +417,55 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
   </div>
 </div>
 
-<!-- PRICING -->
+<!-- LEGAL SECTION -->
+<div class="legal-section">
+  <div class="legal-inner">
+    <div>
+      <div class="legal-badge"><div class="legal-badge-dot"></div>Legal credibility</div>
+      <h2 style="font-size:clamp(28px,4vw,48px);margin-bottom:1.5rem">Built on real<br><em>regulatory research.</em></h2>
+      <p style="font-size:17px;color:var(--cream-dim);line-height:1.8;margin-bottom:1.5rem">Every jurisdiction module in AIDAL was built by reading the actual regulation documents — POJK No. 11, MAS FEAT Principles, EU AI Act Articles 9–17, and VARA 2024 — and translating them into machine-checkable rules that run on every decision automatically.</p>
+      <p style="font-size:17px;color:var(--cream-dim);line-height:1.8;margin-bottom:1.5rem">We are currently seeking formal legal opinions from licensed compliance lawyers in Singapore and Indonesia to independently verify our jurisdiction modules against each regulator's requirements.</p>
+      <div class="legal-cta">
+        Are you a compliance lawyer or consultant with MAS FEAT or OJK expertise?<br>
+        <a href="mailto:try.aidal@gmail.com?subject=Legal Advisor — AIDAL">We'd like to speak with you →</a>
+      </div>
+    </div>
+    <div class="legal-cards">
+      <div class="legal-card">
+        <div class="legal-card-header">
+          <h4>MAS FEAT — Singapore</h4>
+          <span class="legal-card-tag seeking">Review in progress</span>
+        </div>
+        <p>Our FEAT module checks Fairness, Ethics, Accountability, and Transparency fields on every decision. Legal review of compliance adequacy underway.</p>
+      </div>
+      <div class="legal-card">
+        <div class="legal-card-header">
+          <h4>OJK — Indonesia</h4>
+          <span class="legal-card-tag seeking">Review in progress</span>
+        </div>
+        <p>Our OJK module enforces POJK No. 11/POJK.03/2022 required fields and 5-year retention. Legal review of compliance adequacy underway.</p>
+      </div>
+      <div class="legal-card">
+        <div class="legal-card-header">
+          <h4>EU AI Act</h4>
+          <span class="legal-card-tag done">Articles 9–17 mapped</span>
+        </div>
+        <p>Article 12 automatic logging and Article 13 plain-language explanations are both implemented and checked on every decision.</p>
+      </div>
+      <div class="legal-card">
+        <div class="legal-card-header">
+          <h4>VARA — UAE</h4>
+          <span class="legal-card-tag done">Framework mapped</span>
+        </div>
+        <p>VARA 2024 AI &amp; Technology Governance Framework requirements are implemented, including risk classification and audit record fields.</p>
+      </div>
+      <div style="border:1px solid rgba(240,235,224,0.08);padding:1.25rem;background:rgba(240,235,224,0.02)">
+        <p style="font-size:13px;color:rgba(240,235,224,0.4);line-height:1.7"><strong style="color:var(--cream-dim)">Note:</strong> AIDAL provides technical audit infrastructure. We are not a law firm and do not provide legal advice. Using AIDAL is one component of a broader compliance programme. We recommend consulting a licensed compliance lawyer in your jurisdiction.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <section class="section" id="pricing">
   <div class="section-label">Pricing</div>
   <h2>Simple, usage-based.<br><em>Scales with your AI.</em></h2>
@@ -717,34 +512,26 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
   </div>
 </section>
 
-<!-- ── GET API KEY ──────────────────────────────────────────────────────────── -->
 <section class="signup-section" id="get-key">
   <div class="section-label" style="justify-content:center">Get started free</div>
   <h2>Your API key.<br><em>In 10 seconds.</em></h2>
   <p>Enter your details below and get your unique API key instantly. No credit card. No manual approval. Start logging decisions immediately.</p>
-
   <div class="signup-box">
     <input id="s-name" class="signup-input" type="text" placeholder="Company name" />
     <input id="s-email" class="signup-input" type="email" placeholder="Work email" />
     <button class="signup-btn" id="signup-btn" onclick="getApiKey()">Get My API Key →</button>
-
     <div class="signup-error" id="signup-error"></div>
-
-    <!-- KEY RESULT — shown after successful signup -->
     <div class="key-result" id="key-result">
       <div class="key-result-title">✓ Your API key is ready</div>
       <div class="key-display" id="key-display"></div>
       <button class="copy-btn" onclick="copyKey()">Copy key</button>
-      <div class="key-warning">
-        <strong>Save this key now.</strong> It will not be shown again. If you lose it, email try.aidal@gmail.com to reset it.
-      </div>
+      <div class="key-warning"><strong>Save this key now.</strong> It will not be shown again. If you lose it, email try.aidal@gmail.com to reset it.</div>
       <div class="key-next-steps">
         <p>What to do next:</p>
         <a href="https://aidal-dashboard.vercel.app" target="_blank">Open dashboard →</a>
         <a href="https://aidal-production.up.railway.app/docs" target="_blank">API docs →</a>
       </div>
     </div>
-
     <p class="signup-note">Beta is free. No commitment. We respond to all emails within 24 hours.</p>
   </div>
 </section>
@@ -756,7 +543,6 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
 </footer>
 
 <script>
-// Countdown
 var deadline = new Date("2026-08-01T00:00:00");
 function tick() {
   var diff = deadline - new Date();
@@ -769,25 +555,19 @@ function tick() {
 }
 tick(); setInterval(tick, 1000);
 
-// Signup
 var generatedKey = "";
-
 function getApiKey() {
   var name = document.getElementById("s-name").value.trim();
   var email = document.getElementById("s-email").value.trim();
   var btn = document.getElementById("signup-btn");
   var errEl = document.getElementById("signup-error");
   var resultEl = document.getElementById("key-result");
-
   errEl.style.display = "none";
   resultEl.style.display = "none";
-
   if (!name) { showError("Please enter your company name."); return; }
   if (!email || !email.includes("@")) { showError("Please enter a valid work email."); return; }
-
   btn.disabled = true;
   btn.textContent = "Creating your key...";
-
   fetch("https://aidal-production.up.railway.app/signup", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -797,26 +577,14 @@ function getApiKey() {
   .then(function(res) {
     btn.disabled = false;
     btn.textContent = "Get My API Key →";
-
-    if (res.status === 409) {
-      showError("An account with this email already exists. Check your records or email try.aidal@gmail.com to recover your key.");
-      return;
-    }
-    if (res.status !== 201) {
-      showError("Something went wrong. Email try.aidal@gmail.com and we will set you up manually.");
-      return;
-    }
-
+    if (res.status === 409) { showError("An account with this email already exists. Check your records or email try.aidal@gmail.com to recover your key."); return; }
+    if (res.status !== 201) { showError("Something went wrong. Email try.aidal@gmail.com and we will set you up manually."); return; }
     generatedKey = res.data.api_key;
     document.getElementById("key-display").textContent = generatedKey;
     resultEl.style.display = "block";
     resultEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
-
-    // Clear form
     document.getElementById("s-name").value = "";
     document.getElementById("s-email").value = "";
-
-    // Also notify via Formspree so you have a record
     fetch("https://formspree.io/f/xgorddko", {
       method: "POST",
       headers: { "Content-Type": "application/json", "Accept": "application/json" },
@@ -829,13 +597,7 @@ function getApiKey() {
     showError("Network error. Check your connection or email try.aidal@gmail.com.");
   });
 }
-
-function showError(msg) {
-  var el = document.getElementById("signup-error");
-  el.textContent = msg;
-  el.style.display = "block";
-}
-
+function showError(msg) { var el = document.getElementById("signup-error"); el.textContent = msg; el.style.display = "block"; }
 function copyKey() {
   if (!generatedKey) return;
   navigator.clipboard.writeText(generatedKey).then(function() {
@@ -843,7 +605,6 @@ function copyKey() {
     btn.textContent = "Copied!";
     setTimeout(function() { btn.textContent = "Copy key"; }, 2000);
   }).catch(function() {
-    // Fallback
     var el = document.getElementById("key-display");
     var range = document.createRange();
     range.selectNode(el);
@@ -852,6 +613,5 @@ function copyKey() {
   });
 }
 </script>
-
 </body>
 </html>
