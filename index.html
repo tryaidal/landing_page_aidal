@@ -512,6 +512,49 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
   </div>
 </section>
 
+<!-- PUBLIC VERIFICATION SECTION -->
+<div style="background:var(--navy-dark);border-top:1px solid rgba(240,235,224,0.1);border-bottom:1px solid rgba(240,235,224,0.1);">
+  <div style="max-width:1200px;margin:0 auto;padding:6rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;">
+    <div>
+      <div style="font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--cream-dim);margin-bottom:2rem;display:flex;align-items:center;gap:16px;">
+        <span style="display:block;width:30px;height:1px;background:var(--cream-dim);"></span>
+        Independent verification
+      </div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,52px);font-weight:700;line-height:1.1;color:var(--cream);margin-bottom:1.5rem;">
+        Anyone can verify.<br><em style="font-style:italic;color:var(--cream-dim);">No account needed.</em>
+      </h2>
+      <p style="font-size:17px;color:var(--cream-dim);line-height:1.8;margin-bottom:2rem;">
+        Every AI decision logged in AIDAL can be independently verified by anyone — regulators, auditors, customers, or courts. Paste an audit ID and get cryptographic proof the record is untampered. No login. No API key. No asking AIDAL for permission.
+      </p>
+      <p style="font-size:17px;color:var(--cream-dim);line-height:1.8;margin-bottom:2.5rem;">
+        Every day, AIDAL also publishes a master hash of all decisions to a public GitHub repository — a permanent, independently verifiable record that exists even if AIDAL shuts down.
+      </p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <a href="https://aidal-dashboard.vercel.app/verify" target="_blank" style="background:var(--cream);color:var(--navy);padding:14px 32px;font-family:'EB Garamond',serif;font-size:15px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border:1px solid var(--cream);transition:all 0.2s;">
+          Verify a record →
+        </a>
+        <a href="https://github.com/widjajaanthony24-svg/aidal-anchors" target="_blank" style="color:var(--cream-dim);padding:14px 32px;font-family:'EB Garamond',serif;font-size:15px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border:1px solid rgba(240,235,224,0.2);transition:all 0.2s;">
+          View anchor log →
+        </a>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:1rem;">
+      <div style="border:1px solid rgba(240,235,224,0.1);padding:1.5rem;background:rgba(240,235,224,0.03);">
+        <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#7ec8a0;margin-bottom:10px;">✓ How it works</div>
+        <div style="font-size:15px;color:var(--cream-dim);line-height:1.8;">Company gives regulator an audit ID. Regulator pastes it into the verify page. AIDAL recomputes the hash and shows green or red. No sensitive data is ever revealed.</div>
+      </div>
+      <div style="border:1px solid rgba(240,235,224,0.1);padding:1.5rem;background:rgba(240,235,224,0.03);">
+        <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#7ec8a0;margin-bottom:10px;">✓ Daily anchor log</div>
+        <div style="font-size:15px;color:var(--cream-dim);line-height:1.8;">Every 24 hours AIDAL publishes a master hash of all decisions to GitHub. This record is permanent and publicly verifiable — even if AIDAL's servers go offline.</div>
+      </div>
+      <div style="border:1px solid rgba(240,235,224,0.1);padding:1.5rem;background:rgba(240,235,224,0.03);">
+        <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#7ec8a0;margin-bottom:10px;">✓ Why this matters</div>
+        <div style="font-size:15px;color:var(--cream-dim);line-height:1.8;">AWS and Azure cannot do this. They are centralized — you have to trust them. AIDAL's proof exists independently of AIDAL. That is a fundamentally different level of trust.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <section class="signup-section" id="get-key">
   <div class="section-label" style="justify-content:center">Get started free</div>
   <h2>Your API key.<br><em>In 10 seconds.</em></h2>
