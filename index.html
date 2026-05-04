@@ -44,7 +44,6 @@ h1 em { font-style: italic; color: var(--cream-dim); }
 .hero-stat-num { font-family: 'Playfair Display', serif; font-size: 72px; font-weight: 700; color: var(--cream); line-height: 1; display: block; }
 .hero-stat-label { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--cream-dim); }
 
-/* TRUST BAR */
 .trust-bar { border-top: 1px solid rgba(240,235,224,0.1); border-bottom: 1px solid rgba(240,235,224,0.1); background: var(--navy-dark); padding: 1.25rem 4rem; display: flex; align-items: center; gap: 2.5rem; overflow-x: auto; }
 .trust-item { display: flex; align-items: center; gap: 8px; white-space: nowrap; font-size: 13px; letter-spacing: 0.5px; color: var(--cream-dim); }
 .trust-icon { width: 18px; height: 18px; border-radius: 50%; background: rgba(29,158,117,0.15); border: 1px solid rgba(29,158,117,0.35); display: flex; align-items: center; justify-content: center; font-size: 10px; color: #7ec8a0; flex-shrink: 0; }
@@ -84,7 +83,6 @@ h2 em { font-style: italic; color: var(--cream-dim); }
 .jurisdiction-card p { font-size: 14px; color: var(--cream-dim); line-height: 1.7; margin-bottom: 1rem; }
 .jurisdiction-badge { display: inline-block; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; border: 1px solid rgba(240,235,224,0.2); color: var(--cream-dim); padding: 3px 10px; }
 
-/* WHY AIDAL */
 .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(240,235,224,0.1); margin-top: 5rem; border: 1px solid rgba(240,235,224,0.1); }
 .why-card { background: var(--navy-dark); padding: 2.5rem; }
 .why-num { font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 900; color: rgba(240,235,224,0.08); line-height: 1; margin-bottom: 1rem; display: block; }
@@ -119,7 +117,19 @@ h2 em { font-style: italic; color: var(--cream-dim); }
 .deadline-date { font-family: 'Playfair Display', serif; font-size: 80px; font-weight: 900; color: var(--cream); line-height: 1; margin-bottom: 1rem; }
 .deadline-label { font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: var(--cream-dim); }
 
-/* LEGAL SECTION */
+/* FAQ */
+.faq-list { margin-top: 4rem; display: flex; flex-direction: column; gap: 0; border: 1px solid rgba(240,235,224,0.1); }
+.faq-item { border-bottom: 1px solid rgba(240,235,224,0.08); }
+.faq-item:last-child { border-bottom: none; }
+.faq-q { width: 100%; background: transparent; border: none; color: var(--cream); font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; text-align: left; padding: 1.75rem 2rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; transition: background 0.15s; }
+.faq-q:hover { background: rgba(240,235,224,0.03); }
+.faq-arrow { font-size: 20px; color: var(--cream-dim); transition: transform 0.2s; flex-shrink: 0; }
+.faq-item.open .faq-arrow { transform: rotate(45deg); }
+.faq-a { display: none; padding: 0 2rem 1.75rem 2rem; font-size: 16px; color: var(--cream-dim); line-height: 1.85; background: rgba(240,235,224,0.02); }
+.faq-item.open .faq-a { display: block; }
+.faq-a strong { color: var(--cream); }
+
+/* LEGAL — reframed */
 .legal-section { background: var(--navy-dark); border-top: 1px solid rgba(240,235,224,0.1); border-bottom: 1px solid rgba(240,235,224,0.1); }
 .legal-inner { max-width: 1200px; margin: 0 auto; padding: 6rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
 .legal-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; border: 1px solid rgba(29,158,117,0.4); color: #7ec8a0; padding: 6px 14px; margin-bottom: 2rem; }
@@ -147,22 +157,35 @@ h2 em { font-style: italic; color: var(--cream-dim); }
 .signup-btn { width: 100%; background: var(--cream); color: var(--navy); border: none; padding: 16px; font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.2s; margin-top: 4px; }
 .signup-btn:hover { background: transparent; color: var(--cream); border: 1px solid var(--cream); }
 .signup-btn:disabled { opacity: 0.6; cursor: not-allowed; }
-.key-result { display: none; margin-top: 2rem; background: var(--navy-dark); border: 1px solid rgba(29,158,117,0.5); padding: 2rem; text-align: left; }
-.key-result-title { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #7ec8a0; margin-bottom: 1rem; }
-.key-display { font-family: 'Courier New', monospace; font-size: 14px; color: var(--cream); background: rgba(240,235,224,0.06); border: 1px solid rgba(240,235,224,0.15); padding: 14px 18px; word-break: break-all; letter-spacing: 0.5px; margin-bottom: 1rem; }
+
+/* IMPROVED KEY RESULT */
+.key-result { display: none; margin-top: 2rem; text-align: left; }
+.key-result-header { background: rgba(29,158,117,0.12); border: 1px solid rgba(29,158,117,0.4); padding: 1.25rem 1.5rem; margin-bottom: 1px; display: flex; align-items: center; gap: 10px; }
+.key-result-title { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #7ec8a0; }
+.key-display { font-family: 'Courier New', monospace; font-size: 14px; color: var(--cream); background: var(--navy-dark); border: 1px solid rgba(240,235,224,0.15); border-top: none; padding: 14px 18px; word-break: break-all; letter-spacing: 0.5px; margin-bottom: 10px; }
 .copy-btn { background: transparent; border: 1px solid rgba(240,235,224,0.3); color: var(--cream-dim); padding: 8px 20px; font-family: 'EB Garamond', serif; font-size: 14px; letter-spacing: 1px; cursor: pointer; transition: all 0.2s; margin-bottom: 1.5rem; }
 .copy-btn:hover { background: rgba(240,235,224,0.1); color: var(--cream); }
-.key-warning { font-size: 13px; color: rgba(240,235,224,0.5); line-height: 1.7; border-top: 1px solid rgba(240,235,224,0.1); padding-top: 1rem; }
+.key-warning { font-size: 13px; color: rgba(240,235,224,0.45); line-height: 1.7; margin-bottom: 2rem; }
 .key-warning strong { color: var(--cream-dim); }
-.key-next-steps { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(240,235,224,0.1); }
-.key-next-steps p { font-size: 14px; color: var(--cream-dim); margin-bottom: 10px; }
-.key-next-steps a { display: inline-block; margin-right: 12px; font-size: 13px; letter-spacing: 1px; color: #7ec8a0; text-decoration: none; border-bottom: 1px solid rgba(29,158,117,0.3); transition: border-color 0.2s; }
-.key-next-steps a:hover { border-color: #7ec8a0; }
+
+/* 3-STEP NEXT ACTIONS */
+.key-next-steps { border-top: 1px solid rgba(240,235,224,0.1); padding-top: 1.5rem; }
+.key-next-steps-title { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--cream-dim); margin-bottom: 1rem; }
+.next-step-cards { display: flex; flex-direction: column; gap: 10px; }
+.next-step-card { display: flex; gap: 1rem; align-items: flex-start; padding: 1rem 1.25rem; border: 1px solid rgba(240,235,224,0.08); background: rgba(240,235,224,0.03); text-decoration: none; transition: background 0.15s; }
+.next-step-card:hover { background: rgba(240,235,224,0.07); }
+.next-step-num { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: rgba(240,235,224,0.2); line-height: 1; min-width: 28px; }
+.next-step-body { flex: 1; }
+.next-step-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #7ec8a0; margin-bottom: 2px; }
+.next-step-text { font-size: 14px; color: var(--cream-dim); line-height: 1.5; }
+.next-step-arrow { color: var(--cream-dim); font-size: 16px; padding-top: 2px; }
+
 .signup-error { display: none; margin-top: 12px; font-size: 14px; color: #e08080; background: rgba(163,45,45,0.1); border: 1px solid rgba(163,45,45,0.3); padding: 10px 14px; }
 .signup-note { margin-top: 1.5rem; font-size: 14px; color: rgba(240,235,224,0.4); text-align: center; }
 
-footer { border-top: 1px solid rgba(240,235,224,0.1); padding: 3rem 4rem; display: flex; justify-content: space-between; align-items: center; }
+footer { border-top: 1px solid rgba(240,235,224,0.1); padding: 2rem 4rem; display: flex; justify-content: space-between; align-items: center; }
 .footer-logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--cream); letter-spacing: 2px; }
+.footer-note { font-size: 12px; color: rgba(240,235,224,0.3); line-height: 1.6; max-width: 480px; text-align: center; }
 footer p { font-size: 13px; color: var(--cream-dim); letter-spacing: 1px; }
 
 @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
@@ -183,6 +206,8 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
   footer { flex-direction: column; gap: 1rem; text-align: center; }
   .signup-section { padding: 5rem 2rem; }
   .trust-bar { padding: 1.25rem 2rem; }
+  .faq-q { font-size: 16px; padding: 1.25rem 1.25rem; }
+  .faq-a { padding: 0 1.25rem 1.25rem; }
 }
 </style>
 </head>
@@ -194,6 +219,7 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
     <li><a href="#how">How it works</a></li>
     <li><a href="#jurisdictions">Jurisdictions</a></li>
     <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="https://aidal-dashboard.vercel.app" target="_blank">Dashboard</a></li>
     <li><a href="#get-key" class="nav-cta">Get API Key</a></li>
   </ul>
@@ -220,7 +246,6 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
   </div>
 </section>
 
-<!-- TRUST BAR -->
 <div class="trust-bar">
   <div class="trust-item"><div class="trust-icon">✓</div>SHA-256 tamper-proof chain</div>
   <div class="trust-divider"></div>
@@ -232,7 +257,7 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
   <div class="trust-divider"></div>
   <div class="trust-item"><div class="trust-icon">✓</div>Beta free — no credit card</div>
   <div class="trust-divider"></div>
-  <div class="trust-item"><div class="trust-icon" style="background:rgba(186,117,23,0.15);border-color:rgba(186,117,23,0.4);color:#e8c070;">⚖</div><span style="color:#e8c070">Legal review in progress — MAS FEAT &amp; OJK</span></div>
+  <div class="trust-item"><div class="trust-icon">✓</div>Regulation text mapped article by article</div>
 </div>
 
 <hr class="divider">
@@ -295,8 +320,8 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
       <div class="step">
         <span class="step-num">04.</span>
         <div>
-          <h3>Audit anytime</h3>
-          <p>Open your dashboard. Regulators call /verify and get instant cryptographic proof the ledger is clean. You pass the audit.</p>
+          <h3>Audit anytime. Download the PDF.</h3>
+          <p>Open your dashboard. Download a regulator-ready compliance PDF in one click. Hand it to MAS, OJK, or the EU auditor. Done.</p>
         </div>
       </div>
     </div>
@@ -376,7 +401,7 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
       <p>OJK, MAS FEAT, EU AI Act, VARA — every decision is checked against the right rules automatically. No manual compliance work.</p>
     </div>
     <div class="why-card">
-      <span class="why-num">95</span>
+      <span class="why-num">88</span>
       <h3>Days until EU AI Act</h3>
       <p>The deadline is August 2026. AIDAL is live now. Your competitors are still planning. This is your window.</p>
     </div>
@@ -417,14 +442,97 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
   </div>
 </div>
 
-<!-- LEGAL SECTION -->
+<!-- FAQ SECTION -->
+<section class="section" id="faq">
+  <div class="section-label">FAQ</div>
+  <h2>Questions we get<br><em>before people sign up.</em></h2>
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Is AIDAL a law firm? Does using it make us legally compliant?
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        No, AIDAL is not a law firm and does not provide legal advice. AIDAL provides <strong>technical audit infrastructure</strong> — tamper-proof logs, cryptographic proofs, and automatic compliance field-checking based on the actual regulation text. Whether your specific implementation fully satisfies your regulator is a legal question you should confirm with a licensed compliance lawyer. That said, AIDAL is built directly from the regulation documents: POJK No. 11, MAS FEAT Principles, EU AI Act Articles 9–17, and VARA 2024 — not from summaries or interpretations.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        What happens if AIDAL shuts down? Do we lose our audit records?
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        No. Every day AIDAL publishes a master hash of all decisions to a <strong>public GitHub repository</strong> that is independent of AIDAL's servers. Even if AIDAL disappears tomorrow, your audit records can be cryptographically verified against that public anchor forever. Your data does not live or die with us — that's the point of the hash chain architecture.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Who else is using AIDAL?
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        AIDAL is currently in open beta. We are onboarding our first customers now — fintechs and lending platforms in Southeast Asia and the EU. Beta access is free with no commitment. If you want to be among the first to integrate before the EU AI Act deadline, <a href="#get-key" style="color:#7ec8a0;text-decoration:none;border-bottom:1px solid rgba(29,158,117,0.4)">sign up now</a>.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        We already log decisions in our own database. Why do we need AIDAL?
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        Your internal database can be edited, deleted, or compromised — and a regulator knows this. AIDAL's SHA-256 hash chain means any tampering with any record is mathematically detectable. It also adds three things your database almost certainly doesn't have: <strong>plain-English AI explanations</strong> per decision (EU AI Act Article 13), <strong>automatic jurisdiction compliance checking</strong> (Article 9–17), and <strong>a downloadable PDF</strong> formatted for regulator submission. Your database stores data. AIDAL makes it provable.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        How long does integration actually take?
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        For a developer who has already read this page: <strong>under 30 minutes</strong>. You add one API call after your model runs. That's it. There's no SDK to install, no infrastructure to set up, no configuration files. The API accepts JSON, returns JSON, and your first decision is logged and verified before your coffee goes cold. <a href="https://aidal-production.up.railway.app/docs" target="_blank" style="color:#7ec8a0;text-decoration:none;border-bottom:1px solid rgba(29,158,117,0.4)">See the full API docs →</a>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Does AIDAL store our customer data?
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        AIDAL stores whatever you send. You control what goes into the payload. For most use cases, you send <strong>model inputs and outputs</strong> — credit score bands, decision outcomes, confidence scores — not raw PII like full names or IC numbers. You can anonymise or hash sensitive fields before sending them to AIDAL. The compliance requirement is that the decision is auditable, not that it contains every customer detail.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        We're not regulated yet. Should we still use AIDAL?
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        If you are making AI decisions that touch customers or money, regulation is coming — the only question is when. Retrofitting an audit trail after a regulator asks for it is significantly harder and more expensive than plugging in now. Beta is free. The cost of starting today is zero. The cost of scrambling in 88 days is not.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- LEGAL SECTION — reframed as strength -->
 <div class="legal-section">
   <div class="legal-inner">
     <div>
-      <div class="legal-badge"><div class="legal-badge-dot"></div>Legal credibility</div>
-      <h2 style="font-size:clamp(28px,4vw,48px);margin-bottom:1.5rem">Built on real<br><em>regulatory research.</em></h2>
-      <p style="font-size:17px;color:var(--cream-dim);line-height:1.8;margin-bottom:1.5rem">Every jurisdiction module in AIDAL was built by reading the actual regulation documents — POJK No. 11, MAS FEAT Principles, EU AI Act Articles 9–17, and VARA 2024 — and translating them into machine-checkable rules that run on every decision automatically.</p>
-      <p style="font-size:17px;color:var(--cream-dim);line-height:1.8;margin-bottom:1.5rem">We are currently seeking formal legal opinions from licensed compliance lawyers in Singapore and Indonesia to independently verify our jurisdiction modules against each regulator's requirements.</p>
+      <div class="legal-badge"><div class="legal-badge-dot"></div>Regulatory research</div>
+      <h2 style="font-size:clamp(28px,4vw,48px);margin-bottom:1.5rem">Built from the<br><em>actual regulation text.</em></h2>
+      <p style="font-size:17px;color:var(--cream-dim);line-height:1.8;margin-bottom:1.5rem">
+        Every jurisdiction module in AIDAL was built by reading the regulation documents directly — POJK No. 11, MAS FEAT Principles, EU AI Act Articles 9–17, and VARA 2024 — and translating them into machine-checkable rules that run on every decision automatically.
+      </p>
+      <p style="font-size:17px;color:var(--cream-dim);line-height:1.8;margin-bottom:1.5rem">
+        We are seeking formal legal opinions from licensed compliance lawyers in Singapore and Indonesia to independently verify our modules. This is the same process any serious compliance tool goes through.
+      </p>
       <div class="legal-cta">
         Are you a compliance lawyer or consultant with MAS FEAT or OJK expertise?<br>
         <a href="https://mail.google.com/mail/?view=cm&to=try.aidal@gmail.com&subject=Legal%20Advisor%20%E2%80%94%20AIDAL" target="_blank">We'd like to speak with you →</a>
@@ -434,33 +542,30 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
       <div class="legal-card">
         <div class="legal-card-header">
           <h4>MAS FEAT — Singapore</h4>
-          <span class="legal-card-tag seeking">Review in progress</span>
+          <span class="legal-card-tag seeking">Legal review pending</span>
         </div>
-        <p>Our FEAT module checks Fairness, Ethics, Accountability, and Transparency fields on every decision. Legal review of compliance adequacy underway.</p>
+        <p>Checks Fairness, Ethics, Accountability, and Transparency fields on every decision. Built from MAS FEAT Principles document, section by section.</p>
       </div>
       <div class="legal-card">
         <div class="legal-card-header">
           <h4>OJK — Indonesia</h4>
-          <span class="legal-card-tag seeking">Review in progress</span>
+          <span class="legal-card-tag seeking">Legal review pending</span>
         </div>
-        <p>Our OJK module enforces POJK No. 11/POJK.03/2022 required fields and 5-year retention. Legal review of compliance adequacy underway.</p>
+        <p>Enforces POJK No. 11/POJK.03/2022 required fields and 5-year retention rules. Built directly from the regulation text.</p>
       </div>
       <div class="legal-card">
         <div class="legal-card-header">
           <h4>EU AI Act</h4>
           <span class="legal-card-tag done">Articles 9–17 mapped</span>
         </div>
-        <p>Article 12 automatic logging and Article 13 plain-language explanations are both implemented and checked on every decision.</p>
+        <p>Article 12 automatic logging and Article 13 plain-language explanations implemented and checked on every decision. Article 14 human oversight tracking live.</p>
       </div>
       <div class="legal-card">
         <div class="legal-card-header">
           <h4>VARA — UAE</h4>
           <span class="legal-card-tag done">Framework mapped</span>
         </div>
-        <p>VARA 2024 AI &amp; Technology Governance Framework requirements are implemented, including risk classification and audit record fields.</p>
-      </div>
-      <div style="border:1px solid rgba(240,235,224,0.08);padding:1.25rem;background:rgba(240,235,224,0.02)">
-        <p style="font-size:13px;color:rgba(240,235,224,0.4);line-height:1.7"><strong style="color:var(--cream-dim)">Note:</strong> AIDAL provides technical audit infrastructure. We are not a law firm and do not provide legal advice. Using AIDAL is one component of a broader compliance programme. We recommend consulting a licensed compliance lawyer in your jurisdiction.</p>
+        <p>VARA 2024 AI &amp; Technology Governance Framework requirements implemented, including risk classification and audit record fields.</p>
       </div>
     </div>
   </div>
@@ -490,8 +595,8 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
       <ul class="price-features">
         <li>Everything in Starter</li>
         <li>Compliance dashboard</li>
-        <li>Compliance report API</li>
-        <li>Regulatory reporting</li>
+        <li>Compliance report PDF</li>
+        <li>Fairness detection</li>
         <li>Priority support</li>
       </ul>
       <button class="price-btn" onclick="document.getElementById('get-key').scrollIntoView({behavior:'smooth'})">Get started</button>
@@ -512,7 +617,6 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
   </div>
 </section>
 
-<!-- PUBLIC VERIFICATION SECTION -->
 <div style="background:var(--navy-dark);border-top:1px solid rgba(240,235,224,0.1);border-bottom:1px solid rgba(240,235,224,0.1);">
   <div style="max-width:1200px;margin:0 auto;padding:6rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;">
     <div>
@@ -530,12 +634,8 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
         Every day, AIDAL also publishes a master hash of all decisions to a public GitHub repository — a permanent, independently verifiable record that exists even if AIDAL shuts down.
       </p>
       <div style="display:flex;gap:1rem;flex-wrap:wrap;">
-        <a href="https://aidal-dashboard.vercel.app/verify" target="_blank" style="background:var(--cream);color:var(--navy);padding:14px 32px;font-family:'EB Garamond',serif;font-size:15px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border:1px solid var(--cream);transition:all 0.2s;">
-          Verify a record →
-        </a>
-        <a href="https://github.com/widjajaanthony24-svg/aidal-anchors" target="_blank" style="color:var(--cream-dim);padding:14px 32px;font-family:'EB Garamond',serif;font-size:15px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border:1px solid rgba(240,235,224,0.2);transition:all 0.2s;">
-          View anchor log →
-        </a>
+        <a href="https://aidal-dashboard.vercel.app/verify" target="_blank" style="background:var(--cream);color:var(--navy);padding:14px 32px;font-family:'EB Garamond',serif;font-size:15px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border:1px solid var(--cream);">Verify a record →</a>
+        <a href="https://github.com/widjajaanthony24-svg/aidal-anchors" target="_blank" style="color:var(--cream-dim);padding:14px 32px;font-family:'EB Garamond',serif;font-size:15px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border:1px solid rgba(240,235,224,0.2);">View anchor log →</a>
       </div>
     </div>
     <div style="display:flex;flex-direction:column;gap:1rem;">
@@ -564,25 +664,55 @@ h1 { animation: fadeUp 0.8s 0.15s ease both; }
     <input id="s-email" class="signup-input" type="email" placeholder="Work email" />
     <button class="signup-btn" id="signup-btn" onclick="getApiKey()">Get My API Key →</button>
     <div class="signup-error" id="signup-error"></div>
+
     <div class="key-result" id="key-result">
-      <div class="key-result-title">✓ Your API key is ready</div>
+      <div class="key-result-header">
+        <span style="font-size:16px;">✓</span>
+        <span class="key-result-title">Your API key is live — save it now</span>
+      </div>
       <div class="key-display" id="key-display"></div>
       <button class="copy-btn" onclick="copyKey()">Copy key</button>
-      <div class="key-warning"><strong>Save this key now.</strong> It will not be shown again. If you lose it, email try.aidal@gmail.com to reset it.</div>
+      <div class="key-warning"><strong>This key will not be shown again.</strong> Copy it somewhere safe. Lost your key? Email try.aidal@gmail.com.</div>
+
       <div class="key-next-steps">
-        <p>What to do next:</p>
-        <a href="https://aidal-dashboard.vercel.app" target="_blank">Open dashboard →</a>
-        <a href="https://aidal-production.up.railway.app/docs" target="_blank">API docs →</a>
+        <div class="key-next-steps-title">Do these three things now</div>
+        <div class="next-step-cards">
+          <a href="https://aidal-dashboard.vercel.app" target="_blank" class="next-step-card">
+            <div class="next-step-num">1</div>
+            <div class="next-step-body">
+              <div class="next-step-label">Open your dashboard</div>
+              <div class="next-step-text">Log a test decision in 2 minutes — no code needed. See your compliance score instantly.</div>
+            </div>
+            <div class="next-step-arrow">→</div>
+          </a>
+          <a href="https://aidal-production.up.railway.app/docs" target="_blank" class="next-step-card">
+            <div class="next-step-num">2</div>
+            <div class="next-step-body">
+              <div class="next-step-label">Read the API docs</div>
+              <div class="next-step-text">One endpoint. Copy the example. Paste into your codebase. You're integrated.</div>
+            </div>
+            <div class="next-step-arrow">→</div>
+          </a>
+          <a href="mailto:try.aidal@gmail.com?subject=AIDAL%20integration%20help&body=Hi%2C%20I%20just%20signed%20up%20for%20AIDAL%20and%20would%20like%20help%20integrating." class="next-step-card">
+            <div class="next-step-num">3</div>
+            <div class="next-step-body">
+              <div class="next-step-label">Need help integrating?</div>
+              <div class="next-step-text">Email us. We will personally help you log your first real decision — for free.</div>
+            </div>
+            <div class="next-step-arrow">→</div>
+          </a>
+        </div>
       </div>
     </div>
+
     <p class="signup-note">Beta is free. No commitment. We respond to all emails within 24 hours.</p>
   </div>
 </section>
 
 <footer>
   <div class="footer-logo">AIDAL.</div>
-  <p>try.aidal@gmail.com</p>
-  <p style="font-size:13px;color:var(--cream-dim)">© 2026 AIDAL</p>
+  <p class="footer-note">AIDAL provides technical audit infrastructure. We are not a law firm and do not provide legal advice. Using AIDAL is one component of a broader compliance programme. Consult a licensed compliance lawyer in your jurisdiction.</p>
+  <p>try.aidal@gmail.com &nbsp;·&nbsp; © 2026 AIDAL</p>
 </footer>
 
 <script>
@@ -597,6 +727,13 @@ function tick() {
   document.getElementById("countdown").textContent = d + "d " + h + "h " + m + "m " + s + "s remaining";
 }
 tick(); setInterval(tick, 1000);
+
+function toggleFaq(btn) {
+  var item = btn.parentElement;
+  var isOpen = item.classList.contains("open");
+  document.querySelectorAll(".faq-item.open").forEach(function(el) { el.classList.remove("open"); });
+  if (!isOpen) item.classList.add("open");
+}
 
 var generatedKey = "";
 function getApiKey() {
