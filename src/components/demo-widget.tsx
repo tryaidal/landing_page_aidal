@@ -72,7 +72,7 @@ export function DemoWidget() {
         <button
           onClick={runDemo}
           disabled={sealing}
-          className="mt-1 mb-3.5 w-full bg-[#f0ebe0] py-3 font-sans text-[11px] font-semibold tracking-[3px] text-[#070809] uppercase transition-opacity hover:opacity-85 disabled:animate-pulse disabled:opacity-70"
+          className="mt-1 mb-3.5 w-full bg-[#f0ebe0] py-3 font-sans text-[11px] font-semibold tracking-[3px] text-[#070809] uppercase transition-all hover:opacity-85 active:scale-[0.98] disabled:animate-pulse disabled:opacity-70 disabled:active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A6E4F]"
         >
           {sealing ? "Sealing..." : "Seal This Decision"}
         </button>

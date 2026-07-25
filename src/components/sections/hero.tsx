@@ -22,7 +22,7 @@ export function HeroSection() {
           <div className="mb-12 flex w-fit flex-wrap items-center gap-1 rounded-full border border-border bg-secondary/40 p-1.5">
             <a
               href="#get-key"
-              className="rounded-full bg-primary px-6 py-3 text-[0.9375rem] font-semibold text-primary-foreground transition-opacity hover:opacity-85"
+              className="rounded-full bg-primary px-6 py-3 text-[0.9375rem] font-semibold text-primary-foreground transition-all hover:opacity-85 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
             >
               Log your first AI decision
             </a>
@@ -30,7 +30,7 @@ export function HeroSection() {
               href="https://youtu.be/i9gs1EUyb80?si=hKREBJz2GFf8yTkM"
               target="_blank"
               rel="noopener"
-              className="group flex items-center gap-2 rounded-full px-5 py-3 text-[0.9375rem] font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="group flex items-center gap-2 rounded-full px-5 py-3 text-[0.9375rem] font-medium text-muted-foreground transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:outline-none"
             >
               Watch 2-minute demo
               <span className="transition-transform group-hover:translate-x-1">→</span>

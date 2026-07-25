@@ -44,12 +44,12 @@ export function PdfShowcaseSection() {
           <a
             href="/sample-report.pdf"
             download="AIDAL_Sample_Compliance_Report.pdf"
-            className="mt-8 inline-block rounded-full bg-primary px-7 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-85"
+            className="mt-8 inline-block rounded-full bg-primary px-7 py-3 text-sm font-semibold text-primary-foreground transition-all hover:opacity-85 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
           >
             Download sample report →
           </a>
         </div>
-        <div className="overflow-hidden rounded-lg border border-border bg-background shadow-lg">
+        <div className="overflow-hidden rounded-lg border border-border bg-background shadow-[0_1px_2px_rgba(0,0,0,0.04),0_16px_40px_-8px_rgba(0,0,0,0.08)]">
           <div className="flex items-center gap-3 border-b border-border bg-secondary px-4 py-2.5">
             <div className="flex gap-1.5">
               <span className="size-2.5 rounded-full bg-border" />

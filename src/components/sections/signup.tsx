@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Lock, Zap, Check } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
 export function SignupSection() {
@@ -83,16 +84,22 @@ export function SignupSection() {
         <button
           onClick={getApiKey}
           disabled={loading}
-          className="mt-1 w-full rounded-full bg-primary py-3.5 text-[0.9375rem] font-semibold text-primary-foreground transition-opacity hover:opacity-85 disabled:opacity-45"
+          className="mt-1 w-full rounded-full bg-primary py-3.5 text-[0.9375rem] font-semibold text-primary-foreground transition-all hover:opacity-85 active:scale-[0.98] disabled:opacity-45 disabled:active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
         >
           {loading ? "Creating your key..." : "Get My API Key →"}
         </button>
         <div className="mt-2.5 flex flex-wrap items-center justify-center gap-2.5 text-[11px] text-muted-foreground">
-          <span>🔒 SHA-256 sealed</span>
+          <span className="inline-flex items-center gap-1">
+            <Lock className="size-3" strokeWidth={2} /> SHA-256 sealed
+          </span>
           <span className="text-border">·</span>
-          <span>⚡ Instant key</span>
+          <span className="inline-flex items-center gap-1">
+            <Zap className="size-3" strokeWidth={2} /> Instant key
+          </span>
           <span className="text-border">·</span>
-          <span>✓ No credit card</span>
+          <span className="inline-flex items-center gap-1">
+            <Check className="size-3" strokeWidth={2} /> No credit card
+          </span>
         </div>
         {error && (
           <div className="mt-2.5 rounded-md border border-destructive/20 bg-destructive/5 px-3.5 py-2.5 text-[0.9375rem] text-destructive">
@@ -116,7 +123,7 @@ export function SignupSection() {
                 setCopied(true);
                 setTimeout(() => setCopied(false), 2000);
               }}
-              className="mb-5 rounded-md border border-border px-4.5 py-1.5 text-xs transition-colors hover:border-primary"
+              className="mb-5 rounded-md border border-border px-4.5 py-1.5 text-xs transition-all hover:border-primary active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
             >
               {copied ? "Copied!" : "Copy key"}
             </button>

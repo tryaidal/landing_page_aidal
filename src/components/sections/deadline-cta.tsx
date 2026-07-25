@@ -23,7 +23,7 @@ export function DeadlineCtaSection() {
           </p>
           <a
             href="#get-key"
-            className="inline-block rounded-full bg-[#f0ebe0] px-7 py-3 text-sm font-semibold text-[#1a1a1a] transition-colors hover:bg-[#e8dfd0]"
+            className="inline-block rounded-full bg-[#f0ebe0] px-7 py-3 text-sm font-semibold text-[#1a1a1a] transition-all hover:bg-[#e8dfd0] active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f0ebe0]/60"
           >
             Get your API key now
           </a>
