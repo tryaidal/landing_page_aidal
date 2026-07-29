@@ -1,16 +1,15 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import { Check } from "lucide-react";
 import { jurisdictions } from "@/lib/content";
 import { SectionEyebrow } from "@/components/section-eyebrow";
 
-// EU AI Act carries the highest stakes (10-year retention, the nearest
-// binding high-risk deadline) — featured large, the way the reference
-// layout gives its most consequential item the big card.
-const featuredIndex = jurisdictions.findIndex((j) => j.flag === "eu");
-const featured = jurisdictions[featuredIndex];
-const rest = jurisdictions.filter((_, i) => i !== featuredIndex);
-
 export function JurisdictionsSection() {
+  const [activeIdx, setActiveIdx] = useState(0);
+  const active = jurisdictions[activeIdx];
+
   return (
     <section id="jurisdictions" className="bg-secondary px-6 py-32 md:px-16">
       <div className="mx-auto max-w-6xl">
@@ -25,65 +24,68 @@ export function JurisdictionsSection() {
           tells you exactly what your regulator requires.
         </p>
 
-        <div className="grid grid-cols-1 gap-4 lg:grid-cols-[1.3fr_1fr]">
-          {/* Featured card — the highest-stakes jurisdiction, given the room the
-              rest of the grid doesn't get. */}
-          <div className="rounded-xl border border-border border-l-4 border-l-accent bg-background p-8">
-            <div className="mb-5 flex items-center justify-between">
+        {/* Tabs — click a jurisdiction to swap the detail card below. */}
+        <div className="mb-4 flex flex-wrap gap-2">
+          {jurisdictions.map((j, i) => (
+            <button
+              key={j.name}
+              type="button"
+              onClick={() => setActiveIdx(i)}
+              aria-pressed={i === activeIdx}
+              className={`flex items-center gap-2 rounded-full border px-3.5 py-2 text-[13px] font-medium transition-all active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+                i === activeIdx
+                  ? "border-primary bg-primary text-primary-foreground"
+                  : "border-border bg-background text-muted-foreground hover:text-foreground"
+              }`}
+            >
               <Image
-                src={`https://flagcdn.com/w40/${featured.flag}.png`}
-                alt={featured.country}
+                src={`https://flagcdn.com/w40/${j.flag}.png`}
+                alt=""
+                width={20}
+                height={14}
+                style={{ height: "auto" }}
+                className="rounded-[2px]"
+                unoptimized
+              />
+              {j.name}
+            </button>
+          ))}
+        </div>
+
+        {/* The single card that swaps based on the active tab. */}
+        <div
+          key={active.name}
+          className="animate-in fade-in rounded-xl border border-border border-l-4 border-l-accent bg-background p-8 duration-200"
+        >
+          <div className="mb-5 flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <Image
+                src={`https://flagcdn.com/w40/${active.flag}.png`}
+                alt={active.country}
                 width={44}
                 height={30}
                 style={{ height: "auto" }}
                 className="rounded-sm shadow-sm"
                 unoptimized
               />
-              <span className="flex items-center gap-1.5 rounded-full bg-primary px-2.5 py-1 text-[10px] font-semibold tracking-wide text-primary-foreground uppercase">
-                <span className="size-1.5 rounded-full bg-accent" />
-                Active
-              </span>
+              <h3 className="text-xl font-semibold">{active.name}</h3>
             </div>
-            <h3 className="mb-4 text-xl font-semibold">{featured.name}</h3>
-            <ul className="mb-5 grid grid-cols-1 gap-1.5 sm:grid-cols-2">
-              {featured.items.map((item) => (
-                <li key={item} className="relative border-b border-border py-1.5 pl-5 text-[13px] text-muted-foreground">
-                  <Check className="absolute top-2 left-0 size-3 text-accent" strokeWidth={3} />
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <span className="meta-text inline-block rounded-full border border-border bg-secondary px-2.5 py-0.5 text-[10px] font-semibold tracking-wide text-muted-foreground uppercase">
-              {featured.retention}
+            <span className="flex items-center gap-1.5 rounded-full bg-primary px-2.5 py-1 text-[10px] font-semibold tracking-wide text-primary-foreground uppercase">
+              <span className="size-1.5 rounded-full bg-accent" />
+              Active
             </span>
           </div>
-
-          {/* The remaining jurisdictions as a compact, scrollable row — same
-              pattern the reference uses for its thumbnail programs row. */}
-          <div className="flex gap-3 overflow-x-auto pb-1 lg:flex-col lg:overflow-visible lg:pb-0">
-            {rest.map((j) => (
-              <div
-                key={j.name}
-                className="w-[220px] shrink-0 rounded-lg border border-border bg-background p-4 transition-colors hover:bg-secondary/40 lg:w-auto lg:flex-1"
-              >
-                <div className="mb-2.5 flex items-center justify-between">
-                  <Image
-                    src={`https://flagcdn.com/w40/${j.flag}.png`}
-                    alt={j.country}
-                    width={28}
-                    height={19}
-                    style={{ height: "auto" }}
-                    className="rounded-sm shadow-sm"
-                    unoptimized
-                  />
-                  <span className="text-[10px] font-medium tracking-wide text-muted-foreground uppercase">
-                    {j.retention}
-                  </span>
-                </div>
-                <h3 className="text-[13px] font-semibold">{j.name}</h3>
-              </div>
+          <ul className="mb-5 grid grid-cols-1 gap-2 sm:grid-cols-2">
+            {active.items.map((item) => (
+              <li key={item} className="relative border-b border-border py-2 pl-5 text-[13px] text-muted-foreground">
+                <Check className="absolute top-2.5 left-0 size-3 text-accent" strokeWidth={3} />
+                {item}
+              </li>
             ))}
-          </div>
+          </ul>
+          <span className="meta-text inline-block rounded-full border border-border bg-secondary px-2.5 py-0.5 text-[10px] font-semibold tracking-wide text-muted-foreground uppercase">
+            {active.retention}
+          </span>
         </div>
       </div>
     </section>
