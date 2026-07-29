@@ -1,7 +1,6 @@
 import { AnimatedNumber } from "@/components/animated-number";
 import { DemoWidget } from "@/components/demo-widget";
 import { HashPanel } from "@/components/hash-panel";
-import { RetroComputer } from "@/components/retro-computer";
 
 export function HeroSection() {
   return (
@@ -16,7 +15,7 @@ export function HeroSection() {
               <span className="size-1.5 shrink-0 rounded-full bg-accent" />
               The black box for AI decisions
             </div>
-            <h1 className="mb-6 text-4xl leading-[1.05] font-bold md:text-[64px]">
+            <h1 className="mb-6 text-[2.75rem] leading-[1.02] tracking-tight md:text-[72px]">
               Can you explain an AI decision <span className="font-accent text-accent">six months later</span>?
             </h1>
             <p className="mb-10 max-w-[440px] text-[1.0625rem] leading-relaxed text-muted-foreground">
@@ -40,25 +39,27 @@ export function HeroSection() {
                 <span className="transition-transform group-hover:translate-x-1">→</span>
               </a>
             </div>
+            {/* Bold stat row — big fat numbers doing the trust-signaling work
+                a testimonial can't yet, since there isn't one. */}
             <div className="flex w-fit divide-x divide-border overflow-hidden rounded-lg border border-border">
-              <div className="px-7 py-4.5">
-                <span className="mb-1 block font-mono text-4xl font-bold tracking-tight">
+              <div className="px-7 py-5">
+                <span className="mb-1 block font-mono text-5xl font-bold tracking-tight">
                   &lt;<AnimatedNumber value={1} suffix="s" />
                 </span>
                 <span className="meta-text text-[11px] tracking-[0.06em] text-muted-foreground uppercase">
                   Seal time
                 </span>
               </div>
-              <div className="px-7 py-4.5">
-                <span className="mb-1 block font-mono text-4xl font-bold tracking-tight">
+              <div className="px-7 py-5">
+                <span className="mb-1 block font-mono text-5xl font-bold tracking-tight">
                   <AnimatedNumber value={7} />
                 </span>
                 <span className="meta-text text-[11px] tracking-[0.06em] text-muted-foreground uppercase">
                   Jurisdictions
                 </span>
               </div>
-              <div className="px-7 py-4.5">
-                <span className="mb-1 block font-mono text-4xl font-bold tracking-tight">
+              <div className="px-7 py-5">
+                <span className="mb-1 block font-mono text-5xl font-bold tracking-tight">
                   <AnimatedNumber value={30} suffix="m" />
                 </span>
                 <span className="meta-text text-[11px] tracking-[0.06em] text-muted-foreground uppercase">
@@ -67,16 +68,18 @@ export function HeroSection() {
               </div>
             </div>
           </div>
-          <div className="relative flex min-h-[420px] items-center justify-center overflow-hidden border-t border-border bg-background md:min-h-[calc(100vh-104px)] md:border-t-0 md:border-l">
-            <RetroComputer>
+
+          {/* Clean, simplified presentation of the real product demo — no
+              monitor-bezel affectation, just a bordered panel in the same
+              palette as the rest of the page. */}
+          <div className="flex min-h-[420px] items-center justify-center border-t border-border bg-secondary/20 p-6 md:min-h-[calc(100vh-104px)] md:border-t-0 md:border-l md:p-10">
+            <div className="flex w-full max-w-md flex-col gap-4">
               <DemoWidget />
               <HashPanel />
-            </RetroComputer>
+            </div>
           </div>
         </div>
 
-        {/* Scroll cue, bottom-right of the framed card — cheap, real, matches
-            the reference's small "Scroll Down" indicator. */}
         <div className="pointer-events-none absolute right-6 bottom-4 hidden items-center gap-1.5 text-[11px] tracking-wide text-muted-foreground/70 md:flex">
           Scroll
           <span aria-hidden className="animate-bounce">↓</span>

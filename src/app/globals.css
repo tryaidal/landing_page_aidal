@@ -144,12 +144,12 @@
     @apply font-sans;
     scroll-behavior: smooth;
   }
-  /* Headings use the same General Sans family as body copy — tighter tracking
-     at display sizes only, no typeface switch. */
+  /* Headings use the same General Sans family as body copy — bold weight
+     and tight tracking at display sizes, no typeface switch. */
   h1, h2 {
     font-family: var(--font-general-sans);
-    font-weight: 600;
-    letter-spacing: -0.025em;
+    font-weight: 700;
+    letter-spacing: -0.03em;
   }
   /* One accented phrase per headline — same face, italic cut instead of a
      second typeface. General Sans ships a real italic, so this stays crisp. */
