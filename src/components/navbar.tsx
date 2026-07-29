@@ -25,8 +25,8 @@ export function Navbar() {
         <Link href="/" className="flex items-center rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
           <Image
             src="/aidal-logo.png?v=2"
-            alt="AIDAL."
-            width={1596}
+            alt="AIDAL"
+            width={1491}
             height={296}
             className="h-7 w-auto max-w-none shrink-0"
             priority
@@ -65,8 +65,8 @@ export function Navbar() {
               <SheetTitle>
                 <Image
                   src="/aidal-logo.png?v=2"
-                  alt="AIDAL."
-                  width={1596}
+                  alt="AIDAL"
+                  width={1491}
                   height={296}
                   className="h-6 w-auto max-w-none"
                 />
