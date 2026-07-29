@@ -1,158 +1,121 @@
-import { ArrowRight } from "lucide-react";
 import { AnimatedNumber } from "@/components/animated-number";
-import { AppWindow } from "@/components/app-window";
 import { DemoWidget } from "@/components/demo-widget";
 import { HashPanel } from "@/components/hash-panel";
-
-const stats = [
-  { value: <><span aria-hidden>&lt;</span><AnimatedNumber value={1} suffix="s" /></>, label: "Seal time" },
-  { value: <AnimatedNumber value={7} />, label: "Jurisdictions" },
-  { value: <AnimatedNumber value={30} suffix="m" />, label: "To integrate" },
-];
+import { RetroComputer } from "@/components/retro-computer";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-background">
-      {/* Canvas: dot grid + a faint indigo wash, both masked out before they
-          reach the fold so the page stays white-dominant. */}
-      <div className="pointer-events-none absolute inset-0 hero-glow" aria-hidden />
-      <div className="pointer-events-none absolute inset-0 dot-grid" aria-hidden />
-
-      <div className="relative mx-auto max-w-6xl px-5 pt-20 pb-16 md:px-8 md:pt-28">
-        <div className="mx-auto max-w-3xl text-center">
-          <a
-            href="#problem"
-            className="inline-flex items-center gap-2 rounded-full border border-hairline bg-background/80 py-1 pr-3 pl-1 text-[12.5px] text-muted-foreground shadow-xs backdrop-blur transition-colors hover:text-foreground"
-          >
-            <span className="rounded-full bg-accent-soft px-2 py-0.5 font-mono text-[10px] font-medium tracking-[0.08em] text-accent uppercase">
-              New
-            </span>
-            7 jurisdiction modules live
-            <ArrowRight className="size-3 opacity-60" strokeWidth={2} />
-          </a>
-
-          <h1 className="mt-7 text-[2.5rem] leading-[1.05] font-semibold text-balance md:text-[4rem]">
-            Can you explain an AI decision{" "}
-            <span className="font-accent">six months later</span>?
-          </h1>
-
-          <p className="mx-auto mt-6 max-w-[38rem] text-[1.0625rem] leading-relaxed text-muted-foreground text-balance">
-            AIDAL seals every AI decision the instant it happens — tamper-evident, human-readable,
-            and ready the moment a regulator asks why. Not a summary. The tape.
-          </p>
-
-          <div className="mt-9 flex flex-wrap items-center justify-center gap-2.5">
-            <a
-              href="#get-key"
-              className="inline-flex h-10 items-center gap-2 rounded-lg border border-foreground/10 bg-primary px-5 text-sm font-medium text-primary-foreground shadow-sm transition-all hover:bg-zinc-800 active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2"
-            >
-              Log your first AI decision
-              <ArrowRight className="size-3.5" strokeWidth={2} />
-            </a>
-            <a
-              href="https://youtu.be/i9gs1EUyb80?si=hKREBJz2GFf8yTkM"
-              target="_blank"
-              rel="noopener"
-              className="group inline-flex h-10 items-center gap-2 rounded-lg border border-border bg-muted px-5 text-sm font-medium text-foreground transition-all hover:bg-zinc-200/70 active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2"
-            >
-              Watch 2-minute demo
-              <span className="text-subtle transition-transform group-hover:translate-x-0.5">→</span>
-            </a>
-          </div>
-
-          <dl className="mx-auto mt-10 flex w-fit items-stretch divide-x divide-hairline overflow-hidden rounded-xl border border-hairline bg-background/80 shadow-xs backdrop-blur">
-            {stats.map((s) => (
-              <div key={s.label} className="px-6 py-3.5 text-center">
-                <dt className="sr-only">{s.label}</dt>
-                <dd>
-                  <span className="tabular block font-mono text-2xl font-medium tracking-tight text-foreground">
-                    {s.value}
-                  </span>
-                  <span className="mt-1 block font-mono text-[10px] tracking-[0.12em] text-subtle uppercase">
-                    {s.label}
-                  </span>
-                </dd>
+    <div className="px-4 pt-4 md:px-6 md:pt-6">
+      {/* Framed hero card: cream page background stays visible as a margin
+          around it, the way the reference frames its hero photo rather than
+          running it edge-to-edge. */}
+      <div className="relative overflow-hidden rounded-3xl border border-border bg-background">
+        <div className="mx-auto grid max-w-[1400px] grid-cols-1 md:grid-cols-2">
+          <div className="flex flex-col justify-center px-6 py-16 md:px-16 md:py-20">
+            <div className="mb-7 inline-flex w-fit items-center gap-2 rounded-full border border-border bg-secondary/60 px-4 py-1.5 text-[11px] font-medium tracking-[0.04em] text-muted-foreground">
+              <span className="size-1.5 shrink-0 rounded-full bg-accent" />
+              The black box for AI decisions
+            </div>
+            <h1 className="mb-6 text-4xl leading-[1.05] font-bold md:text-[64px]">
+              Can you explain an AI decision <span className="font-accent text-accent">six months later</span>?
+            </h1>
+            <p className="mb-10 max-w-[440px] text-[1.0625rem] leading-relaxed text-muted-foreground">
+              AIDAL seals every AI decision the instant it happens — tamper-evident, human-readable,
+              and ready the moment a regulator asks why. Not a summary. The tape.
+            </p>
+            <div className="mb-12 flex w-fit flex-wrap items-center gap-1 rounded-full border border-border bg-secondary/40 p-1.5">
+              <a
+                href="#get-key"
+                className="rounded-full bg-primary px-6 py-3 text-[0.9375rem] font-semibold text-primary-foreground transition-all hover:opacity-85 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              >
+                Log your first AI decision
+              </a>
+              <a
+                href="https://youtu.be/i9gs1EUyb80?si=hKREBJz2GFf8yTkM"
+                target="_blank"
+                rel="noopener"
+                className="group flex items-center gap-2 rounded-full px-5 py-3 text-[0.9375rem] font-medium text-muted-foreground transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:outline-none"
+              >
+                Watch 2-minute demo
+                <span className="transition-transform group-hover:translate-x-1">→</span>
+              </a>
+            </div>
+            <div className="flex w-fit divide-x divide-border overflow-hidden rounded-lg border border-border">
+              <div className="px-7 py-4.5">
+                <span className="mb-1 block font-mono text-4xl font-bold tracking-tight">
+                  &lt;<AnimatedNumber value={1} suffix="s" />
+                </span>
+                <span className="meta-text text-[11px] tracking-[0.06em] text-muted-foreground uppercase">
+                  Seal time
+                </span>
               </div>
-            ))}
-          </dl>
-        </div>
-
-        {/* Product asset: the live demo inside a bordered app frame, the way
-            Linear anchors every hero with one sharp piece of real product. */}
-        <div className="relative mx-auto mt-16 max-w-4xl">
-          <AppWindow
-            label="app.tryaidal.com/decisions/new"
-            action={
-              <span className="hidden font-mono text-[10px] tracking-[0.1em] text-subtle uppercase sm:inline">
-                Interactive
-              </span>
-            }
-          >
-            <div className="grid grid-cols-1 md:grid-cols-[1.15fr_1fr]">
-              <div className="flex min-h-[380px] flex-col">
-                <DemoWidget />
+              <div className="px-7 py-4.5">
+                <span className="mb-1 block font-mono text-4xl font-bold tracking-tight">
+                  <AnimatedNumber value={7} />
+                </span>
+                <span className="meta-text text-[11px] tracking-[0.06em] text-muted-foreground uppercase">
+                  Jurisdictions
+                </span>
               </div>
-              <div className="flex flex-col justify-between border-t border-hairline bg-card/40 md:border-t-0 md:border-l">
-                <div className="p-5">
-                  {/* Panel caption, not a document heading — kept out of the
-                      outline so the page's h2s stay the section titles. */}
-                  <p className="text-[13px] font-medium text-foreground">
-                    Every decision becomes a block
-                  </p>
-                  <p className="mt-1.5 text-[12.5px] leading-relaxed text-muted-foreground">
-                    Each record is hashed with SHA-256 and chained to the one before it. Change any
-                    field and every hash after it breaks — visibly, permanently.
-                  </p>
-                  <ul className="mt-4 space-y-2">
-                    {[
-                      ["01", "Decision logged via one API call"],
-                      ["02", "Hashed, chained, explanation generated"],
-                      ["03", "Anchored publicly every 24 hours"],
-                    ].map(([n, text]) => (
-                      <li key={n} className="flex gap-2.5 text-[12.5px] text-muted-foreground">
-                        <span className="font-mono text-[11px] text-subtle">{n}</span>
-                        {text}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <HashPanel />
+              <div className="px-7 py-4.5">
+                <span className="mb-1 block font-mono text-4xl font-bold tracking-tight">
+                  <AnimatedNumber value={30} suffix="m" />
+                </span>
+                <span className="meta-text text-[11px] tracking-[0.06em] text-muted-foreground uppercase">
+                  To integrate
+                </span>
               </div>
             </div>
-          </AppWindow>
+          </div>
+          <div className="relative flex min-h-[420px] items-center justify-center overflow-hidden border-t border-border bg-background md:min-h-[calc(100vh-104px)] md:border-t-0 md:border-l">
+            <RetroComputer>
+              <DemoWidget />
+              <HashPanel />
+            </RetroComputer>
+          </div>
+        </div>
+
+        {/* Scroll cue, bottom-right of the framed card — cheap, real, matches
+            the reference's small "Scroll Down" indicator. */}
+        <div className="pointer-events-none absolute right-6 bottom-4 hidden items-center gap-1.5 text-[11px] tracking-wide text-muted-foreground/70 md:flex">
+          Scroll
+          <span aria-hidden className="animate-bounce">↓</span>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 
 const storySteps = [
-  { num: "01", text: "AI makes a decision." },
-  { num: "02", text: "Someone asks “Why?”" },
-  { num: "03", text: "Nobody knows." },
-  { num: "04", text: "AIDAL already has the answer.", answer: true },
+  { num: "01", text: ["AI makes", "a decision."] },
+  { num: "02", text: ["Someone asks", "“Why?”"] },
+  { num: "03", text: ["Nobody", "knows."] },
+  { num: "04", text: ["AIDAL already", "has the answer."], answer: true },
 ];
 
 export function StoryFlowSection() {
   return (
-    <div className="border-y border-hairline bg-card">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 divide-y divide-hairline px-5 md:grid-cols-4 md:divide-x md:divide-y-0 md:px-8">
-        {storySteps.map((s) => (
-          <div key={s.num} className="px-5 py-8 first:pl-0 last:pr-0">
-            <span
-              className={`font-mono text-[11px] tracking-[0.12em] ${
-                s.answer ? "text-accent" : "text-subtle"
-              }`}
-            >
-              {s.num}
-            </span>
-            <p
-              className={`mt-2 text-[15px] leading-snug font-medium ${
-                s.answer ? "text-accent" : "text-foreground"
-              }`}
-            >
-              {s.text}
-            </p>
+    <div className="border-b border-border bg-background px-6 py-14 md:px-16">
+      <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-7">
+        {storySteps.map((s, i) => (
+          <div key={s.num} className="flex items-center gap-7">
+            {i > 0 && (
+              <span className={`text-xl ${storySteps[i].answer ? "text-accent" : "text-border"}`}>→</span>
+            )}
+            <div className="flex min-w-[140px] flex-col items-center text-center">
+              <span
+                className={`mb-2.5 font-mono text-[11px] tracking-[0.08em] ${
+                  s.answer ? "text-accent" : "text-muted-foreground"
+                }`}
+              >
+                {s.num}
+              </span>
+              <p className={`text-lg leading-tight font-bold ${s.answer ? "text-accent" : "text-foreground"}`}>
+                {s.text[0]}
+                <br />
+                {s.text[1]}
+              </p>
+            </div>
           </div>
         ))}
       </div>

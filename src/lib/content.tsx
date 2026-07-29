@@ -129,7 +129,7 @@ export const pricingTiers = [
     featured: false,
   },
   {
-    label: "Professional",
+    label: "Audit-Ready",
     price: "$2,500",
     unit: "per month · 500,000 decisions",
     integration: "→ Integrate in 30 minutes",
@@ -142,7 +142,7 @@ export const pricingTiers = [
     price: "Custom",
     unit: "unlimited · white-label · SOC2",
     integration: "→ Dedicated onboarding",
-    features: ["Everything in Professional", "White-label deployment", "On-premise option", "Custom jurisdiction modules", "Dedicated team"],
+    features: ["Everything in Audit-Ready", "White-label deployment", "On-premise option", "Custom jurisdiction modules", "Dedicated team"],
     cta: "Contact us",
     featured: false,
     href: "mailto:anthony@tryaidal.com?subject=AIDAL%20Enterprise",

@@ -1,5 +1,4 @@
-import { Check, Download } from "lucide-react";
-import { AppWindow } from "@/components/app-window";
+import { SectionEyebrow } from "@/components/section-eyebrow";
 
 const callouts = [
   {
@@ -16,33 +15,28 @@ const callouts = [
   },
 ];
 
-const summaryRows: [string, string][] = [
-  ["Reporting period", "Q1 2026"],
-  ["Decisions logged", "4,821"],
-];
-
 export function PdfShowcaseSection() {
   return (
-    <section className="mx-auto max-w-6xl px-5 py-24 md:px-8 md:py-28">
-      <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-20">
+    <section className="border-t border-border bg-secondary py-32">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-6 md:grid-cols-2 md:gap-24 md:px-16">
         <div>
-          <div className="section-label">Compliance report</div>
-          <h2 className="mt-5 mb-5 text-[2rem] leading-[1.1] font-semibold md:text-[2.5rem]">
-            The document your regulator <span className="text-subtle">actually wants.</span>
+          <SectionEyebrow n="07" label="Compliance report" />
+          <h2 className="mb-5 text-3xl font-bold md:text-4xl">
+            The document your regulator
+            <br />
+            <em className="text-muted-foreground not-italic">actually wants.</em>
           </h2>
-          <p className="mb-8 text-[15px] leading-relaxed text-muted-foreground">
+          <p className="mb-8 text-[1.0625rem] leading-relaxed text-muted-foreground">
             One click from your dashboard. A professional PDF with cryptographic proof, AI explanations, and a
             compliance certificate — ready to hand to MAS, OJK, or an EU auditor.
           </p>
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-6">
             {callouts.map((c) => (
-              <div key={c.title} className="flex items-start gap-3">
-                <span className="mt-0.5 flex size-4 shrink-0 items-center justify-center rounded-full bg-accent-soft">
-                  <Check className="size-2.5 text-accent" strokeWidth={3} />
-                </span>
+              <div key={c.title} className="flex items-start gap-4">
+                <span className="mt-0.5 w-[18px] shrink-0 text-sm font-bold text-accent">✓</span>
                 <div>
-                  <strong className="mb-0.5 block text-[14px] font-medium">{c.title}</strong>
-                  <p className="text-[13.5px] leading-relaxed text-muted-foreground">{c.body}</p>
+                  <strong className="mb-0.5 block text-[0.9375rem] font-semibold">{c.title}</strong>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{c.body}</p>
                 </div>
               </div>
             ))}
@@ -50,49 +44,56 @@ export function PdfShowcaseSection() {
           <a
             href="/sample-report.pdf"
             download="AIDAL_Sample_Compliance_Report.pdf"
-            className="mt-8 inline-flex h-10 items-center gap-2 rounded-lg border border-foreground/10 bg-primary px-5 text-sm font-medium text-primary-foreground shadow-xs transition-all hover:bg-zinc-800 active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2"
+            className="mt-8 inline-block rounded-full bg-primary px-7 py-3 text-sm font-semibold text-primary-foreground transition-all hover:opacity-85 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
           >
-            <Download className="size-3.5" strokeWidth={2} />
-            Download sample report
+            Download sample report →
           </a>
         </div>
-
-        <AppWindow label="aidal-production.up.railway.app/report/pdf">
-          <div className="p-6">
-            <div className="mb-5 flex items-center justify-between border-b border-hairline pb-4">
-              <strong className="text-[15px] font-semibold">AIDAL. Compliance Audit Report</strong>
-              <span className="font-mono text-[11px] text-subtle">May 2026</span>
+        <div className="overflow-hidden rounded-lg border border-border bg-background shadow-[0_1px_2px_rgba(0,0,0,0.04),0_16px_40px_-8px_rgba(0,0,0,0.08)]">
+          <div className="flex items-center gap-3 border-b border-border bg-secondary px-4 py-2.5">
+            <div className="flex gap-1.5">
+              <span className="size-2.5 rounded-full bg-border" />
+              <span className="size-2.5 rounded-full bg-border" />
+              <span className="size-2.5 rounded-full bg-border" />
             </div>
-            <div className="mb-5 text-[15px] font-medium">Acme Fintech Pte Ltd</div>
-            <div className="mb-2 font-mono text-[10px] font-medium tracking-[0.12em] text-subtle uppercase">
+            <span className="font-mono text-[11px] text-muted-foreground">
+              aidal-production.up.railway.app/report/pdf
+            </span>
+          </div>
+          <div className="p-6">
+            <div className="mb-3.5 flex items-center justify-between border-b border-border pb-3.5 text-xs text-foreground/70">
+              <strong className="text-[15px] font-bold text-foreground">AIDAL. Compliance Audit Report</strong>
+              <span className="text-[11px] text-muted-foreground">May 2026</span>
+            </div>
+            <div className="mb-5 text-[15px] font-semibold">Acme Fintech Pte Ltd</div>
+            <div className="mb-2.5 text-[9px] font-medium tracking-[0.12em] text-muted-foreground uppercase">
               Executive summary
             </div>
-            {summaryRows.map(([k, v]) => (
-              <div
-                key={k}
-                className="flex justify-between border-b border-hairline py-2 text-[13px] text-muted-foreground"
-              >
+            {[
+              ["Reporting period", "Q1 2026"],
+              ["Decisions logged", "4,821"],
+            ].map(([k, v]) => (
+              <div key={k} className="flex justify-between border-b border-secondary py-1.5 text-[12.5px] text-foreground/70">
                 <span>{k}</span>
-                <span className="tabular font-mono text-foreground">{v}</span>
+                <span>{v}</span>
               </div>
             ))}
-            <div className="flex justify-between border-b border-hairline py-2 text-[13px] text-muted-foreground">
+            <div className="flex justify-between border-b border-secondary py-1.5 text-[12.5px] text-foreground/70">
               <span>Rules-passed rate</span>
-              <span className="tabular font-mono font-medium text-success">98.7%</span>
+              <span className="font-semibold text-accent">98.7%</span>
             </div>
-            <div className="flex justify-between py-2 text-[13px] text-muted-foreground">
+            <div className="flex justify-between py-1.5 text-[12.5px] text-foreground/70">
               <span>Jurisdiction</span>
-              <span className="font-mono text-foreground">SG — MAS FEAT</span>
+              <span>SG — MAS FEAT</span>
             </div>
-            <div className="mt-5 flex items-center justify-between rounded-lg border border-success/20 bg-success/8 px-4 py-3">
-              <span className="flex items-center gap-2 text-[12.5px] font-medium text-success">
-                <Check className="size-3.5" strokeWidth={3} />
-                Chain integrity verified
+            <div className="mt-5 flex items-center justify-between rounded bg-primary px-4 py-3 text-[11px] font-semibold tracking-wide text-primary-foreground">
+              <span>✓ Chain integrity verified</span>
+              <span className="font-mono text-[10px] font-normal text-primary-foreground/55">
+                CERT-2026-A7F3C9B2
               </span>
-              <span className="font-mono text-[10.5px] text-success/70">CERT-2026-A7F3C9B2</span>
             </div>
           </div>
-        </AppWindow>
+        </div>
       </div>
     </section>
   );

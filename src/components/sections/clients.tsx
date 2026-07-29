@@ -1,4 +1,5 @@
 import { Building2, ShieldCheck, Users } from "lucide-react";
+import { SectionEyebrow } from "@/components/section-eyebrow";
 
 const clients = [
   {
@@ -20,22 +21,26 @@ const clients = [
 
 export function ClientsSection() {
   return (
-    <section className="mx-auto max-w-6xl px-5 py-24 md:px-8 md:py-28">
-      <div className="section-label">Who uses AIDAL</div>
-      <h2 className="mt-5 mb-12 text-[2rem] leading-[1.1] font-semibold md:text-[2.5rem]">
-        Built for anyone <span className="text-subtle">using AI to make decisions.</span>
+    <section className="mx-auto max-w-6xl px-6 py-32 md:px-16">
+      <SectionEyebrow n="05" label="Who uses AIDAL" />
+      <h2 className="mb-12 text-3xl font-bold md:text-4xl">
+        Built for anyone
+        <br />
+        <em className="text-muted-foreground not-italic">using AI to make decisions.</em>
       </h2>
-      <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
-        {clients.map((c) => (
+      <div className="grid grid-cols-1 overflow-hidden rounded-lg border border-border md:grid-cols-3">
+        {clients.map((c, i) => (
           <div
             key={c.title}
-            className="rounded-xl border border-hairline bg-background p-7 shadow-xs transition-shadow hover:shadow-md"
+            className={`bg-background p-9 transition-colors hover:bg-secondary/40 ${
+              i !== clients.length - 1 ? "border-b border-border md:border-r md:border-b-0" : ""
+            }`}
           >
-            <div className="mb-5 flex size-9 items-center justify-center rounded-lg border border-hairline bg-card">
-              <c.icon className="size-4 text-accent" strokeWidth={1.75} />
+            <div className="mb-6 flex size-9 items-center justify-center rounded-lg border border-border">
+              <c.icon className="size-4" strokeWidth={1.5} />
             </div>
-            <h3 className="mb-2 text-[15px] font-medium">{c.title}</h3>
-            <p className="text-[14px] leading-relaxed text-muted-foreground">{c.body}</p>
+            <h3 className="mb-2 text-[1.0625rem] font-semibold">{c.title}</h3>
+            <p className="text-[0.9375rem] leading-relaxed text-muted-foreground">{c.body}</p>
           </div>
         ))}
       </div>

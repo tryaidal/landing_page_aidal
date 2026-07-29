@@ -1,5 +1,4 @@
-import { AppWindow } from "@/components/app-window";
-import { CodeBlock, Cmt, Fn, Key, Pun, Str } from "@/components/code-block";
+import { SectionEyebrow } from "@/components/section-eyebrow";
 
 const steps = [
   {
@@ -8,10 +7,8 @@ const steps = [
     body: (
       <>
         Sign up with your company name and email. Your unique{" "}
-        <code className="rounded-md border border-hairline bg-muted px-1.5 py-0.5 font-mono text-[12px] text-foreground">
-          aidal_live_xxxx
-        </code>{" "}
-        key is generated in seconds.
+        <code className="rounded bg-secondary px-1.5 py-0.5 font-mono text-[13px]">aidal_live_xxxx</code> key
+        is generated in seconds.
       </>
     ),
   },
@@ -32,127 +29,98 @@ const steps = [
   },
 ];
 
-const requestLines = [
-  <Cmt key="c1"># After your model runs</Cmt>,
-  <>
-    <Fn>requests.post</Fn>
-    <Pun>(</Pun>
-  </>,
-  <>
-    {"  "}
-    <Str>&quot;https://aidal-production.up.railway.app/decision&quot;</Str>
-    <Pun>,</Pun>
-  </>,
-  <>
-    {"  "}headers<Pun>={"{"}</Pun>
-    <Key>&quot;Authorization&quot;</Key>
-    <Pun>:</Pun> <Str>&quot;Bearer aidal_live_xxxx&quot;</Str>
-    <Pun>{"},"}</Pun>
-  </>,
-  <>
-    {"  "}json<Pun>={"{"}</Pun>
-  </>,
-  <>
-    {"    "}
-    <Key>&quot;decision_type&quot;</Key>
-    <Pun>:</Pun> <Str>&quot;loan_approval&quot;</Str>
-    <Pun>,</Pun>
-  </>,
-  <>
-    {"    "}
-    <Key>&quot;model_used&quot;</Key>
-    <Pun>:</Pun> <Str>&quot;xgboost-v2&quot;</Str>
-    <Pun>,</Pun>
-  </>,
-  <>
-    {"    "}
-    <Key>&quot;input_features&quot;</Key>
-    <Pun>:</Pun> applicant_data<Pun>,</Pun>
-  </>,
-  <>
-    {"    "}
-    <Key>&quot;output&quot;</Key>
-    <Pun>:</Pun> model_result<Pun>,</Pun>
-  </>,
-  <>
-    {"    "}
-    <Key>&quot;jurisdiction&quot;</Key>
-    <Pun>:</Pun> <Str>&quot;SG&quot;</Str>
-  </>,
-  <>
-    {"  "}
-    <Pun>{"})"}</Pun>
-  </>,
-];
-
-const responseLines = [
-  <Cmt key="c2"># Response in &lt;1 second</Cmt>,
-  <Pun key="open">{"{"}</Pun>,
-  <>
-    {"  "}
-    <Key>&quot;audit_id&quot;</Key>
-    <Pun>:</Pun> <Str>&quot;aud_a7f3c9b2…&quot;</Str>
-    <Pun>,</Pun>
-  </>,
-  <>
-    {"  "}
-    <Key>&quot;hash&quot;</Key>
-    <Pun>:</Pun> <Str>&quot;sha256:3e8b2a91…&quot;</Str>
-    <Pun>,</Pun>
-  </>,
-  <>
-    {"  "}
-    <Key>&quot;explanation&quot;</Key>
-    <Pun>:</Pun> <Str>&quot;Loan approved…&quot;</Str>
-    <Pun>,</Pun>
-  </>,
-  <>
-    {"  "}
-    <Key>&quot;rules_check&quot;</Key>
-    <Pun>: {"{"}</Pun>
-    <Key>&quot;status&quot;</Key>
-    <Pun>:</Pun> <Str>&quot;PASSED&quot;</Str>
-    <Pun>{"}"}</Pun>
-  </>,
-  <Pun key="close">{"}"}</Pun>,
-];
-
 export function HowItWorksSection() {
   return (
-    <section id="how" className="mx-auto max-w-6xl px-5 py-24 md:px-8 md:py-28">
-      <div className="section-label">How it works</div>
-      <h2 className="mt-5 mb-12 text-[2rem] leading-[1.1] font-semibold md:text-[2.5rem]">
-        One line of code. <span className="text-subtle">The tape starts here.</span>
+    <section id="how" className="mx-auto max-w-6xl px-6 py-32 md:px-16">
+      <SectionEyebrow n="02" label="How it works" />
+      <h2 className="mb-12 text-3xl font-bold md:text-4xl">
+        One line of code.
+        <br />
+        <em className="text-muted-foreground not-italic">The tape starts here.</em>
       </h2>
-      <div className="grid grid-cols-1 items-start gap-12 md:grid-cols-2 md:gap-16">
-        <ol>
+      <div className="grid grid-cols-1 items-start gap-12 md:grid-cols-2 md:gap-20">
+        <div>
           {steps.map((s, i) => (
-            <li
+            <div
               key={s.n}
-              className={`flex gap-4 ${i !== steps.length - 1 ? "mb-7 border-b border-hairline pb-7" : ""}`}
+              className={`flex gap-5 pb-9 ${i !== steps.length - 1 ? "mb-9 border-b border-border" : ""}`}
             >
-              <span className="tabular mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-md border border-hairline bg-card font-mono text-[11px] font-medium text-muted-foreground">
+              <span className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-primary text-[11px] font-semibold text-primary-foreground">
                 {s.n}
               </span>
               <div>
-                <h3 className="mb-1.5 text-[15px] font-medium">{s.title}</h3>
-                <p className="text-[14px] leading-relaxed text-muted-foreground">{s.body}</p>
+                <h3 className="mb-1 text-[1.0625rem] font-semibold">{s.title}</h3>
+                <p className="text-[0.9375rem] leading-relaxed text-muted-foreground">{s.body}</p>
               </div>
-            </li>
-          ))}
-        </ol>
-        <div className="md:sticky md:top-24">
-          <AppWindow
-            label="decision.py"
-            action={
-              <span className="pill border-accent/20 bg-accent-soft text-accent">Python</span>
-            }
-          >
-            <CodeBlock lines={requestLines} />
-            <div className="border-t border-hairline bg-card/50">
-              <CodeBlock lines={responseLines} className="bg-transparent" />
             </div>
-          </AppWindow>
+          ))}
+        </div>
+        <div className="sticky top-30">
+          <div className="flex items-center justify-between rounded-t-lg border border-b-0 border-[#1E2A3A] bg-[#1A2030] px-7 py-2.5">
+            <span className="font-mono text-[10px] tracking-wide text-[#6B7A8D]">Python · One API call</span>
+            <div className="flex gap-1.5">
+              <span className="size-2 rounded-full bg-[#1E2A3A]" />
+              <span className="size-2 rounded-full bg-[#1E2A3A]" />
+              <span className="size-2 rounded-full bg-[#1E2A3A]" />
+            </div>
+          </div>
+          <div className="overflow-x-auto rounded-b-lg border border-[#1E2A3A] bg-[#0D1117] p-7 font-mono text-[11.5px] leading-loose text-[#6B7A8D]">
+            <div># After your model runs</div>
+            <div>
+              <span className="text-[#F1F5F9]">requests.post</span>(
+            </div>
+            <div className="pl-4">
+              <span className="text-[#FCA5A5]">&quot;https://aidal-production.up.railway.app/decision&quot;</span>,
+            </div>
+            <div className="pl-4">
+              headers={"{"}<span className="text-[#7DD3FC]">&quot;Authorization&quot;</span>:{" "}
+              <span className="text-[#FCA5A5]">&quot;Bearer aidal_live_xxxx&quot;</span>{"}"},
+            </div>
+            <div className="pl-4">json={"{"}</div>
+            <div className="pl-8">
+              <span className="text-[#7DD3FC]">&quot;decision_type&quot;</span>:{" "}
+              <span className="text-[#86EFAC]">&quot;loan_approval&quot;</span>,
+            </div>
+            <div className="pl-8">
+              <span className="text-[#7DD3FC]">&quot;model_used&quot;</span>:{" "}
+              <span className="text-[#86EFAC]">&quot;xgboost-v2&quot;</span>,
+            </div>
+            <div className="pl-8">
+              <span className="text-[#7DD3FC]">&quot;input_features&quot;</span>:{" "}
+              <span className="text-[#86EFAC]">applicant_data</span>,
+            </div>
+            <div className="pl-8">
+              <span className="text-[#7DD3FC]">&quot;output&quot;</span>:{" "}
+              <span className="text-[#86EFAC]">model_result</span>,
+            </div>
+            <div className="pl-8">
+              <span className="text-[#7DD3FC]">&quot;jurisdiction&quot;</span>:{" "}
+              <span className="text-[#86EFAC]">&quot;SG&quot;</span>
+            </div>
+            <div className="pl-4">{"}"})</div>
+            <div>&nbsp;</div>
+            <div># Response in &lt;1 second</div>
+            <div>{"{"}</div>
+            <div className="pl-4">
+              <span className="text-[#7DD3FC]">&quot;audit_id&quot;</span>:{" "}
+              <span className="text-[#FCA5A5]">&quot;aud_a7f3c9b2...&quot;</span>,
+            </div>
+            <div className="pl-4">
+              <span className="text-[#7DD3FC]">&quot;hash&quot;</span>:{" "}
+              <span className="text-[#FCA5A5]">&quot;sha256:3e8b2a91...&quot;</span>,
+            </div>
+            <div className="pl-4">
+              <span className="text-[#7DD3FC]">&quot;explanation&quot;</span>:{" "}
+              <span className="text-[#FCA5A5]">&quot;Loan approved...&quot;</span>,
+            </div>
+            <div className="pl-4">
+              <span className="text-[#7DD3FC]">&quot;rules_check&quot;</span>: {"{"}
+              <span className="text-[#7DD3FC]">&quot;status&quot;</span>:{" "}
+              <span className="text-[#86EFAC]">&quot;PASSED&quot;</span>
+              {"}"}
+            </div>
+            <div>{"}"}</div>
+          </div>
         </div>
       </div>
     </section>

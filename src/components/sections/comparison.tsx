@@ -1,51 +1,42 @@
-import { Check } from "lucide-react";
 import { comparisonRows } from "@/lib/content";
+import { SectionEyebrow } from "@/components/section-eyebrow";
 
 export function ComparisonSection() {
   return (
-    <section className="mx-auto max-w-6xl px-5 py-24 md:px-8 md:py-28">
-      <div className="section-label">Why AIDAL</div>
-      <h2 className="mt-5 mb-12 text-[2rem] leading-[1.1] font-semibold md:text-[2.5rem]">
-        Cheaper, faster, <span className="text-subtle">already built.</span>
+    <section className="mx-auto max-w-6xl px-6 py-32 md:px-16">
+      <SectionEyebrow n="04" label="Why AIDAL" />
+      <h2 className="mb-12 text-3xl font-bold md:text-4xl">
+        Cheaper, faster,
+        <br />
+        <em className="text-muted-foreground not-italic">already built.</em>
       </h2>
-      <div className="overflow-x-auto rounded-xl border border-hairline shadow-xs">
-        <table className="w-full min-w-[560px] border-collapse text-left">
-          <thead>
-            <tr className="border-b border-hairline bg-card">
-              <th className="w-[38%] px-6 py-3 font-mono text-[10px] font-medium tracking-[0.12em] text-subtle uppercase">
-                Capability
-              </th>
-              <th className="px-6 py-3">
-                <span className="inline-flex items-center rounded-md bg-primary px-2 py-0.5 font-mono text-[10px] font-medium tracking-[0.08em] text-primary-foreground uppercase">
-                  AIDAL
-                </span>
-              </th>
-              <th className="px-6 py-3 font-mono text-[10px] font-medium tracking-[0.12em] text-subtle uppercase">
-                Build in-house
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {comparisonRows.map((row) => (
-              <tr
-                key={row.label}
-                className="border-b border-hairline bg-background transition-colors last:border-b-0 hover:bg-card"
-              >
-                <td className="px-6 py-4 text-[13.5px] font-medium text-foreground">{row.label}</td>
-                <td className="px-6 py-4 text-[13.5px] text-foreground">
-                  <span className="flex items-center gap-2">
-                    <Check className="size-3.5 shrink-0 text-accent" strokeWidth={2.5} />
-                    {row.aidal}
-                  </span>
-                </td>
-                <td className="px-6 py-4 text-[13.5px] text-muted-foreground">
-                  {row.alt}
-                  <span className="mt-0.5 block text-[11.5px] text-subtle">{row.altSub}</span>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <div className="overflow-x-auto rounded-lg border border-border">
+        <div className="grid min-w-[520px] grid-cols-[1.5fr_1fr_1fr] items-center gap-0 border-b border-border bg-background px-7 py-3.5">
+          <span />
+          <span className="inline-block w-fit rounded bg-primary px-3 py-1 text-[11px] font-semibold tracking-wide text-primary-foreground uppercase">
+            AIDAL
+          </span>
+          <span className="meta-text text-[11px] font-medium tracking-wide text-muted-foreground uppercase">
+            Build in-house
+          </span>
+        </div>
+        {comparisonRows.map((row, i) => (
+          <div
+            key={row.label}
+            className={`grid min-w-[520px] grid-cols-[1.5fr_1fr_1fr] items-center gap-0 border-b border-border px-7 py-5 last:border-b-0 ${
+              i % 2 === 0 ? "bg-background" : "bg-secondary"
+            }`}
+          >
+            <span className="text-sm font-medium">{row.label}</span>
+            <span className="flex items-center gap-1.5 text-sm font-medium before:text-[11px] before:font-extrabold before:text-accent before:content-['●']">
+              {row.aidal}
+            </span>
+            <span className="text-sm text-muted-foreground">
+              {row.alt}
+              <small className="mt-0.5 block text-[11px] text-muted-foreground/70">{row.altSub}</small>
+            </span>
+          </div>
+        ))}
       </div>
     </section>
   );
