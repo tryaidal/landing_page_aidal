@@ -37,8 +37,8 @@ export function HeroSection() {
           </h1>
 
           <p className="mx-auto mt-6 max-w-[38rem] text-[1.0625rem] leading-relaxed text-muted-foreground text-balance">
-            AIDAL automatically creates tamper-evident evidence, human-readable explanations, and
-            compliance-ready reports for every AI decision.
+            AIDAL seals every AI decision the instant it happens — tamper-evident, human-readable,
+            and ready the moment a regulator asks why. Not a summary. The tape.
           </p>
 
           <div className="mt-9 flex flex-wrap items-center justify-center gap-2.5">

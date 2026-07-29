@@ -22,7 +22,7 @@ const steps = [
   },
   {
     n: 3,
-    title: "We lock it and check compliance",
+    title: "We seal it and check compliance",
     body: "AIDAL cryptographically hashes the decision, chains it, generates a plain-English explanation, and checks it against your regulator's requirements.",
   },
   {
@@ -122,7 +122,7 @@ export function HowItWorksSection() {
     <section id="how" className="mx-auto max-w-6xl px-5 py-24 md:px-8 md:py-28">
       <div className="section-label">How it works</div>
       <h2 className="mt-5 mb-12 text-[2rem] leading-[1.1] font-semibold md:text-[2.5rem]">
-        One line of code. <span className="text-subtle">Full compliance.</span>
+        One line of code. <span className="text-subtle">The tape starts here.</span>
       </h2>
       <div className="grid grid-cols-1 items-start gap-12 md:grid-cols-2 md:gap-16">
         <ol>
