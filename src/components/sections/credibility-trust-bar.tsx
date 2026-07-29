@@ -13,15 +13,14 @@ const trustItems = [
 
 export function CredibilityBar() {
   return (
-    <div className="border-y border-border bg-secondary px-6 py-2.5 md:px-16">
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-6">
-        <span className="meta-text text-[11px] font-medium tracking-[0.06em] text-muted-foreground uppercase">
+    <div className="border-b border-hairline bg-background px-5 py-4 md:px-8">
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-6 gap-y-3">
+        <span className="font-mono text-[10px] font-medium tracking-[0.14em] text-subtle uppercase">
           Built for
         </span>
-        <div className="flex flex-wrap items-center gap-4">
-          {builtFor.map((item, i) => (
-            <span key={item} className="flex items-center gap-4 text-xs font-medium text-foreground/80">
-              {i > 0 && <span className="text-border">·</span>}
+        <div className="flex flex-wrap items-center gap-2">
+          {builtFor.map((item) => (
+            <span key={item} className="pill">
               {item}
             </span>
           ))}
@@ -33,18 +32,15 @@ export function CredibilityBar() {
 
 export function TrustBar() {
   return (
-    <div className="flex items-center gap-8 overflow-x-auto border-b border-border bg-background px-6 py-4 md:px-16">
-      {trustItems.map((item, i) => (
-        <div key={item.label} className="flex items-center gap-6 whitespace-nowrap">
-          {i > 0 && <span className="h-3.5 w-px bg-border" />}
-          <div className="flex items-center gap-2">
-            <div className="flex size-5.5 shrink-0 items-center justify-center rounded-full border border-accent/30 bg-accent/10">
-              <item.icon className="size-2.5 text-accent" strokeWidth={2} />
-            </div>
-            <span className="text-xs text-foreground/70">{item.label}</span>
+    <div className="border-b border-hairline bg-background">
+      <div className="mx-auto flex max-w-6xl items-center gap-6 overflow-x-auto px-5 py-3.5 md:px-8">
+        {trustItems.map((item) => (
+          <div key={item.label} className="flex shrink-0 items-center gap-2 whitespace-nowrap">
+            <item.icon className="size-3.5 text-accent" strokeWidth={2} />
+            <span className="text-[12.5px] text-muted-foreground">{item.label}</span>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }

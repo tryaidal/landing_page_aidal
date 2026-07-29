@@ -4,18 +4,13 @@ import { jurisdictions } from "@/lib/content";
 
 export function JurisdictionsSection() {
   return (
-    <section id="jurisdictions" className="bg-secondary px-6 py-32 md:px-16">
+    <section id="jurisdictions" className="border-y border-hairline bg-card px-5 py-24 md:px-8 md:py-28">
       <div className="mx-auto max-w-6xl">
-        <div className="meta-text mb-10 flex items-center gap-3 text-[11px] font-medium tracking-[0.1em] text-muted-foreground uppercase">
-          <span className="block h-px w-5 bg-border" />
-          Jurisdiction modules
-        </div>
-        <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-          Built for your
-          <br />
-          <em className="text-muted-foreground not-italic">specific regulator.</em>
+        <div className="section-label">Jurisdiction modules</div>
+        <h2 className="mt-5 mb-4 text-[2rem] leading-[1.1] font-semibold md:text-[2.5rem]">
+          Built for your <span className="text-subtle">specific regulator.</span>
         </h2>
-        <p className="mb-10 max-w-[500px] text-sm leading-relaxed text-muted-foreground">
+        <p className="mb-10 max-w-[34rem] text-[15px] leading-relaxed text-muted-foreground">
           Pass your jurisdiction code and AIDAL automatically checks compliance, flags missing fields, and
           tells you exactly what your regulator requires.
         </p>
@@ -23,38 +18,33 @@ export function JurisdictionsSection() {
           {jurisdictions.map((j) => (
             <div
               key={j.name}
-              className="rounded-lg border border-border border-l-3 border-l-accent bg-background p-7 transition-colors hover:bg-secondary/40"
+              className="flex flex-col rounded-xl border border-hairline bg-background p-5 shadow-xs transition-shadow hover:shadow-md"
             >
-              <div className="mb-3.5 flex items-center justify-between">
+              <div className="mb-4 flex items-center justify-between">
                 <Image
                   src={`https://flagcdn.com/w40/${j.flag}.png`}
                   alt={j.country}
-                  width={36}
-                  height={24}
+                  width={28}
+                  height={19}
                   style={{ height: "auto" }}
-                  className="rounded-sm shadow-sm"
+                  className="rounded-[3px] ring-1 ring-black/10"
                   unoptimized
                 />
-                <span className="flex items-center gap-1.5 rounded-full bg-primary px-2 py-0.5 text-[10px] font-semibold tracking-wide text-primary-foreground uppercase">
-                  <span className="size-1.5 rounded-full bg-accent" />
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-success/20 bg-success/8 px-2 py-0.5 font-mono text-[10px] font-medium tracking-[0.08em] text-success uppercase">
+                  <span className="size-1.5 rounded-full bg-success" />
                   Active
                 </span>
               </div>
-              <h3 className="mb-2.5 text-[0.9375rem] font-semibold">{j.name}</h3>
-              <ul className="mb-3.5">
+              <h3 className="mb-3 text-[14px] font-medium">{j.name}</h3>
+              <ul className="mb-4 flex-1 space-y-1.5">
                 {j.items.map((item) => (
-                  <li
-                    key={item}
-                    className="relative border-b border-border py-1 pl-5 text-[12.5px] text-muted-foreground last:border-b-0"
-                  >
-                    <Check className="absolute left-0 top-1 size-3 text-accent" strokeWidth={3} />
+                  <li key={item} className="flex gap-2 text-[12.5px] leading-snug text-muted-foreground">
+                    <Check className="mt-0.5 size-3 shrink-0 text-accent" strokeWidth={2.5} />
                     {item}
                   </li>
                 ))}
               </ul>
-              <span className="meta-text inline-block rounded-full border border-border bg-secondary px-2.5 py-0.5 text-[10px] font-semibold tracking-wide text-muted-foreground uppercase">
-                {j.retention}
-              </span>
+              <span className="pill w-fit">{j.retention}</span>
             </div>
           ))}
         </div>

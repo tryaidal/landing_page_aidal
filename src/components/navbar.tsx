@@ -20,22 +20,31 @@ const links = [
 
 export function Navbar() {
   return (
-    <div className="sticky top-4 z-50 px-4 md:px-8">
-      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between rounded-full border border-white/10 bg-primary px-4 text-primary-foreground shadow-[0_1px_2px_rgba(0,0,0,0.06),0_8px_24px_rgba(0,0,0,0.12)] md:px-6">
-        <Link href="/" className="flex items-center rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+    // Full-bleed sticky glass bar (Linear's own header pattern): translucent
+    // white, 12px blur, single hairline underneath — no floating pill, no
+    // drop shadow, so it disappears into the page until content scrolls under.
+    <header className="glass-nav sticky top-0 z-50">
+      <nav className="mx-auto flex h-14 max-w-6xl items-center justify-between px-5 md:px-8">
+        <Link
+          href="/"
+          className="flex items-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
+        >
           <Image
-            src="/aidal-logo.png"
+            src="/aidal-logo-black.png"
             alt="AIDAL."
             width={1304}
             height={364}
-            className="h-7 w-auto max-w-none shrink-0"
+            className="h-[22px] w-auto max-w-none shrink-0"
             priority
           />
         </Link>
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden items-center gap-1 md:flex">
           {links.map((l) => (
             <li key={l.href}>
-              <Link000 href={l.href} className="text-sm text-primary-foreground/70 hover:text-primary-foreground focus-visible:text-primary-foreground focus-visible:outline-none">
+              <Link000
+                href={l.href}
+                className="rounded-md px-3 py-1.5 text-[13px] font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:bg-muted focus-visible:text-foreground focus-visible:outline-none"
+              >
                 {l.label}
               </Link000>
             </li>
@@ -45,34 +54,34 @@ export function Navbar() {
               href="https://aidal-dashboard.vercel.app"
               target="_blank"
               rel="noopener"
-              className="text-sm font-medium text-primary-foreground/60 transition-colors hover:text-primary-foreground/90 focus-visible:text-primary-foreground/90 focus-visible:outline-none"
+              className="rounded-md px-3 py-1.5 text-[13px] font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:bg-muted focus-visible:text-foreground focus-visible:outline-none"
             >
               Dashboard
             </a>
           </li>
-          <li>
+          <li className="ml-2">
             <a
               href="#get-key"
-              className="rounded-full bg-accent px-5 py-2 text-[13px] font-semibold text-accent-foreground transition-all hover:opacity-85 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-foreground/40"
+              className="inline-flex h-8 items-center rounded-lg border border-foreground/10 bg-primary px-3.5 text-[13px] font-medium text-primary-foreground shadow-xs transition-all hover:bg-zinc-800 active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2"
             >
-              Get API Key
+              Get API key
             </a>
           </li>
         </ul>
         <Sheet>
           <SheetContent side="right" className="w-4/5 gap-0 bg-background sm:max-w-xs">
-            <SheetHeader className="border-b border-border pb-4">
+            <SheetHeader className="border-b border-hairline pb-4">
               <SheetTitle>
                 <Image
-                  src="/aidal-logo.png"
+                  src="/aidal-logo-black.png"
                   alt="AIDAL."
                   width={1304}
                   height={364}
-                  className="h-6 w-auto max-w-none"
+                  className="h-5 w-auto max-w-none"
                 />
               </SheetTitle>
             </SheetHeader>
-            <ul className="flex flex-col gap-1 px-4 py-2">
+            <ul className="flex flex-col gap-0.5 px-3 py-3">
               {links.map((l) => (
                 <li key={l.href}>
                   <SheetClose
@@ -80,7 +89,7 @@ export function Navbar() {
                     render={
                       <a
                         href={l.href}
-                        className="block rounded-md px-2 py-3 text-base text-foreground/80 transition-colors hover:bg-muted hover:text-foreground active:bg-muted"
+                        className="block rounded-lg px-3 py-2.5 text-[15px] font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground active:bg-muted"
                       />
                     }
                   >
@@ -96,7 +105,7 @@ export function Navbar() {
                       href="https://aidal-dashboard.vercel.app"
                       target="_blank"
                       rel="noopener"
-                      className="block rounded-md px-2 py-3 text-base text-foreground/80 transition-colors hover:bg-muted hover:text-foreground active:bg-muted"
+                      className="block rounded-lg px-3 py-2.5 text-[15px] font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground active:bg-muted"
                     />
                   }
                 >
@@ -104,17 +113,17 @@ export function Navbar() {
                 </SheetClose>
               </li>
             </ul>
-            <div className="mt-auto border-t border-border p-4">
+            <div className="mt-auto border-t border-hairline p-4">
               <SheetClose
                 nativeButton={false}
                 render={
                   <a
                     href="#get-key"
-                    className="flex w-full items-center justify-center rounded-full bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground transition-all hover:opacity-85 active:scale-[0.97]"
+                    className="flex w-full items-center justify-center rounded-lg bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-all hover:bg-zinc-800 active:translate-y-px"
                   />
                 }
               >
-                Get API Key
+                Get API key
               </SheetClose>
             </div>
           </SheetContent>
@@ -123,14 +132,14 @@ export function Navbar() {
               <button
                 type="button"
                 aria-label="Open menu"
-                className="flex size-9 shrink-0 items-center justify-center rounded-full text-primary-foreground transition-colors hover:bg-white/10 active:scale-[0.95] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent md:hidden"
+                className="flex size-8 shrink-0 items-center justify-center rounded-lg border border-hairline bg-background text-foreground shadow-xs transition-colors hover:bg-muted active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 md:hidden"
               />
             }
           >
-            <MenuIcon className="size-5" />
+            <MenuIcon className="size-4" />
           </SheetTrigger>
         </Sheet>
       </nav>
-    </div>
+    </header>
   );
 }

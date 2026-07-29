@@ -33,45 +33,43 @@ const cells = [
 
 export function ProblemSection() {
   return (
-    <section id="problem" className="mx-auto max-w-6xl px-6 py-32 md:px-16">
-      <div className="meta-text mb-10 flex items-center gap-3 text-[11px] font-medium tracking-[0.1em] text-muted-foreground uppercase">
-        <span className="block h-px w-5 bg-border" />
-        The problem
-      </div>
-      <h2 className="mb-10 text-3xl font-bold md:text-4xl">
-        AI makes millions of decisions.
-        <br />
-        <em className="text-muted-foreground not-italic">None of them are provable.</em>
+    <section id="problem" className="mx-auto max-w-6xl px-5 py-24 md:px-8 md:py-28">
+      <div className="section-label">The problem</div>
+      <h2 className="mt-5 mb-10 max-w-2xl text-[2rem] leading-[1.1] font-semibold md:text-[2.5rem]">
+        AI makes millions of decisions.{" "}
+        <span className="text-subtle">None of them are provable.</span>
       </h2>
-      <div className="grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
         {cells.map((cell) => (
           <div
             key={cell.badge}
             className={
               cell.dark
-                ? "bg-primary p-10 text-primary-foreground"
-                : "bg-secondary p-10 transition-colors hover:bg-secondary/70"
+                ? "rounded-xl border border-foreground/10 bg-primary p-7 text-primary-foreground shadow-md"
+                : "rounded-xl border border-hairline bg-background p-7 shadow-xs transition-colors hover:bg-card"
             }
           >
             <div className="mb-5 flex items-center justify-between">
               <span
                 className={
                   cell.dark
-                    ? "inline-block rounded-full bg-background px-2.5 py-0.5 text-[10px] font-semibold text-foreground"
-                    : "inline-block rounded-full bg-primary px-2.5 py-0.5 text-[10px] font-semibold text-primary-foreground"
+                    ? "inline-flex items-center rounded-full border border-white/15 bg-white/10 px-2.5 py-0.5 font-mono text-[10px] font-medium tracking-[0.08em] text-white/90 uppercase"
+                    : "inline-flex items-center rounded-full border border-border/60 bg-muted px-2.5 py-0.5 font-mono text-[10px] font-medium tracking-[0.08em] text-muted-foreground uppercase"
                 }
               >
                 {cell.badge}
               </span>
               <cell.icon
-                className={cell.dark ? "size-4 text-primary-foreground/50" : "size-4 text-muted-foreground/60"}
-                strokeWidth={1.5}
+                className={cell.dark ? "size-4 text-white/50" : "size-4 text-accent"}
+                strokeWidth={1.75}
               />
             </div>
-            <h3 className="mb-2 text-[1.0625rem] font-semibold">{cell.title}</h3>
+            <h3 className="mb-2 text-[15px] font-medium">{cell.title}</h3>
             <p
               className={
-                cell.dark ? "text-[0.9375rem] leading-relaxed text-primary-foreground/60" : "text-[0.9375rem] leading-relaxed text-muted-foreground"
+                cell.dark
+                  ? "text-[14px] leading-relaxed text-white/65"
+                  : "text-[14px] leading-relaxed text-muted-foreground"
               }
             >
               {cell.body}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Check, ShieldCheck } from "lucide-react";
 
 const jurLabel: Record<string, string> = { SG: "MAS FEAT", ID: "OJK", EU: "EU AI Act", UAE: "VARA" };
 const HEX = "0123456789abcdef";
@@ -9,6 +10,12 @@ function rndHex(n: number) {
   for (let i = 0; i < n; i++) s += HEX[Math.floor(Math.random() * 16)];
   return s;
 }
+
+const fieldClass =
+  "w-full appearance-none rounded-lg border border-border bg-background px-3 py-2 font-mono text-[12.5px] text-foreground transition-colors outline-none hover:border-zinc-300 focus-visible:border-accent focus-visible:ring-3 focus-visible:ring-accent/15";
+
+const labelClass =
+  "mb-1.5 block font-mono text-[10px] font-medium tracking-[0.12em] text-subtle uppercase";
 
 export function DemoWidget() {
   const [type, setType] = useState("loan_approval");
@@ -24,104 +31,104 @@ export function DemoWidget() {
       setResult({
         id: "aud_" + rndHex(8),
         hash: "sha256:" + rndHex(32),
-        comp: "RULES CHECK PASSED — " + (jurLabel[jur] ?? jur),
+        comp: "Rules check passed — " + (jurLabel[jur] ?? jur),
       });
     }, 800);
   }
 
   return (
-    <div className="flex min-h-0 flex-1 flex-col border border-white/8 bg-[#0a0c10] text-[#f0ebe0]">
-      <div className="flex items-center gap-2 border-b border-white/6 bg-white/[0.015] px-3.5 py-2">
-        <div className="size-1.5 shrink-0 animate-pulse rounded-full bg-[#0A6E4F]" />
-        <span className="font-sans text-[9px] tracking-[4px] text-[#3A3A38] uppercase">
-          Live Audit Chain Demo
+    <div className="flex min-h-0 flex-1 flex-col">
+      <div className="flex items-center justify-between border-b border-hairline px-4 py-2.5">
+        <span className="font-mono text-[10px] font-medium tracking-[0.12em] text-subtle uppercase">
+          Live audit chain demo
+        </span>
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-success/20 bg-success/8 px-2 py-0.5 font-mono text-[10px] font-medium text-success">
+          <span className="size-1.5 animate-pulse rounded-full bg-success" />
+          Live
         </span>
       </div>
+
       <div className="min-h-0 flex-1 overflow-y-auto">
-      <div className="space-y-3.5 px-3.5 pt-3.5">
-        <div>
-          <label className="mb-1 block font-sans text-[9px] tracking-[2px] text-[#4A4A48] uppercase">
-            Decision type
-          </label>
-          <select
-            value={type}
-            onChange={(e) => setType(e.target.value)}
-            className="w-full border-0 border-b border-white/12 bg-white/3 py-1.5 font-mono text-xs text-[#f0ebe0] outline-none"
+        <div className="space-y-3.5 p-4">
+          <div>
+            <label className={labelClass}>Decision type</label>
+            <select value={type} onChange={(e) => setType(e.target.value)} className={fieldClass}>
+              <option value="loan_approval">Loan Approval</option>
+              <option value="fraud_detection">Fraud Detection</option>
+              <option value="credit_scoring">Credit Scoring</option>
+              <option value="insurance_underwriting">Insurance Underwriting</option>
+            </select>
+          </div>
+          <div>
+            <label className={labelClass}>Jurisdiction</label>
+            <select value={jur} onChange={(e) => setJur(e.target.value)} className={fieldClass}>
+              <option value="SG">SG (MAS FEAT)</option>
+              <option value="ID">ID (OJK)</option>
+              <option value="EU">EU (EU AI Act)</option>
+              <option value="UAE">UAE (VARA)</option>
+            </select>
+          </div>
+          <button
+            onClick={runDemo}
+            disabled={sealing}
+            className="mt-1 flex w-full items-center justify-center gap-2 rounded-lg border border-foreground/10 bg-primary py-2.5 text-[13px] font-medium text-primary-foreground shadow-xs transition-all hover:bg-zinc-800 active:translate-y-px disabled:opacity-60 disabled:active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2"
           >
-            <option value="loan_approval">Loan Approval</option>
-            <option value="fraud_detection">Fraud Detection</option>
-            <option value="credit_scoring">Credit Scoring</option>
-            <option value="insurance_underwriting">Insurance Underwriting</option>
-          </select>
+            {sealing ? (
+              <>
+                <span className="size-1.5 animate-pulse rounded-full bg-primary-foreground" />
+                Sealing…
+              </>
+            ) : (
+              <>
+                <ShieldCheck className="size-3.5" strokeWidth={2} />
+                Seal this decision
+              </>
+            )}
+          </button>
         </div>
-        <div>
-          <label className="mb-1 block font-sans text-[9px] tracking-[2px] text-[#4A4A48] uppercase">
-            Jurisdiction
-          </label>
-          <select
-            value={jur}
-            onChange={(e) => setJur(e.target.value)}
-            className="w-full border-0 border-b border-white/12 bg-white/3 py-1.5 font-mono text-xs text-[#f0ebe0] outline-none"
-          >
-            <option value="SG">SG (MAS FEAT)</option>
-            <option value="ID">ID (OJK)</option>
-            <option value="EU">EU (EU AI Act)</option>
-            <option value="UAE">UAE (VARA)</option>
-          </select>
-        </div>
-        <button
-          onClick={runDemo}
-          disabled={sealing}
-          className="mt-1 mb-3.5 w-full bg-[#f0ebe0] py-3 font-sans text-[11px] font-semibold tracking-[3px] text-[#070809] uppercase transition-all hover:opacity-85 active:scale-[0.98] disabled:animate-pulse disabled:opacity-70 disabled:active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A6E4F]"
-        >
-          {sealing ? "Sealing..." : "Seal This Decision"}
-        </button>
-      </div>
-      {result && (
-        <div className="border-t border-white/6 font-mono">
-          <div className="flex items-center gap-2 border-b border-[#0A6E4F]/12 px-3.5 py-1.5">
-            <div className="h-px flex-1 bg-[#0A6E4F]/25" />
-            <span className="text-[9px] tracking-[3px] text-[#0A6E4F] uppercase">Sealed</span>
-            <div className="h-px flex-1 bg-[#0A6E4F]/25" />
+
+        {result && (
+          <div className="border-t border-hairline bg-card/60">
+            <div className="flex items-center justify-between px-4 pt-3 pb-2">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-success/20 bg-success/8 px-2 py-0.5 font-mono text-[10px] font-medium tracking-tight text-success">
+                <Check className="size-2.5" strokeWidth={3} />
+                Sealed
+              </span>
+              <span className="font-mono text-[10px] tracking-[0.1em] text-subtle uppercase">
+                Demo only
+              </span>
+            </div>
+
+            {[
+              ["Audit ID", result.id],
+              ["Hash", result.hash],
+            ].map(([k, v]) => (
+              <div key={k} className="flex items-start gap-3 border-t border-hairline px-4 py-2">
+                <span className="min-w-[64px] shrink-0 pt-px font-mono text-[10px] tracking-[0.1em] text-subtle uppercase">
+                  {k}
+                </span>
+                <span className="font-mono text-[11.5px] break-all text-foreground">{v}</span>
+              </div>
+            ))}
+
+            <div className="border-t border-hairline px-4 py-2.5">
+              <div className="flex items-center gap-2 rounded-lg border border-success/20 bg-success/6 px-3 py-2">
+                <Check className="size-3 shrink-0 text-success" strokeWidth={3} />
+                <span className="font-mono text-[11px] text-success">{result.comp}</span>
+              </div>
+            </div>
+
+            <div className="border-t border-hairline px-4 py-2.5 text-[11.5px] leading-relaxed text-muted-foreground">
+              This decision is permanently sealed. No one — including AIDAL — can alter it.{" "}
+              <a
+                href="#get-key"
+                className="text-foreground underline underline-offset-2 transition-colors hover:text-accent"
+              >
+                Get a real audit ID →
+              </a>
+            </div>
           </div>
-          <div className="px-3.5 pt-1.5 pb-0.5 font-mono text-[9px] tracking-[1.5px] text-[#cc4444]/55 uppercase">
-            DEMO — for illustration only
-          </div>
-          <div className="flex items-start gap-2.5 border-b border-white/4 px-3.5 py-1.5">
-            <span className="min-w-[72px] shrink-0 pt-0.5 font-sans text-[9px] tracking-[1.5px] text-[#4A4A48] uppercase">
-              Audit ID
-            </span>
-            <span className="text-[11px] break-all text-[#f0ebe0]">{result.id}</span>
-          </div>
-          <div className="flex items-start gap-2.5 border-b border-white/4 px-3.5 py-1.5">
-            <span className="min-w-[72px] shrink-0 pt-0.5 font-sans text-[9px] tracking-[1.5px] text-[#4A4A48] uppercase">
-              Hash
-            </span>
-            <span className="text-[11px] break-all text-[#f0ebe0]">
-              <span className="text-[#0A6E4F]/65">SHA-256 · </span>
-              {result.hash}
-            </span>
-          </div>
-          <div className="flex items-center gap-2.5 border-b border-white/4 px-3.5 py-2">
-            <span className="text-base text-[#0A6E4F]">✓</span>
-            <span className="text-[9px] font-semibold tracking-[4px] text-[#0A6E4F] uppercase">
-              Cryptographically Sealed
-            </span>
-          </div>
-          <div className="mx-3.5 my-2 flex items-center gap-2 rounded border border-[#0A6E4F]/20 bg-[#0A6E4F]/8 px-3 py-1.5">
-            <span className="text-[8px] text-[#0A6E4F]">●</span>
-            <span className="text-[11px] text-[#0A6E4F]">{result.comp}</span>
-          </div>
-          <div className="border-b border-white/4 px-3.5 py-2 font-sans text-[10px] leading-relaxed text-[#4A4A48] italic">
-            This decision is permanently sealed. No one — including AIDAL — can alter it.
-          </div>
-          <div className="px-3.5 py-2">
-            <a href="#get-key" className="font-sans text-[10px] text-[#f0ebe0]/35 italic underline hover:text-[#f0ebe0]/65">
-              Want a real verifiable audit ID? Sign up for a free API key →
-            </a>
-          </div>
-        </div>
-      )}
+        )}
       </div>
     </div>
   );
