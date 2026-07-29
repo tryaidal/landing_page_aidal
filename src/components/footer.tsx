@@ -39,7 +39,7 @@ export function Footer() {
       <div className="relative mx-auto max-w-6xl">
         <div className="mb-14 flex items-center justify-between">
           <Image
-            src="/aidal-logo.png"
+            src="/aidal-logo.png?v=2"
             alt="AIDAL."
             width={1596}
             height={296}

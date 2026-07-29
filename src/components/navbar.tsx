@@ -24,7 +24,7 @@ export function Navbar() {
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between rounded-full border border-white/10 bg-primary px-4 text-primary-foreground shadow-[0_1px_2px_rgba(0,0,0,0.06),0_8px_24px_rgba(0,0,0,0.12)] md:px-6">
         <Link href="/" className="flex items-center rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
           <Image
-            src="/aidal-logo.png"
+            src="/aidal-logo.png?v=2"
             alt="AIDAL."
             width={1596}
             height={296}
@@ -64,7 +64,7 @@ export function Navbar() {
             <SheetHeader className="border-b border-border pb-4">
               <SheetTitle>
                 <Image
-                  src="/aidal-logo.png"
+                  src="/aidal-logo.png?v=2"
                   alt="AIDAL."
                   width={1596}
                   height={296}

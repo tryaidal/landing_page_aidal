@@ -1,15 +1,9 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
 import { Check } from "lucide-react";
 import { jurisdictions } from "@/lib/content";
 import { SectionEyebrow } from "@/components/section-eyebrow";
 
 export function JurisdictionsSection() {
-  const [activeIdx, setActiveIdx] = useState(0);
-  const active = jurisdictions[activeIdx];
-
   return (
     <section id="jurisdictions" className="bg-secondary px-6 py-32 md:px-16">
       <div className="mx-auto max-w-6xl">
@@ -23,69 +17,44 @@ export function JurisdictionsSection() {
           Pass your jurisdiction code and AIDAL automatically checks compliance, flags missing fields, and
           tells you exactly what your regulator requires.
         </p>
-
-        {/* Tabs — click a jurisdiction to swap the detail card below. */}
-        <div className="mb-4 flex flex-wrap gap-2">
-          {jurisdictions.map((j, i) => (
-            <button
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {jurisdictions.map((j) => (
+            <div
               key={j.name}
-              type="button"
-              onClick={() => setActiveIdx(i)}
-              aria-pressed={i === activeIdx}
-              className={`flex items-center gap-2 rounded-full border px-3.5 py-2 text-[13px] font-medium transition-all active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
-                i === activeIdx
-                  ? "border-primary bg-primary text-primary-foreground"
-                  : "border-border bg-background text-muted-foreground hover:text-foreground"
-              }`}
+              className="rounded-lg border border-border border-l-3 border-l-accent bg-background p-7 transition-colors hover:bg-secondary/40"
             >
-              <Image
-                src={`https://flagcdn.com/w40/${j.flag}.png`}
-                alt=""
-                width={20}
-                height={14}
-                style={{ height: "auto" }}
-                className="rounded-[2px]"
-                unoptimized
-              />
-              {j.name}
-            </button>
-          ))}
-        </div>
-
-        {/* The single card that swaps based on the active tab. */}
-        <div
-          key={active.name}
-          className="animate-in fade-in rounded-xl border border-border border-l-4 border-l-accent bg-background p-8 duration-200"
-        >
-          <div className="mb-5 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <Image
-                src={`https://flagcdn.com/w40/${active.flag}.png`}
-                alt={active.country}
-                width={44}
-                height={30}
-                style={{ height: "auto" }}
-                className="rounded-sm shadow-sm"
-                unoptimized
-              />
-              <h3 className="text-xl font-semibold">{active.name}</h3>
+              <div className="mb-3.5 flex items-center justify-between">
+                <Image
+                  src={`https://flagcdn.com/w40/${j.flag}.png`}
+                  alt={j.country}
+                  width={36}
+                  height={24}
+                  style={{ height: "auto" }}
+                  className="rounded-sm shadow-sm"
+                  unoptimized
+                />
+                <span className="flex items-center gap-1.5 rounded-full bg-primary px-2 py-0.5 text-[10px] font-semibold tracking-wide text-primary-foreground uppercase">
+                  <span className="size-1.5 rounded-full bg-accent" />
+                  Active
+                </span>
+              </div>
+              <h3 className="mb-2.5 text-[0.9375rem] font-semibold">{j.name}</h3>
+              <ul className="mb-3.5">
+                {j.items.map((item) => (
+                  <li
+                    key={item}
+                    className="relative border-b border-border py-1 pl-5 text-[12.5px] text-muted-foreground last:border-b-0"
+                  >
+                    <Check className="absolute top-1 left-0 size-3 text-accent" strokeWidth={3} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <span className="meta-text inline-block rounded-full border border-border bg-secondary px-2.5 py-0.5 text-[10px] font-semibold tracking-wide text-muted-foreground uppercase">
+                {j.retention}
+              </span>
             </div>
-            <span className="flex items-center gap-1.5 rounded-full bg-primary px-2.5 py-1 text-[10px] font-semibold tracking-wide text-primary-foreground uppercase">
-              <span className="size-1.5 rounded-full bg-accent" />
-              Active
-            </span>
-          </div>
-          <ul className="mb-5 grid grid-cols-1 gap-2 sm:grid-cols-2">
-            {active.items.map((item) => (
-              <li key={item} className="relative border-b border-border py-2 pl-5 text-[13px] text-muted-foreground">
-                <Check className="absolute top-2.5 left-0 size-3 text-accent" strokeWidth={3} />
-                {item}
-              </li>
-            ))}
-          </ul>
-          <span className="meta-text inline-block rounded-full border border-border bg-secondary px-2.5 py-0.5 text-[10px] font-semibold tracking-wide text-muted-foreground uppercase">
-            {active.retention}
-          </span>
+          ))}
         </div>
       </div>
     </section>
