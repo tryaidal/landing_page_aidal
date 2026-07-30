@@ -26,8 +26,8 @@ export function Navbar() {
           <Image
             src="/aidal-logo.png?v=2"
             alt="AIDAL"
-            width={1491}
-            height={296}
+            width={705}
+            height={140}
             className="h-7 w-auto max-w-none shrink-0"
             priority
           />
@@ -66,8 +66,8 @@ export function Navbar() {
                 <Image
                   src="/aidal-logo.png?v=2"
                   alt="AIDAL"
-                  width={1491}
-                  height={296}
+                  width={705}
+                  height={140}
                   className="h-6 w-auto max-w-none"
                 />
               </SheetTitle>

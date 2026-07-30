@@ -25,10 +25,22 @@ export function AnimatedNumber({
 
   useEffect(() => {
     if (!inView) return;
+    // NumberFlow re-measures layout on every value change to animate the
+    // digit flip — onUpdate can fire ~60x/sec during the count-up, which
+    // was showing up as forced-reflow time in real-world performance audits.
+    // Throttling to ~12 updates/sec keeps the animation visually smooth
+    // (still ~12 distinct digit steps over the 1s duration) while cutting
+    // the remeasure frequency by roughly 5x.
+    let lastUpdate = 0;
     const controls = animate(count, value, {
       duration: 1,
       ease: "easeOut",
-      onUpdate: (latest) => setDisplay(Math.round(latest)),
+      onUpdate: (latest) => {
+        const now = performance.now();
+        if (now - lastUpdate < 80 && Math.round(latest) !== value) return;
+        lastUpdate = now;
+        setDisplay(Math.round(latest));
+      },
     });
     return () => controls.stop();
   }, [inView, value, count]);
