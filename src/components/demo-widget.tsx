@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const jurLabel: Record<string, string> = { SG: "MAS FEAT", ID: "OJK", EU: "EU AI Act", UAE: "VARA" };
+const jurLabel: Record<string, string> = { SG: "MAS FEAT", ID: "OJK", EU: "EU AI Act", UAE: "DFSA" };
 const HEX = "0123456789abcdef";
 function rndHex(n: number) {
   let s = "";
@@ -66,7 +66,7 @@ export function DemoWidget() {
               <option value="SG">SG (MAS FEAT)</option>
               <option value="ID">ID (OJK)</option>
               <option value="EU">EU (EU AI Act)</option>
-              <option value="UAE">UAE (VARA)</option>
+              <option value="UAE">UAE (DFSA)</option>
             </select>
           </div>
           <button

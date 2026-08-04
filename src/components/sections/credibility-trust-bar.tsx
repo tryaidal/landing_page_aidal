@@ -1,13 +1,13 @@
 import { Fingerprint, Globe2, Clock, FileText, CheckCircle2, Search } from "lucide-react";
 
-const builtFor = ["EU AI Act", "MAS FEAT", "OJK AI Governance (2025)", "VARA UAE", "FCA UK", "CFPB US", "APRA AU"];
+const builtFor = ["EU AI Act", "MAS FEAT", "OJK AI Governance (2025)", "DFSA UAE", "FCA UK", "CFPB US", "APRA AU"];
 
 const trustItems = [
   { icon: Fingerprint, label: "SHA-256 tamper-proof chain" },
   { icon: Globe2, label: "7 jurisdiction modules live" },
   { icon: Clock, label: "30-minute integration" },
   { icon: FileText, label: "AI explanation per decision" },
-  { icon: CheckCircle2, label: "Free during beta" },
+  { icon: CheckCircle2, label: "No-cost sandbox tier" },
   { icon: Search, label: "Regulation text mapped article by article" },
 ];
 

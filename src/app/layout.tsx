@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://tryaidal.com"),
   title: "AIDAL. — AI Decision Accountability Layer",
   description:
-    "Tamper-proof audit trail for every AI decision. One API call. Cryptographically sealed, regulator-ready, publicly verifiable. Built for EU AI Act, MAS FEAT, OJK, VARA requirements. Free to start.",
+    "Tamper-proof audit trail for every AI decision. One API call. Cryptographically sealed, regulator-ready, publicly verifiable. Built for EU AI Act, MAS FEAT, OJK, DFSA requirements. No-cost sandbox tier.",
   icons: { icon: "/logo.png" },
 };
 

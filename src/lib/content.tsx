@@ -38,12 +38,12 @@ export const jurisdictions = [
   {
     flag: "ae",
     country: "UAE",
-    name: "VARA UAE",
+    name: "DFSA UAE",
     items: [
-      "AI risk classification",
-      "Crypto & fintech audit trail",
+      "DIFC AI & data protection consultation (2026)",
+      "Autonomous Systems Officer duties proposed",
       "AI governance documentation",
-      "VARA 2024 framework mapped",
+      "Not VARA — DFSA covers lending/AI, not crypto",
     ],
     retention: "7 yr retention",
   },
@@ -52,10 +52,10 @@ export const jurisdictions = [
     country: "United Kingdom",
     name: "FCA United Kingdom",
     items: [
-      "SYSC 3 explainability required",
       "SM&CR senior manager accountability",
-      "PS 22/3 bias & fairness testing",
-      "SR 11/9 model documentation",
+      "No new AI rules — existing frameworks apply",
+      "Consumer Duty (PS22/9) outcomes testing",
+      "SYSC governance & controls requirements",
     ],
     retention: "7 yr retention",
   },
@@ -89,10 +89,10 @@ export const legalCards = [
   { title: "OJK AI Governance — Indonesia", tag: "Guidance mapped (2025)", body: "Aligns with OJK's 2025 AI governance guidance for banks (non-binding) and POJK No. 11/POJK.03/2022's binding IT-governance and retention rules." },
   { title: "MAS FEAT — Singapore", tag: "Principles mapped", body: "Checks Fairness, Ethics, Accountability, and Transparency on every financial AI decision." },
   { title: "EU AI Act — Articles 9–17", tag: "Articles mapped", body: "Article 12 automatic logging and Article 13 plain-language explanations on every decision." },
-  { title: "VARA 2024 — UAE", tag: "Framework mapped", body: "VARA 2024 AI & Technology Governance Framework requirements fully implemented." },
-  { title: "FCA — United Kingdom", tag: "Framework mapped", body: "SYSC 3 explainability, SM&CR senior-manager accountability, PS 22/3 bias testing, and SR 11/9 model documentation implemented." },
-  { title: "CFPB — United States", tag: "Circulars mapped", body: "ECOA Regulation B, CFPB Circulars 2022-03 & 2023-03, and Fair Credit Reporting Act adverse-action requirements implemented." },
-  { title: "APRA — Australia", tag: "Standards mapped", body: "CPS 234 information security, CPS 230 operational risk, and ASIC's 2026 AI Governance Letter requirements implemented." },
+  { title: "DFSA — UAE", tag: "Consultation mapped", body: "Tracks DIFC Consultation Paper No. 3 of 2026 on AI and data protection. Not VARA — VARA regulates virtual assets/crypto specifically, not general financial-services AI use." },
+  { title: "FCA — United Kingdom", tag: "Framework mapped", body: "SM&CR senior-manager accountability and Consumer Duty (PS22/9) implemented. The FCA has stated it does not plan AI-specific rules, relying on these existing frameworks instead." },
+  { title: "CFPB — United States", tag: "Circulars mapped", body: "ECOA Regulation B, CFPB Circular 2023-03, and Fair Credit Reporting Act adverse-action requirements implemented." },
+  { title: "APRA — Australia", tag: "Standards mapped", body: "CPS 234 information security, CPS 230 operational risk, and APRA's April 2026 AI Governance Letter requirements implemented." },
 ];
 
 export const faqItems = [

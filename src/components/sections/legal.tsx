@@ -16,8 +16,9 @@ export function LegalSection() {
           </h2>
           <p className="mb-4 text-muted-foreground">
             Every jurisdiction module was built by reading the regulation documents directly — OJK&apos;s 2025 AI
-            governance guidance, MAS FEAT Principles, EU AI Act Articles 9–17, VARA 2024, FCA SYSC 3/SM&amp;CR,
-            CFPB Circulars &amp; ECOA Reg B, and APRA CPS 234/230 — across all seven jurisdictions we support.
+            governance guidance, MAS FEAT Principles, EU AI Act Articles 9–17, DFSA&apos;s DIFC AI consultation,
+            FCA SM&amp;CR/Consumer Duty, CFPB Circular 2023-03 &amp; ECOA Reg B, and APRA CPS 234/230 — across
+            all seven jurisdictions we support.
           </p>
           <p className="text-muted-foreground">
             Are you a compliance lawyer with MAS FEAT or OJK expertise?{" "}
