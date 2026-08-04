@@ -53,7 +53,7 @@ export function PricingSection() {
               ))}
             </ul>
             <a
-              href={tier.href ?? "#get-key"}
+              href={tier.href ?? `/?plan=${tier.slug}#get-key`}
               className={cn(
                 "block rounded-full py-2.5 text-center text-sm font-semibold transition-all active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent",
                 tier.featured

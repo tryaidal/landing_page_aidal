@@ -111,6 +111,7 @@ export const faqItems = [
 
 export const pricingTiers = [
   {
+    slug: "sandbox",
     label: "Sandbox",
     price: "$0",
     unit: "forever · 1,000 decisions/month",
@@ -120,15 +121,17 @@ export const pricingTiers = [
     featured: false,
   },
   {
+    slug: "starter",
     label: "Starter",
     price: "$299",
     unit: "per month · 50,000 decisions",
     integration: "→ Integrate in 30 minutes",
-    features: ["Everything in Free", "Compliance dashboard", "Human oversight tracking", "Model registry", "Email support"],
+    features: ["Everything in Sandbox", "Compliance dashboard", "Human oversight tracking", "Model registry", "Email support"],
     cta: "Get started",
     featured: false,
   },
   {
+    slug: "audit-ready",
     label: "Audit-Ready",
     price: "$2,500",
     unit: "per month · 500,000 decisions",
@@ -138,6 +141,7 @@ export const pricingTiers = [
     featured: true,
   },
   {
+    slug: "enterprise",
     label: "Enterprise",
     price: "Custom",
     unit: "unlimited · white-label · SOC2",

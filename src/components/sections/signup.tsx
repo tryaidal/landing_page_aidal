@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Lock, Zap, Check } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { pricingTiers } from "@/lib/content";
 
 export function SignupSection() {
   const [name, setName] = useState("");
@@ -11,6 +12,19 @@ export function SignupSection() {
   const [error, setError] = useState("");
   const [apiKey, setApiKey] = useState("");
   const [copied, setCopied] = useState(false);
+  // Which pricing card they clicked through from, e.g. "?plan=starter" — read
+  // client-side (not next/navigation's useSearchParams) so this stays a plain
+  // static export with no Suspense-boundary requirement. Not enforced, just
+  // recorded, so a real "I want Starter" intent doesn't look identical to a
+  // $0 sandbox signup on the backend.
+  const [interestedPlan, setInterestedPlan] = useState<string | null>(null);
+
+  useEffect(() => {
+    const plan = new URLSearchParams(window.location.search).get("plan");
+    if (plan) setInterestedPlan(plan);
+  }, []);
+
+  const matchedTier = pricingTiers.find((t) => t.slug === interestedPlan);
 
   async function getApiKey() {
     setError("");
@@ -27,7 +41,7 @@ export function SignupSection() {
       const res = await fetch("https://aidal-production.up.railway.app/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email }),
+        body: JSON.stringify({ name, email, interested_plan: interestedPlan }),
       });
       const data = await res.json();
       if (res.status === 409) {
@@ -41,7 +55,12 @@ export function SignupSection() {
         fetch("https://formspree.io/f/xgorddko", {
           method: "POST",
           headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify({ company: name, email, event: "api_key_created" }),
+          body: JSON.stringify({
+            company: name,
+            email,
+            event: "api_key_created",
+            interested_plan: interestedPlan ?? "sandbox (default, no tier clicked)",
+          }),
         }).catch(() => {});
       }
     } catch {
@@ -70,6 +89,12 @@ export function SignupSection() {
         No credit card. No manual approval. Start logging decisions immediately.
       </p>
       <div className="mx-auto max-w-[520px] rounded-lg border border-border bg-background p-10 text-left shadow-sm">
+        {matchedTier && matchedTier.slug !== "sandbox" && (
+          <div className="mb-5 rounded-md border border-accent/25 bg-accent/5 px-4 py-3 text-[13px] text-foreground/80">
+            Signing up for <strong className="text-foreground">{matchedTier.label} — {matchedTier.price}{matchedTier.price !== "Custom" ? "/mo" : ""}</strong>.
+            You&apos;ll get instant sandbox access below — we&apos;ll follow up by email to set up billing for this tier.
+          </div>
+        )}
         <Input
           placeholder="Company name"
           value={name}
