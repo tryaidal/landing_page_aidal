@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { SectionEyebrow } from "@/components/section-eyebrow";
 
 const tierIcons: Record<string, typeof Sparkles> = {
-  Free: Sparkles,
+  Sandbox: Sparkles,
   Starter: Rocket,
   "Audit-Ready": Star,
   Enterprise: Building2,

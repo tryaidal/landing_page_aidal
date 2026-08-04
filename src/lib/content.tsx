@@ -111,12 +111,12 @@ export const faqItems = [
 
 export const pricingTiers = [
   {
-    label: "Free",
+    label: "Sandbox",
     price: "$0",
     unit: "forever · 1,000 decisions/month",
     integration: "→ Integrate in 30 minutes",
     features: ["Full API access", "AI-generated explanations", "Tamper-proof audit log", "7 jurisdiction modules", "Public verify page"],
-    cta: "Get API key free",
+    cta: "Get your API key",
     featured: false,
   },
   {
