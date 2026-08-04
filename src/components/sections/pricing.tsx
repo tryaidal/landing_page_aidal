@@ -63,20 +63,33 @@ export function PricingSection() {
             >
               {tier.cta}
             </a>
+            {tier.href?.startsWith("mailto:") && (
+              // mailto: links silently no-op if the visitor's browser/OS has
+              // no default mail app registered (common for anyone using
+              // Gmail only in-browser) -- the click looks like it did
+              // nothing. Visible, selectable email text is the fallback.
+              <p className="mt-2 text-center text-[11px] text-muted-foreground">
+                or email{" "}
+                <a href="mailto:anthony@tryaidal.com?subject=AIDAL%20Enterprise" className="underline">
+                  anthony@tryaidal.com
+                </a>
+              </p>
+            )}
           </div>
           );
         })}
       </div>
       <p className="mt-4 text-[11px] text-muted-foreground">
-        All plans include SHA-256 tamper-proof chain and public audit trail. No credit card required for Free
-        tier. Running at million-decision scale? Free, Starter, and Audit-Ready cap at 1k–500k/month —{" "}
+        All plans include SHA-256 tamper-proof chain and public audit trail. No credit card required for the
+        Sandbox tier. Running at million-decision scale? Sandbox, Starter, and Audit-Ready cap at 1k–500k/month —
+        talk to us about Enterprise (
         <a
           href="mailto:anthony@tryaidal.com?subject=AIDAL%20Enterprise%20Volume"
           className="text-foreground underline"
         >
-          talk to us about Enterprise
-        </a>{" "}
-        for unlimited volume.
+          anthony@tryaidal.com
+        </a>
+        ) for unlimited volume.
       </p>
     </section>
   );
