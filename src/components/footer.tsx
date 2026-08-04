@@ -10,6 +10,7 @@ const footerLinks = [
   { href: "#pricing", label: "Pricing" },
   { href: "#faq", label: "FAQ" },
   { href: "https://aidal-dashboard.vercel.app", label: "Dashboard", external: true },
+  { href: "https://aidal-dashboard.vercel.app/regulations", label: "Regulations", external: true },
   { href: "https://www.linkedin.com/in/anthony-widjaja-b5810b406/", label: "LinkedIn", external: true },
   { href: "/security.html", label: "Security" },
 ];
