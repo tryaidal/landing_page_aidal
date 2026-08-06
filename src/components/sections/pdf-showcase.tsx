@@ -2,12 +2,12 @@ import { SectionEyebrow } from "@/components/section-eyebrow";
 
 const callouts = [
   {
-    title: "Cryptographic certificate",
-    body: "SHA-256 hash chain with tamper-evident seal. Mathematically verifiable by any third party, independently of AIDAL's servers.",
+    title: "Independently verifiable certificate",
+    body: "Any third party can check it themselves, without trusting AIDAL's servers — a SHA-256 hash chain with a tamper-evident seal under the hood.",
   },
   {
     title: "Per-decision explanations",
-    body: "Every AI decision explained in plain language. Required by EU AI Act Art 13, MAS FEAT, and OJK's 2025 AI governance guidance.",
+    body: "Every AI decision explained in plain language. Supports EU AI Act Art 13's explanation requirement, MAS FEAT, and OJK's 2025 AI governance guidance.",
   },
   {
     title: "Jurisdiction compliance mapping",
@@ -27,8 +27,8 @@ export function PdfShowcaseSection() {
             <em className="text-muted-foreground not-italic">actually wants.</em>
           </h2>
           <p className="mb-8 text-[1.0625rem] leading-relaxed text-muted-foreground">
-            One click from your dashboard. A professional PDF with cryptographic proof, AI explanations, and a
-            compliance certificate — ready to hand to MAS, OJK, or an EU auditor.
+            One click from your dashboard. A professional PDF with an independently verifiable seal, AI
+            explanations, and a compliance certificate — ready to hand to MAS, OJK, or an EU auditor.
           </p>
           <div className="flex flex-col gap-6">
             {callouts.map((c) => (

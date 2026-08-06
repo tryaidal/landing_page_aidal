@@ -15,12 +15,12 @@ const steps = [
   {
     n: 2,
     title: "Send decisions after your model runs",
-    body: "After your AI makes a decision, send it to AIDAL via one API call. Any language, any model, any cloud provider.",
+    body: "After your AI makes a decision, send it to AIDAL — a single request, any language, any model, any cloud provider. Choose client-side hashing to send only a digest and keep your raw data off our servers entirely, or send the full decision if you want AIDAL's fairness/bias reporting.",
   },
   {
     n: 3,
     title: "We seal it and check compliance",
-    body: "AIDAL cryptographically hashes the decision, chains it, generates a plain-English explanation, and checks it against your regulator's requirements.",
+    body: "You get back an independently verifiable record, a plain-English explanation, and a check against your regulator's actual requirements. Under the hood: cryptographically hashed and chained to every decision before it — the mechanism, not the headline.",
   },
   {
     n: 4,

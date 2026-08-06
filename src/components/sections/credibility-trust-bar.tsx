@@ -3,7 +3,7 @@ import { Fingerprint, Globe2, Clock, FileText, CheckCircle2, Search } from "luci
 const builtFor = ["EU AI Act", "MAS FEAT", "OJK AI Governance (2025)", "DFSA UAE", "FCA UK", "CFPB US", "APRA AU"];
 
 const trustItems = [
-  { icon: Fingerprint, label: "SHA-256 tamper-proof chain" },
+  { icon: Fingerprint, label: "Independently verifiable, not just logged" },
   { icon: Globe2, label: "7 jurisdiction modules live" },
   { icon: Clock, label: "30-minute integration" },
   { icon: FileText, label: "AI explanation per decision" },

@@ -80,7 +80,7 @@ export function PricingSection() {
         })}
       </div>
       <p className="mt-4 text-[11px] text-muted-foreground">
-        All plans include SHA-256 tamper-proof chain and public audit trail. No credit card required for the
+        All plans include an independently verifiable audit trail (SHA-256 hash chain) and a public verify page. No credit card required for the
         Sandbox tier. Running at million-decision scale? Sandbox, Starter, and Audit-Ready cap at 1k–500k/month —
         talk to us about Enterprise (
         <a

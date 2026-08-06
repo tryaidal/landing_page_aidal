@@ -12,7 +12,7 @@ const cells = [
   {
     badge: "Gap 2",
     title: "No audit trail",
-    body: "AI decisions live in databases that can be edited. There is no tamper-proof record of what was decided, when, by which model, and with what confidence.",
+    body: "AI decisions live in databases that can be edited. There is no independently verifiable record of what was decided, when, by which model, and with what confidence.",
     icon: DatabaseZap,
     dark: false,
   },
@@ -26,7 +26,7 @@ const cells = [
   {
     badge: "Solution",
     title: "AIDAL solves all three",
-    body: "One API call logs every decision with a cryptographic proof, an AI-generated explanation, and automatic compliance checking. Regulators verify everything in seconds.",
+    body: "Every decision gets a record you didn't have to build yourself: independently verifiable, plain-English explained, and checked against your regulator's actual requirements. One request logs it — the hard part was never the integration.",
     icon: ShieldCheck,
     dark: true,
   },

@@ -31,9 +31,10 @@ export function VerifySection() {
             <em className="text-muted-foreground not-italic">This is proof.</em>
           </h2>
           <p className="mb-10 text-sm leading-loose text-muted-foreground">
-            A regulator doesn&apos;t trust what you control. AIDAL&apos;s SHA-256 hash chain is mathematically
-            verifiable by anyone, independent of AIDAL&apos;s servers. That is the difference between passing
-            an audit and failing one — a black box recorder anyone can pull the tape from, not just AIDAL.
+            A regulator doesn&apos;t trust what you control. AIDAL&apos;s record is verifiable by anyone,
+            independent of AIDAL&apos;s own servers — a SHA-256 hash chain underneath, mathematically checkable,
+            not just policy-promised. That is the difference between passing an audit and failing one — a black
+            box recorder anyone can pull the tape from, not just AIDAL.
           </p>
           <div className="flex flex-wrap gap-4">
             <a
