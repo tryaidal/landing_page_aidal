@@ -19,8 +19,8 @@ export function HeroSection() {
               Can you explain an AI decision <span className="font-accent text-accent">six months later</span>?
             </h1>
             <p className="mb-10 max-w-[440px] text-[1.0625rem] leading-relaxed text-muted-foreground">
-              AIDAL seals every AI decision the instant it happens — tamper-evident, human-readable,
-              and ready the moment a regulator asks why. Not a summary. The tape.
+              AIDAL seals each decision you send it, the instant it happens — tamper-evident,
+              human-readable, and ready the moment a regulator asks why. Not a summary. The tape.
             </p>
             <div className="mb-12 flex w-fit flex-wrap items-center gap-1 rounded-full border border-border bg-secondary/40 p-1.5">
               <a
