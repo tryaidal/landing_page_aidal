@@ -16,26 +16,31 @@ export function HeroSection() {
               The black box for AI decisions
             </div>
             <h1 className="mb-6 text-[2.75rem] leading-[1.02] tracking-tight md:text-[72px]">
-              Can you explain an AI decision <span className="font-accent text-accent">six months later</span>?
+              When an AI decision gets challenged, can you prove <span className="font-accent text-accent">what actually happened</span>?
             </h1>
             <p className="mb-10 max-w-[440px] text-[1.0625rem] leading-relaxed text-muted-foreground">
-              AIDAL seals each decision you send it, the instant it happens — tamper-evident,
-              human-readable, and ready the moment a regulator asks why. Not a summary. The tape.
+              AIDAL creates cryptographically verifiable evidence for AI decisions — with
+              privacy-preserving ingestion and offline verification.
             </p>
             <div className="mb-12 flex w-fit flex-wrap items-center gap-1 rounded-full border border-border bg-secondary/40 p-1.5">
+              {/* Primary CTA is the demo, not signup: a visitor who has never
+                  heard of AIDAL needs to SEE a decision investigated before
+                  "get an API key" means anything to them. */}
               <a
-                href="#get-key"
+                href="https://aidal-dashboard.vercel.app/demo"
+                target="_blank"
+                rel="noopener"
                 className="rounded-full bg-primary px-6 py-3 text-[0.9375rem] font-semibold text-primary-foreground transition-all hover:opacity-85 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
               >
-                Log your first AI decision
+                Investigate a decision
               </a>
               <a
-                href="https://youtu.be/i9gs1EUyb80?si=hKREBJz2GFf8yTkM"
+                href="https://github.com/widjajaanthony24-svg/AIDAL/blob/main/EVIDENCE_SPEC.md"
                 target="_blank"
                 rel="noopener"
                 className="group flex items-center gap-2 rounded-full px-5 py-3 text-[0.9375rem] font-medium text-muted-foreground transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:outline-none"
               >
-                Watch 2-minute demo
+                Read the evidence specification
                 <span className="transition-transform group-hover:translate-x-1">→</span>
               </a>
             </div>
